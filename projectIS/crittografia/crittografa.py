@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 import pickle
-#12345
+#1234
 class CryptoManager:
     def __init__(self):
         self.key = b'QaywJxlWb6nOrEt5X1zZawGstHK5sAWfUQpSejYhXIQ='
