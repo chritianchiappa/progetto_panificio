@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 
-#modifica michele 6.0
+#modifica michele 7.0
 class CryptoManager:
     def __init__(self):
         self.key = b'QaywJxlWb6nOrEt5X1zZawGstHK5sAWfUQpSejYhXIQ='
