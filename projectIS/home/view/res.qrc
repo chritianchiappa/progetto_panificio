@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="immagini">
+    <file>../../immagini/sfondologin2.png</file>
+  </qresource>
+  <qresource prefix="icone">
+    <file>../../icone/hidepass.png</file>
+    <file>../../icone/showpass.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,3 @@
+
+class Amministratore():
+    id="Amministratorte"
