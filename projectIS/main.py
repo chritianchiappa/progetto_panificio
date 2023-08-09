@@ -8,5 +8,6 @@ if __name__ == "__main__":
     login = VistaLogin()
     login.show()
     sys.exit(app.exec())
+    #ciao
 
 
