@@ -8,6 +8,7 @@ from home.view.VistaLogAmm import VistaLogAmm
 from utilizzatore.view.VistaAmministratore import VistaAmministratore
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
 from listaclienti.model.lista_clienti import ListaClienti
+from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
 from home.view import res_rc
 
 
@@ -17,6 +18,7 @@ class VistaLogin(QDialog):
         uic.loadUi('home/view/vistalogin2.ui', self)
         self.setWindowTitle("Login")
         self.controller=ControllerListaClienti()
+        self.controllerdip=ControllerListaDipendenti()
         self.accedi_button.clicked.connect(self.go_Home)
         self.accedi_amm_button.clicked.connect(self.accedi_Amm)
         self.sel_registra.activated.connect(self.on_combobox_activated)
@@ -37,7 +39,7 @@ class VistaLogin(QDialog):
             self.RegistraUtente = VistaRegisterUtente(self.controller)
             self.RegistraUtente.show()
         elif selected_option=="Dipendente":
-            self.RegistraDipendente = VistaRegisterDipendente()
+            self.RegistraDipendente = VistaRegisterDipendente(self.controllerdip)
             self.RegistraDipendente.show()
 
     def show_login(self):
