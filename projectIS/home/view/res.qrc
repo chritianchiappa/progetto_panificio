@@ -3,7 +3,12 @@
     <file>../../immagini/sfondologin2.png</file>
   </qresource>
   <qresource prefix="icone">
+    <file>../../icone/statistiche.png</file>
+    <file>../../icone/cassa.png</file>
+    <file>../../icone/Logo.png</file>
+    <file>../../icone/magazzino.png</file>
     <file>../../icone/hidepass.png</file>
+    <file>../../icone/dipendenti.png</file>
     <file>../../icone/showpass.png</file>
   </qresource>
 </RCC>
