@@ -53,6 +53,7 @@ class VistaLogin(QDialog):
             self.error.setText("alcuni campi non sono compilati")
         else:
             t = False
+            print(lista_clienti.get_lista_clienti())
             for cliente in lista_clienti.get_lista_clienti():
                 if cliente.check_cliente(email,password)==True:
                     print("ciao!: "+ cliente.nome)
