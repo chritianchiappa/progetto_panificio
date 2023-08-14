@@ -1,7 +1,7 @@
 import os
 import pickle
 from crittografia.crittografa import CryptoManager
-
+from utilizzatore.model.Dipendente import Dipendente
 crypto_manager = CryptoManager()
 
 
@@ -21,13 +21,14 @@ class ListaDipendenti():
         for dipendente in self.lista_dipendenti:
             if dipendente.id==id:
                 return dipendente
+        return None
 
     def rimuovi_dipendente_by_id(self, id):
         def is_selected(dipendente):
             if dipendente.id == id:
                 return True
             return False
-        self.lista_dipendenti.remove(list(filter(is_selected, self.lista_clienti))[0])
+        self.lista_dipendenti.remove(list(filter(is_selected, self.lista_dipendenti))[0])
 
     def get_lista_dipendenti(self):
         return self.lista_dipendenti
