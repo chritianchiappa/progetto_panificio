@@ -1,5 +1,6 @@
-from PyQt6.QtWidgets import QFrame
+from PyQt6.QtWidgets import QFrame, QLineEdit
 from PyQt6 import uic
+from PyQt6.QtCore import Qt
 from utilizzatore.model.Dipendente import Dipendente
 from validazionecampi.validazione_campi import Validation
 
@@ -9,7 +10,15 @@ class VistaRegisterDipendente(QFrame):
         super(VistaRegisterDipendente,self).__init__()
         uic.loadUi('home/view/vistaregisterdipendente.ui',self)
         self.controller = controller
-        self.cc_button.clicked.connect(self.reg_dipendente)
+        self.registrati_button.clicked.connect(self.reg_dipendente)
+        self.sp_button.clicked.connect(self.show_password)
+        self.error.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter)
+
+    def show_password(self):
+        if self.sp_button.isChecked():
+            self.password.setEchoMode(QLineEdit.EchoMode.Normal)
+        else:
+            self.cpassword.setEchoMode(QLineEdit.EchoMode.Password)
 
     def closeEvent(self, event):
         self.controller.save_data()

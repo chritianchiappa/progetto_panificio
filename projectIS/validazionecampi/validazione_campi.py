@@ -3,7 +3,7 @@ import re
 
 class Validation:
     def __init__(self):
-        self.patternPassword = r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$'
+        self.patternPassword = r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$'
         self.patternEmail = r'^[\w.-]+@[\w.-]+\.\w+$'
         self.patternTelefono = r'^\d{10}$'
 
