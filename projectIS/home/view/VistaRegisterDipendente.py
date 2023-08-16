@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QFrame, QLineEdit
 from PyQt6 import uic
 from PyQt6.QtCore import Qt
-from utilizzatore.model.Dipendente import Dipendente
+
 from validazionecampi.validazione_campi import Validation
 
 
@@ -44,7 +44,7 @@ class VistaRegisterDipendente(QFrame):
             if dipendente_cercato:
                 self.controller.aggiorna_dipendente(id, email, password)
             else:
-                self.error.setText("Dipendente non trovato")
+                self.error.setText("dipendente non trovato")
 
 
 

@@ -1,7 +1,7 @@
 import os
 import pickle
 from crittografia.crittografa import CryptoManager
-from utilizzatore.model.Dipendente import Dipendente
+
 crypto_manager = CryptoManager()
 
 
@@ -16,6 +16,9 @@ class ListaDipendenti():
 
     def aggiungi_dipendente(self, dipendente):
         self.lista_dipendenti.append(dipendente)
+
+    def get_dipendente_by_index(self, index):
+        return self.lista_dipendenti[index]
 
     def check_dipendente_by_id(self,id):
         for dipendente in self.lista_dipendenti:

@@ -4,9 +4,9 @@ from PyQt6.QtCore import QTime,QTimer
 from listadipendenti.view.vista_lista_dipendenti import VistaListaDipendenti
 import webbrowser
 from datetime import datetime
-class VistaAmministratore(QWidget):
+class HomeAmministratore(QWidget):
     def __init__(self):
-        super(VistaAmministratore,self).__init__()
+        super(HomeAmministratore,self).__init__()
         uic.loadUi('utilizzatore/view/vistaAmministratore.ui',self)
         self.setWindowTitle("Home")
         self.dipendenti_button.clicked.connect(self.go_Lista_Dipendenti)

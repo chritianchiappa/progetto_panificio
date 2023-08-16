@@ -15,6 +15,9 @@ class ControllerListaDipendenti():
     def aggiungi_dipendente(self, dipendente):
         self.model.aggiungi_dipendente(dipendente)
 
+    def get_dipendente_by_index(self, index):
+        return self.model.get_dipendente_by_index(index)
+
     def get_lista_dipendenti(self):
         return self.model.get_lista_dipendenti()
 

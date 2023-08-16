@@ -1,12 +1,13 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget
-from utilizzatore.model.Dipendente import Dipendente
+from dipendente.model.Dipendente import Dipendente
 
 class VistaInserisciDipendente(QWidget):
-    def __init__(self ,controller):
+    def __init__(self ,controller,callback):
         super(VistaInserisciDipendente, self).__init__()
         uic.loadUi('listadipendenti/view/vistainseriscidipendente.ui', self)
         self.controller = controller
+        self.callback = callback
         self.reg_dip_button.clicked.connect(self.registra_Dipendente)
     def closeEvent(self, event):
         self.controller.save_data()
@@ -31,4 +32,5 @@ class VistaInserisciDipendente(QWidget):
                 telefono,
                 )
             )
+            self.callback()
             self.close()

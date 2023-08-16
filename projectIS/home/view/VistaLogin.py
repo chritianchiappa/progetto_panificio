@@ -5,7 +5,7 @@ from home.view.VistaHome import VistaHome
 from home.view.VistaRegisterUtente import VistaRegisterUtente
 from home.view.VistaRegisterDipendente import VistaRegisterDipendente
 from home.view.VistaLogAmm import VistaLogAmm
-from utilizzatore.view.VistaAmministratore import VistaAmministratore
+from utilizzatore.view.HomeAmministratore import HomeAmministratore
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
 from listaclienti.model.lista_clienti import ListaClienti
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
@@ -38,7 +38,7 @@ class VistaLogin(QDialog):
         if selected_option=="Utente":
             self.RegistraUtente = VistaRegisterUtente(self.controller)
             self.RegistraUtente.show()
-        elif selected_option=="Dipendente":
+        elif selected_option=="dipendente":
             self.RegistraDipendente = VistaRegisterDipendente(self.controllerdip)
             self.RegistraDipendente.show()
 
@@ -64,5 +64,5 @@ class VistaLogin(QDialog):
 
 
     def accedi_Amm(self):
-        self.LogAmm= VistaLogAmm(self,VistaAmministratore())
+        self.LogAmm= VistaLogAmm(self,HomeAmministratore())
         self.LogAmm.show()
