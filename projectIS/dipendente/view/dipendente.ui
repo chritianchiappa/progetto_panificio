@@ -26,19 +26,6 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="1" column="0">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
@@ -52,8 +39,8 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="1">
-    <spacer name="verticalSpacer_2">
+   <item row="0" column="1">
+    <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -96,9 +83,9 @@
        <widget class="QLabel" name="nome_cognome_label">
         <property name="font">
          <font>
-          <family>Arial Nova</family>
+          <family>American Typewriter</family>
           <pointsize>16</pointsize>
-          <bold>true</bold>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -124,6 +111,11 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="id_label">
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+         </font>
+        </property>
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -131,6 +123,11 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="indirizzo_label">
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+         </font>
+        </property>
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -138,6 +135,11 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="cfiscale_label">
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+         </font>
+        </property>
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -145,6 +147,11 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="telefono_label">
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+         </font>
+        </property>
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -153,8 +160,8 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="1">
-    <spacer name="verticalSpacer_3">
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -165,6 +172,19 @@
       <size>
        <width>20</width>
        <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
       </size>
      </property>
     </spacer>
