@@ -20,6 +20,9 @@ class ListaDipendenti():
     def get_dipendente_by_index(self, index):
         return self.lista_dipendenti[index]
 
+    def rimuovi_dipendente_by_index(self,index):
+        self.lista_dipendenti.pop(index)
+
     def check_dipendente_by_id(self,id):
         for dipendente in self.lista_dipendenti:
             if dipendente.id==id:

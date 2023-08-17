@@ -14,6 +14,7 @@ class VistaListaDipendenti(QWidget):
         self.update_ui()
         self.new_button.clicked.connect(self.show_new_dipendente)
         self.open_button.clicked.connect(self.mostra_selezionato)
+        self.delete_button.clicked.connect(self.elimina_selezionato)
 
     def update_ui(self):
         self.listview_model = QStandardItemModel(self.list_view)
@@ -40,6 +41,17 @@ class VistaListaDipendenti(QWidget):
     def show_new_dipendente(self):
         self.vista_inserisci_dipendente = VistaInserisciDipendente(self.controller,self.update_ui)
         self.vista_inserisci_dipendente.show()
+
+    def elimina_selezionato(self):
+        selected = self.list_view.selectedIndexes()
+        if not selected:
+            return
+        selected_index=selected[0].row()
+        self.controller.rimuovi_dipendente_by_index(selected_index)
+        self.listview_model.removeRow(selected_index)
+
+
+
 
 
 
