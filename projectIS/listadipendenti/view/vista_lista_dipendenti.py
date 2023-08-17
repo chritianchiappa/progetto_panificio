@@ -13,6 +13,8 @@ class VistaListaDipendenti(QWidget):
         self.controller = ControllerListaDipendenti()
         self.update_ui()
         self.new_button.clicked.connect(self.show_new_dipendente)
+        self.open_button.clicked.connect(self.mostra_selezionato)
+
     def update_ui(self):
         self.listview_model = QStandardItemModel(self.list_view)
         for dipendente in self.controller.get_lista_dipendenti():
@@ -24,6 +26,7 @@ class VistaListaDipendenti(QWidget):
             item.setFont(font)
             self.listview_model.appendRow(item)
         self.list_view.setModel(self.listview_model)
+
     def closeEvent(self, event):
         self.controller.save_data()
         super(VistaListaDipendenti, self).closeEvent(event)
@@ -33,8 +36,11 @@ class VistaListaDipendenti(QWidget):
         dipendente_selezionato = self.controller.get_dipendente_by_index(selected)
         self.vista_dipendente = VistaDipendente(dipendente_selezionato)
         self.vista_dipendente.show()
+
     def show_new_dipendente(self):
         self.vista_inserisci_dipendente = VistaInserisciDipendente(self.controller,self.update_ui)
         self.vista_inserisci_dipendente.show()
+
+
 
 

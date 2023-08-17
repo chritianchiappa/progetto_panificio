@@ -3,16 +3,16 @@ class ControllerDipendente():
         self.model = dipendente
 
     def get_nome_dipendente(self):
-        return self.model.nome
+        return str(self.model.nome)
 
     def get_cognome_dipendente(self):
-        return self.model.cognome
+        return str(self.model.cognome)
 
     def get_id_dipendente(self):
-        return self.model.id
+        return str(self.model.id)
 
     def get_indirizzo_dipendente(self):
-        return self.model.indirizzo
+        return str(self.model.indirizzo)
 
     def get_telefono_dipendente(self):
         return self.model.telefono

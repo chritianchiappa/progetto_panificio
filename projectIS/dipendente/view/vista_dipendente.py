@@ -11,8 +11,12 @@ class VistaDipendente(QWidget):
         uic.loadUi('dipendente/view/dipendente.ui', self)
         self.controller = ControllerDipendente(dipendente)
         self.nome_cognome_label.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter)
-        self.nome_cognome_label.setText(f" {self.controller.get_cognome_dipendente()} {self.get_nome_dipendente()}")
+
+        self.nome_cognome_label.setText(f"{self.controller.get_nome_dipendente()} {self.controller.get_cognome_dipendente()}")
         self.id_label.setText(f"Id: {self.controller.get_id_dipendente()}")
         self.indirizzo_label.setText(f"Indirizzo: {self.controller.get_indirizzo_dipendente()}")
-        self.cfiscale_label.setText(f"Codice fiscale: {self.controller.get_prezzo_servizio()}")
+        self.cfiscale_label.setText(f"Codice fiscale: {self.controller.get_cfiscale_dipendente()}")
         self.telefono_label.setText(f"Telefono: {self.controller.get_telefono_dipendente()}")
+
+
+
