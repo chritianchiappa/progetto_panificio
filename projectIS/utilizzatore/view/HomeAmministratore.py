@@ -41,5 +41,6 @@ class HomeAmministratore(QWidget):
         self.close()
     def go_Statistiche(self):
         self.close()
+
     def go_Cassa(self):
         self.close()
