@@ -16,7 +16,7 @@ class VistaLogAmm(QFrame):
             self.error.setText("Id non corretto!")
         else:
             self.close()
-            self.login.close()
+            self.login.hide()
             self.home.show()
 
 

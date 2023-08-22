@@ -1,7 +1,7 @@
 
-from PyQt6.QtWidgets import QLineEdit, QDialog, QGraphicsView, QGraphicsScene
+from PyQt6.QtWidgets import QLineEdit, QDialog,QMessageBox,QGraphicsDropShadowEffect
 from PyQt6 import uic
-from home.view.VistaHome import VistaHome
+
 from home.view.VistaRegisterUtente import VistaRegisterUtente
 from home.view.VistaRegisterDipendente import VistaRegisterDipendente
 from home.view.VistaLogAmm import VistaLogAmm
@@ -9,6 +9,7 @@ from utilizzatore.view.HomeAmministratore import HomeAmministratore
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
 from listaclienti.model.lista_clienti import ListaClienti
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
+from PyQt6.QtGui import QColor
 from home.view import res_rc
 
 
@@ -23,7 +24,12 @@ class VistaLogin(QDialog):
         self.accedi_amm_button.clicked.connect(self.accedi_Amm)
         self.sel_registra.activated.connect(self.on_combobox_activated)
         self.sp_button.clicked.connect(self.show_password)
-
+        shadow = QGraphicsDropShadowEffect()
+        shadow.setColor(QColor(255, 255, 255, 100))  # Colore dell'ombra
+        shadow.setBlurRadius(50)  # Raggio di sfocatura dell'ombra
+        shadow.setOffset(0, 0)
+        self.frame.setGraphicsEffect(shadow)
+        self.frame_5.setGraphicsEffect(shadow)
 
 
     def show_password(self):
@@ -38,7 +44,7 @@ class VistaLogin(QDialog):
         if selected_option=="Utente":
             self.RegistraUtente = VistaRegisterUtente(self.controller)
             self.RegistraUtente.show()
-        elif selected_option=="dipendente":
+        elif selected_option=="Dipendente":
             self.RegistraDipendente = VistaRegisterDipendente(self.controllerdip)
             self.RegistraDipendente.show()
 
@@ -66,3 +72,13 @@ class VistaLogin(QDialog):
     def accedi_Amm(self):
         self.LogAmm= VistaLogAmm(self,HomeAmministratore())
         self.LogAmm.show()
+
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, "Conferma Chiusura",
+                                     "Sei sicuro di voler chiudere il programma?",
+                                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
+
+        if reply == QMessageBox.StandardButton.Yes:
+            event.accept()
+        else:
+            event.ignore()

@@ -51,22 +51,6 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="1" column="1">
     <widget class="QFrame" name="frame">
      <property name="sizePolicy">
@@ -105,7 +89,7 @@ background-color: rgba(0,0,0,150)</string>
          <enum>Qt::Vertical</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Fixed</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -521,13 +505,13 @@ QPushButton:hover {
           <widget class="QComboBox" name="sel_registra">
            <property name="minimumSize">
             <size>
-             <width>110</width>
+             <width>150</width>
              <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>125</width>
+             <width>150</width>
              <height>30</height>
             </size>
            </property>
@@ -546,6 +530,9 @@ QPushButton:hover {
     color:white;
     border: none;
     border-radius: 10px;
+   padding-top:6px;
+   padding-bottom:6px;
+   padding-left:8px;
    
 }
 QComboBox QAbstractItemView {
@@ -558,9 +545,6 @@ QComboBox QAbstractItemView::item:hover {
 
 }
 QComboBox::drop-down {
-   
-    subcontrol-position: top right;
-    width: 20px;
     border: none;
 }
 QComboBox::down-arrow {
@@ -570,6 +554,9 @@ QComboBox::down-arrow {
     width: 16px; 
     height: 16px;
 }</string>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QComboBox::AdjustToContents</enum>
            </property>
            <property name="placeholderText">
             <string>Registrati</string>
@@ -595,7 +582,7 @@ QComboBox::down-arrow {
          <enum>Qt::Vertical</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Fixed</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -636,6 +623,22 @@ QComboBox::down-arrow {
       <size>
        <width>40</width>
        <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
       </size>
      </property>
     </spacer>

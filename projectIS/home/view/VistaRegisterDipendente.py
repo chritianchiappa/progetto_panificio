@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QFrame, QLineEdit
+from PyQt6.QtWidgets import QFrame, QLineEdit, QMessageBox
 from PyQt6 import uic
 from PyQt6.QtCore import Qt
 
@@ -43,6 +43,11 @@ class VistaRegisterDipendente(QFrame):
             dipendente_cercato= self.controller.check_dipendente_by_id(id)
             if dipendente_cercato:
                 self.controller.aggiorna_dipendente(id, email, password)
+                msg = QMessageBox()
+                msg.setText(
+                    "Registrazione avvenuta con successo!")
+                msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+                msg.exec()
             else:
                 self.error.setText("dipendente non trovato")
 
