@@ -14,7 +14,6 @@ class HomeAmministratore(QWidget):
         self.statistiche_button.clicked.connect(self.go_Statistiche)
         self.cassa_button.clicked.connect(self.go_Cassa)
         self.Data.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter)
-        #self.logout_button.clicked.connect(self.go_Login)
         self.logo_button.clicked.connect(self.open_sito)
         self.timer=QTimer()
         self.timer.timeout.connect(self.update_time)
@@ -37,6 +36,8 @@ class HomeAmministratore(QWidget):
         self.VistaDip = VistaListaDipendenti()
         self.VistaDip.show()
     def go_Magazzino(self):
+        #self.VistaIng=VistaIngredienti()
+        #self.VistaIng.show()
         self.close()
     def go_Statistiche(self):
         self.close()

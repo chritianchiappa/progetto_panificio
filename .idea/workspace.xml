@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4fd768d-517b-4487-a3c2-29eb049bacb3" name="Changes" comment="modifica michele">
+      <change beforePath="$PROJECT_DIR$/projectIS/ingrediente/model/Ingrediente.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectIS/ingrediente/model/Ingrediente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectIS/listadipendenti/data/lista_dipendenti_salvata.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/projectIS/listadipendenti/data/lista_dipendenti_salvata.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectIS/listaingredienti/controller/controller_lista_ingredienti.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectIS/listaingredienti/controller/controller_lista_ingredienti.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectIS/listaingredienti/model/lista_ingredienti.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectIS/listaingredienti/model/lista_ingredienti.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectIS/utilizzatore/view/HomeAmministratore.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectIS/utilizzatore/view/HomeAmministratore.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2U6WaqgYYz6BDZY0tj50AR6PzTD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/miche/OneDrive/Desktop/progetto_panificio"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4fd768d-517b-4487-a3c2-29eb049bacb3" name="Changes" comment="" />
+      <created>1692260577403</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692260577403</updated>
+    </task>
+    <task id="LOCAL-00001" summary="modifica michele">
+      <created>1692272487935</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692272487935</updated>
+    </task>
+    <task id="LOCAL-00002" summary="modifica michele">
+      <created>1692275641407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692275641407</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="modifica michele" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica michele" />
+  </component>
+</project>

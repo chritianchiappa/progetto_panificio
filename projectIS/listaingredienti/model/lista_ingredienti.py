@@ -1,6 +1,6 @@
 import os
 import pickle
-
+from datetime import datetime,timedelta
 class ListaIngredienti():
     def __init__(self):
         self.lista_ingredienti = []
@@ -11,27 +11,31 @@ class ListaIngredienti():
     def inserisci_ingrediente(self, ingrediente):
         self.lista_ingredienti.append(ingrediente)
 
-    def get_dipendente_by_index(self, index):
-        return self.lista_dipendenti[index]
+    def get_ingrediente_by_index(self, index):
+        return self.lista_ingrediente[index]
 
-    def rimuovi_dipendente_by_index(self,index):
-        self.lista_dipendenti.pop(index)
+    def rimuovi_ingrediente_by_index(self,index):
+        self.lista_ingredienti.pop(index)
 
-    def check_dipendente_by_id(self,id):
-        for dipendente in self.lista_dipendenti:
-            if dipendente.id==id:
-                return dipendente
+    def check_ingrediente_by_id(self,id):
+        for ingrediente in self.lista_ingredienti:
+            if ingrediente.id==id:
+                return ingrediente
         return None
 
-    def rimuovi_dipendente_by_id(self, id):
-        def is_selected(dipendente):
-            if dipendente.id == id:
+    def rimuovi_ingrediente_by_id(self, id):
+        def is_selected(ingrediente):
+            if ingrediente.id == id:
                 return True
             return False
-        self.lista_dipendenti.remove(list(filter(is_selected, self.lista_dipendenti))[0])
+        self.lista_ingredienti.remove(list(filter(is_selected, self.lista_ingredienti))[0])
 
-    def get_lista_dipendenti(self):
-        return self.lista_dipendenti
+    def get_lista_ingredienti(self):
+        return self.lista_ingredienti
+
+    def is_scaduto(self):
+        oggi = datetime.now().date()
+        return oggi > self.data_scadenza
 
     def save_data(self):
         with open('listaingredienti/data/lista_ingredienti_salvata.pickle', 'wb') as handle:
