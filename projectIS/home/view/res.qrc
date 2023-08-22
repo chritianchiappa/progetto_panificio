@@ -4,6 +4,12 @@
     <file>../../immagini/sfondologin2.png</file>
   </qresource>
   <qresource prefix="icone">
+    <file>../../icone/torta.png</file>
+    <file>../../icone/carrello.png</file>
+    <file>../../icone/whishlist.png</file>
+    <file>../../icone/prodotto.png</file>
+    <file>../../icone/profilo.png</file>
+    <file>../../icone/ordine.png</file>
     <file>../../icone/statistiche.png</file>
     <file>../../icone/cassa.png</file>
     <file>../../icone/Logo.png</file>

@@ -11,6 +11,9 @@ class ControllerListaClienti():
     def get_lista_clienti(self):
         return self.model.get_lista_clienti()
 
+    def check_cliente(self,email,password):
+        return self.model.check_cliente(email,password)
+
     def ritorna_nome(self,cognome):
         return self.model.ritorna_nome(cognome)
 

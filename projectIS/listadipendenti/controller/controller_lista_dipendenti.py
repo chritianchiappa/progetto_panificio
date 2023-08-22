@@ -23,6 +23,8 @@ class ControllerListaDipendenti():
 
     def get_lista_dipendenti(self):
         return self.model.get_lista_dipendenti()
+    def check_dipendente(self,email,password):
+        return self.model.check_dipendente(email,password)
 
     def check_dipendente_by_id(self, id):
         return self.model.check_dipendente_by_id(id)

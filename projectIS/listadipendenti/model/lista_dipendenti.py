@@ -28,7 +28,11 @@ class ListaDipendenti():
             if dipendente.id==id:
                 return dipendente
         return None
-
+    def check_dipendente(self,email,password):
+        for dipendente in self.lista_dipendenti:
+            if dipendente.email==email and dipendente.password==password:
+                return dipendente
+        return None
     def rimuovi_dipendente_by_id(self, id):
         def is_selected(dipendente):
             if dipendente.id == id:

@@ -1,4 +1,4 @@
-
+from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QLineEdit, QDialog,QMessageBox,QGraphicsDropShadowEffect
 from PyQt6 import uic
 
@@ -6,10 +6,13 @@ from home.view.VistaRegisterUtente import VistaRegisterUtente
 from home.view.VistaRegisterDipendente import VistaRegisterDipendente
 from home.view.VistaLogAmm import VistaLogAmm
 from utilizzatore.view.HomeAmministratore import HomeAmministratore
+from utilizzatore.view.HomeDipendente import HomeDipendente
+from utilizzatore.view.HomeCliente import HomeCliente
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
 from listaclienti.model.lista_clienti import ListaClienti
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
-from PyQt6.QtGui import QColor
+from listadipendenti.model.lista_dipendenti import ListaDipendenti
+
 from home.view import res_rc
 
 
@@ -52,21 +55,22 @@ class VistaLogin(QDialog):
         self.show()
 
     def go_Home(self):
-        lista_clienti = ListaClienti()
         email= self.emailfield.text()
         password= self.passwordfield.text()
         if len(email)==0 or len(password)==0:
             self.error.setText("alcuni campi non sono compilati")
         else:
-            t = False
-            print(lista_clienti.get_lista_clienti())
-            for cliente in lista_clienti.get_lista_clienti():
-                if cliente.check_cliente(email,password)==True:
-                    print("ciao!: "+ cliente.nome)
-                    t=True
-                    break
-            if t==False:
-                self.error.setText("nessun utente trovato, registrati")
+            if self.controller.check_cliente(email,password):
+                utente=self.controller.check_cliente(email,password)
+                self.HomeC=HomeCliente(utente)
+                self.HomeC.show()
+            elif self.controllerdip.check_dipendente(email,password):
+                utente=self.controllerdip.check_dipendente(email,password)
+                self.HomeD = HomeDipendente(utente)
+                self.HomeD.show()
+
+            else:
+                self.error.setText("email o password non corette")
 
 
     def accedi_Amm(self):

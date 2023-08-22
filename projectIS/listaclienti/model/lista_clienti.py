@@ -25,7 +25,12 @@ class ListaClienti():
         self.lista_clienti.remove(list(filter(is_selected, self.lista_clienti))[0])
 
 
-
+    def check_cliente(self,email,password):
+        for cliente in self.lista_clienti:
+            if cliente.email == email and cliente.password == password:
+                return True
+            else:
+                return False
     def ritorna_nome(self,cognome):
         for cliente in self.lista_clienti:
             if cliente.cognome==cognome:
