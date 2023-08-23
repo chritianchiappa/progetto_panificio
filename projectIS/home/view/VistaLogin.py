@@ -15,12 +15,6 @@ from listadipendenti.model.lista_dipendenti import ListaDipendenti
 
 from home.view import res_rc
 
-
-class WhiteBackgroundMessageBox(QMessageBox):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.setStyleSheet("background-color: white;")
 class VistaLogin(QDialog):
     def __init__(self,parent=None):
         super(VistaLogin, self).__init__(parent)
@@ -68,10 +62,10 @@ class VistaLogin(QDialog):
         utente_cliente = self.controller.check_cliente(email, password)
         utente_dipendente = self.controllerdip.check_dipendente(email, password)
         if utente_cliente:
-            self.HomeC = HomeCliente(utente_cliente)
+            self.HomeC = HomeCliente(self,utente_cliente)
             self.HomeC.show()
         elif utente_dipendente:
-            self.HomeD = HomeDipendente(utente_dipendente)
+            self.HomeD = HomeDipendente(self,utente_dipendente)
             self.HomeD.show()
         else:
             self.error.setText("email o password non corette")
@@ -82,11 +76,16 @@ class VistaLogin(QDialog):
         self.LogAmm.show()
 
     def closeEvent(self, event):
-        reply = WhiteBackgroundMessageBox.question(self, "Conferma Chiusura",
-                                     "Sei sicuro di voler chiudere il programma?",
-                                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
 
-        if reply == QMessageBox.StandardButton.Yes:
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Icon.Question)
+        msg.setText("Sei sicuro di voler chiudere il programma?")
+        msg.setStyleSheet('color: white; '
+                          )
+        msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+        result = msg.exec()
+
+        if result == QMessageBox.StandardButton.Yes:
             event.accept()
         else:
             event.ignore()

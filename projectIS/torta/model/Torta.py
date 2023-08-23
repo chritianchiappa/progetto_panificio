@@ -1,7 +1,7 @@
 class Torta:
-    def __init__(self, nome,ingredienti,prezzo, peso,candeline,scritta,richieste):
+    def __init__(self, base,ingredienti,prezzo, peso,candeline,scritta,richieste):
         super(Torta, self).__init__()
-        self.nome = nome
+        self.base = base
         self.prezzo = prezzo
         self.peso = peso
         self.ingredienti = ingredienti
