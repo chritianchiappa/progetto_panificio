@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
-from PyQt6.QtCore import  QTimer, Qt
+from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QTimer
+
 
 import webbrowser
 from datetime import datetime
@@ -14,13 +15,31 @@ class HomeCliente(QWidget):
         self.whishlist_button.clicked.connect(self.go_Magazzino)
         self.shop_button.clicked.connect(self.go_Prodotti)
         self.torte_button.clicked.connect(self.go_Torte)
-        self.Data.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter)
-        self.Ora.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter)
         self.logo_button.clicked.connect(self.open_sito)
+        self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
+        self.nome.setText(cliente.nome)
         self.timer=QTimer()
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
         self.update_time()
+
+    def slideMenu(self):
+        self.animation = QPropertyAnimation(self.slide_menu, b"maximumWidth")
+        self.animation.setDuration(250)
+        easing_curve = QEasingCurve(QEasingCurve.Type.Linear)
+        if self.open_close_side_bar_btn.isChecked():
+            self.animation.setStartValue(0)
+            self.animation.setEndValue(200)
+            self.animation.setEasingCurve(easing_curve)
+            self.animation.start()
+        else:
+            self.animation.setStartValue(200)
+            self.animation.setEndValue(0)
+            self.animation.setEasingCurve(easing_curve)
+            self.animation.start()
+
+
+
 
     def open_sito(self):
         webbrowser.open(

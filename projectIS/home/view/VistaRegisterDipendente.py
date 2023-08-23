@@ -12,14 +12,20 @@ class VistaRegisterDipendente(QFrame):
         self.controller = controller
         self.registrati_button.clicked.connect(self.reg_dipendente)
         self.sp_button.clicked.connect(self.show_password)
+        self.scp_button.clicked.connect(self.show_cpassword)
         self.error.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter)
 
     def show_password(self):
         if self.sp_button.isChecked():
             self.password.setEchoMode(QLineEdit.EchoMode.Normal)
         else:
-            self.cpassword.setEchoMode(QLineEdit.EchoMode.Password)
+            self.password.setEchoMode(QLineEdit.EchoMode.Password)
 
+    def show_cpassword(self):
+        if self.scp_button.isChecked():
+            self.cpassword.setEchoMode(QLineEdit.EchoMode.Normal)
+        else:
+            self.cpassword.setEchoMode(QLineEdit.EchoMode.Password)
     def closeEvent(self, event):
         self.controller.save_data()
 

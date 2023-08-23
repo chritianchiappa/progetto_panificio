@@ -28,9 +28,8 @@ class ListaClienti():
     def check_cliente(self,email,password):
         for cliente in self.lista_clienti:
             if cliente.email == email and cliente.password == password:
-                return True
-            else:
-                return False
+                return cliente
+        return None
     def ritorna_nome(self,cognome):
         for cliente in self.lista_clienti:
             if cliente.cognome==cognome:

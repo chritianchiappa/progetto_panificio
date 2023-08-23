@@ -16,6 +16,11 @@ from listadipendenti.model.lista_dipendenti import ListaDipendenti
 from home.view import res_rc
 
 
+class WhiteBackgroundMessageBox(QMessageBox):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.setStyleSheet("background-color: white;")
 class VistaLogin(QDialog):
     def __init__(self,parent=None):
         super(VistaLogin, self).__init__(parent)
@@ -59,18 +64,17 @@ class VistaLogin(QDialog):
         password= self.passwordfield.text()
         if len(email)==0 or len(password)==0:
             self.error.setText("alcuni campi non sono compilati")
+            return
+        utente_cliente = self.controller.check_cliente(email, password)
+        utente_dipendente = self.controllerdip.check_dipendente(email, password)
+        if utente_cliente:
+            self.HomeC = HomeCliente(utente_cliente)
+            self.HomeC.show()
+        elif utente_dipendente:
+            self.HomeD = HomeDipendente(utente_dipendente)
+            self.HomeD.show()
         else:
-            if self.controller.check_cliente(email,password):
-                utente=self.controller.check_cliente(email,password)
-                self.HomeC=HomeCliente(utente)
-                self.HomeC.show()
-            elif self.controllerdip.check_dipendente(email,password):
-                utente=self.controllerdip.check_dipendente(email,password)
-                self.HomeD = HomeDipendente(utente)
-                self.HomeD.show()
-
-            else:
-                self.error.setText("email o password non corette")
+            self.error.setText("email o password non corette")
 
 
     def accedi_Amm(self):
@@ -78,7 +82,7 @@ class VistaLogin(QDialog):
         self.LogAmm.show()
 
     def closeEvent(self, event):
-        reply = QMessageBox.question(self, "Conferma Chiusura",
+        reply = WhiteBackgroundMessageBox.question(self, "Conferma Chiusura",
                                      "Sei sicuro di voler chiudere il programma?",
                                      QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
 
