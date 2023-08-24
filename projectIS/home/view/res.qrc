@@ -1,9 +1,11 @@
 <RCC>
   <qresource prefix="immagini">
+    <file>../../immagini/sfondo_splashscreen.png</file>
     <file>../../immagini/sfondologin.png</file>
     <file>../../immagini/sfondologin2.png</file>
   </qresource>
   <qresource prefix="icone">
+    <file>../../icone/Logo_Forno_grande.png</file>
     <file>../../icone/freccia_destra.png</file>
     <file>../../icone/burger_menu.png</file>
     <file>../../icone/logout.png</file>

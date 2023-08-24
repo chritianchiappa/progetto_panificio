@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
 from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QTimer
 from torta.view.PersonalizzaTorta import PersonalizzaTorta
-
+from listaprodotti.view.VistaListaProdotti import VistaListaProdotti
 import webbrowser
 from datetime import datetime
 class HomeCliente(QWidget):
@@ -76,4 +76,5 @@ class HomeCliente(QWidget):
         #self.VistaIng.show()
         self.close()
     def go_Prodotti(self):
-        self.close()
+        self.Shop=VistaListaProdotti()
+        self.Shop.show()
