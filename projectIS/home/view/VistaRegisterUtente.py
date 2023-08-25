@@ -39,6 +39,8 @@ class VistaRegisterUtente(QFrame):
                 email,
                 password,
                 telefono,
+                [],
+                []
                 )
             )
             self.close()

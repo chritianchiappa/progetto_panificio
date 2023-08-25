@@ -1,0 +1,48 @@
+[
+{
+   "nome": "farina",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [
+      "glutine"],
+   "scadenza": "31-12-2023"
+ },
+   {
+      "nome": "uova",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [
+      "glutine"],
+   "scadenza": "31-12-2023"
+   },
+   {
+       "nome": "cioccolata",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [
+      "glutine"],
+   "scadenza": "31-12-2023"
+   },
+   {
+       "nome": "crema",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [
+      "glutine"],
+   "scadenza": "31-12-2023"
+   },
+   {
+       "nome": "pomodoro",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [
+      "glutine"],
+   "scadenza": "31-12-2023"
+   }
+
+]

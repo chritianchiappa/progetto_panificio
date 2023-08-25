@@ -5,6 +5,7 @@
     <file>../../immagini/sfondologin2.png</file>
   </qresource>
   <qresource prefix="icone">
+    <file>../../icone/chiusura.png</file>
     <file>../../icone/cuore_pieno.png</file>
     <file>../../icone/cuore.png</file>
     <file>../../icone/Logo_Forno_grande.png</file>

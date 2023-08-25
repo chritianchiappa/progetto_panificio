@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame">
@@ -48,6 +51,9 @@
         <width>81</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:black;</string>
       </property>
       <property name="placeholderText">
        <string>Filtra</string>

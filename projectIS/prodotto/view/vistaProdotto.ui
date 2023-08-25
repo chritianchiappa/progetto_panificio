@@ -45,7 +45,9 @@
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius:10px;
-border:2px solid black</string>
+border:2px solid black;
+color:black;
+background-color: rgb(204, 204, 204);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -85,7 +87,10 @@ border:2px solid black</string>
           <number>0</number>
          </property>
          <item alignment="Qt::AlignRight">
-          <widget class="QToolButton" name="toolButton">
+          <widget class="QToolButton" name="like_button">
+           <property name="styleSheet">
+            <string notr="true">border:none;</string>
+           </property>
            <property name="text">
             <string/>
            </property>

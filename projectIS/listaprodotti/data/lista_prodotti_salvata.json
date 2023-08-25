@@ -4,11 +4,11 @@
    "tipo": "dolce",
    "prezzo": 1.2,
    "peso": null,
-   "ingredienti": [
-      {"nome": "farina"},
-      {"nome": "uova"},
-      {"nome": "cioccolato"}],
-   "liked": null,
+   "ingredienti":[
+      "farina",
+      "uova",
+      "cioccolata"],
+   "liked": false,
    "quantita": 10
  },
  {
@@ -17,10 +17,10 @@
    "prezzo": 1.2,
    "peso": null,
    "ingredienti": [
-      {"nome": "farina"},
-      {"nome": "uova"},
-      {"nome": "crema"}],
-   "liked": null,
+      "farina",
+      "uova",
+      "crema"],
+   "liked": false,
    "quantita": 15
  },
    {
@@ -29,10 +29,10 @@
    "prezzo": 1,
    "peso": null,
    "ingredienti": [
-      {"nome": "farina"},
-      {"nome": "uova"},
-      {"nome": "pomodoro"}],
-   "liked": null,
+      "farina",
+      "uova",
+      "pomodoro"],
+   "liked": false,
      "quantita": 9
  },
    {
@@ -41,9 +41,9 @@
    "prezzo": 0.50,
    "peso": null,
    "ingredienti": [
-      {"nome": "farina"},
-      {"nome": "uova"}],
-   "liked": null,
+      "farina",
+      "uova"],
+   "liked": false,
      "quantita": 20
  }
 ]

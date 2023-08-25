@@ -3,7 +3,7 @@ import os.path
 import pickle
 
 from prodotto.model.Prodotto import Prodotto
-
+from listaingredienti.controller.controller_lista_ingredienti import ControllerListaIngredienti
 class ListaProdotti:
 
     def __init__(self):
@@ -44,13 +44,24 @@ class ListaProdotti:
             with open('listaprodotti/data/lista_prodotti_salvata.json') as f:
                 lista_prodotti_json = json.load(f)
                 for prodotto_da_caricare in lista_prodotti_json:
+                    ingredienti_caricati = []
+
+                    for ingrediente_nome in prodotto_da_caricare['ingredienti']:
+                        ingrediente_corrispondente = None
+                        for ingrediente_obj in ControllerListaIngredienti().get_lista_ingredienti():
+                            if ingrediente_obj.nome == ingrediente_nome:
+                                ingrediente_corrispondente = ingrediente_obj
+                                break  # Esci dal ciclo una volta trovato il corrispondente
+                        if ingrediente_corrispondente:
+                            ingredienti_caricati.append(ingrediente_corrispondente)
+
                     self.lista_prodotti.append(
                         Prodotto(
                             prodotto_da_caricare['nome'],
                             prodotto_da_caricare['tipo'],
                             prodotto_da_caricare['prezzo'],
                             prodotto_da_caricare['peso'],
-                            prodotto_da_caricare['ingredienti'],
+                            ingredienti_caricati,
                             prodotto_da_caricare['liked'],
                             prodotto_da_caricare['quantita']))
 
