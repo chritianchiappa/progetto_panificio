@@ -14,7 +14,7 @@ class HomeCliente(QWidget):
         self.login=login
         self.carrello_button.clicked.connect(self.go_Lista_Ordini)
         self.whishlist_button.clicked.connect(self.go_Magazzino)
-        self.shop_button.clicked.connect(self.go_Prodotti)
+        self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente))
         self.torte_button.clicked.connect(self.go_Torte)
         self.logo_button.clicked.connect(self.open_sito)
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
@@ -75,6 +75,6 @@ class HomeCliente(QWidget):
         #self.VistaIng=VistaIngredienti()
         #self.VistaIng.show()
         self.close()
-    def go_Prodotti(self):
-        self.Shop=VistaListaProdotti()
+    def go_Prodotti(self,cliente):
+        self.Shop=VistaListaProdotti(cliente)
         self.Shop.show()

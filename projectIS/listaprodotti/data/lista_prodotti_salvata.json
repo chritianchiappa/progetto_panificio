@@ -1,0 +1,49 @@
+[
+{
+   "nome": "brioche alla nutella",
+   "tipo": "dolce",
+   "prezzo": 1.2,
+   "peso": null,
+   "ingredienti": [
+      {"nome": "farina"},
+      {"nome": "uova"},
+      {"nome": "cioccolato"}],
+   "liked": null,
+   "quantita": 10
+ },
+ {
+    "nome": "brioche alla crema",
+   "tipo": "dolce",
+   "prezzo": 1.2,
+   "peso": null,
+   "ingredienti": [
+      {"nome": "farina"},
+      {"nome": "uova"},
+      {"nome": "crema"}],
+   "liked": null,
+   "quantita": 15
+ },
+   {
+    "nome": "pizza margherita",
+   "tipo": "salato",
+   "prezzo": 1,
+   "peso": null,
+   "ingredienti": [
+      {"nome": "farina"},
+      {"nome": "uova"},
+      {"nome": "pomodoro"}],
+   "liked": null,
+     "quantita": 9
+ },
+   {
+    "nome": "pizza bianca",
+   "tipo": "dolce",
+   "prezzo": 0.50,
+   "peso": null,
+   "ingredienti": [
+      {"nome": "farina"},
+      {"nome": "uova"}],
+   "liked": null,
+     "quantita": 20
+ }
+]

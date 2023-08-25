@@ -1,14 +1,15 @@
-from PyQt6.QtWidgets import QWidget,QGraphicsOpacityEffect
+from PyQt6.QtWidgets import QSplashScreen,QApplication
 from PyQt6 import uic
 from PyQt6.QtCore import Qt,QTimer,QPropertyAnimation,QEasingCurve
 
 from home.view.VistaLogin import VistaLogin
 COUNTER=0
-class SplashScreen(QWidget):
+class SplashScreen(QSplashScreen):
     def __init__(self):
         super(SplashScreen,self).__init__()
         uic.loadUi('splashscreen/view/splashScreen.ui',self)
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
+        self.centerOnScreen()
         self.timer = QTimer()
         self.timer.timeout.connect(self.progress)
         self.timer.start(60)
@@ -36,3 +37,9 @@ class SplashScreen(QWidget):
             self.close()
             self.login.show()
         COUNTER+=1
+
+    def centerOnScreen(self):
+        available_geometry = QApplication.primaryScreen().availableGeometry()
+        self.move(
+            available_geometry.center() - self.rect().center()
+        )
