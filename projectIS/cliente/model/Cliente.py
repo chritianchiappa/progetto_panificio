@@ -6,3 +6,5 @@ class Cliente(Utilizzatore):
         self.telefono=telefono
         self.carrello=carrello
         self.whishlist=whishlist
+
+

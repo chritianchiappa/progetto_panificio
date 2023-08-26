@@ -18,6 +18,8 @@ class ListaProdotti:
     def get_lista_prodotti(self):
         return self.lista_prodotti
 
+    def get_prodotto_by_index(self,index):
+        return self.lista_prodotti[index]
     def get_lista_marche(self):
         for prodotto in self.lista_prodotti:
             if prodotto.marca in self.lista_marche:

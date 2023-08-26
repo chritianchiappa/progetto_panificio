@@ -10,8 +10,7 @@ class VistaRegisterUtente(QFrame):
         self.controller = controller
         self.reg_cliente_button.clicked.connect(self.registra_Cliente)
 
-    def closeEvent(self, event):
-        self.controller.save_data()
+
 
     def registra_Cliente(self):
         nome = self.textNome.text()
@@ -43,6 +42,7 @@ class VistaRegisterUtente(QFrame):
                 []
                 )
             )
+            self.controller.save_data()
             self.close()
 
 

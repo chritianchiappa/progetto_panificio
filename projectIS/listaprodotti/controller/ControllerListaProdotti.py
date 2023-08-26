@@ -14,7 +14,8 @@ class ControllerListaProdotti:
     def get_lista_prodotti(self):
         return self.model.get_lista_prodotti()
 
-
+    def get_prodotto_by_index(self,index):
+        return self.model.get_prodotto_by_index(index)
 
     def inserisci_prodotto(self, prodotto):
         self.model.inserisci_prodotto(prodotto)

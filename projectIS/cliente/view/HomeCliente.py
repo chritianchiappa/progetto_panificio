@@ -3,6 +3,7 @@ from PyQt6 import uic
 from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QTimer
 from torta.view.PersonalizzaTorta import PersonalizzaTorta
 from listaprodotti.view.VistaListaProdotti import VistaListaProdotti
+from carrello.view.VistaCarrello import VistaCarrello
 import webbrowser
 from datetime import datetime
 class HomeCliente(QWidget):
@@ -12,7 +13,7 @@ class HomeCliente(QWidget):
         self.setWindowTitle("Home")
         self.cliente=cliente
         self.login=login
-        self.carrello_button.clicked.connect(self.go_Lista_Ordini)
+        self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente))
         self.whishlist_button.clicked.connect(self.go_Magazzino)
         self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente))
         self.torte_button.clicked.connect(self.go_Torte)
@@ -66,8 +67,9 @@ class HomeCliente(QWidget):
         self.Ora.setText(formatted_time)
         self.Data.setText(formatted_data)
 
-    def go_Lista_Ordini(self):
-        self.close()
+    def go_carrello(self,cliente):
+        self.Carrello=VistaCarrello(cliente)
+        self.Carrello.show()
     def go_Torte(self):
         self.Torte=PersonalizzaTorta()
         self.Torte.show()
