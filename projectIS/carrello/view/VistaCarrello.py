@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QWidget
 from cliente.controller.ControllerCliente import ControllerCliente
 from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
 from ordine.model.Ordine import Ordine
-from listaordini.controller.ListaOrdini import ControllerListaOrdini
+from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from datetime import datetime
 class VistaCarrello(QWidget):
      def __init__(self, cliente):
@@ -22,8 +22,8 @@ class VistaCarrello(QWidget):
 
      def update_ui(self):
          self.listview_model = QStandardItemModel(self.list_view)
-
          for prodotto in self.controller.get_carrello_cliente():
+             print("prodotto")
              item = QStandardItem()
              item.setText(f"{prodotto.nome}  {prodotto.prezzo} €")
              item.setEditable(False)
@@ -33,7 +33,8 @@ class VistaCarrello(QWidget):
              self.listview_model.appendRow(item)
 
          self.list_view.setModel(self.listview_model)
-         self.prezzo_totale.setText(f"{self.controller.prezzo_totale_carrello} €")
+         importo=self.controller.prezzo_totale_carrello()
+         self.prezzo_totale.setText(f"{importo} €")
 
      def acquista_selezionato(self):
          selected = self.list_view.selectedIndexes()[0].row()
@@ -63,5 +64,5 @@ class VistaCarrello(QWidget):
          self.listview_model.removeRow(selected_index)
 
      def ordina_tutto(self):
-         #simile all acquisto
+         print("ordina tutto")
 

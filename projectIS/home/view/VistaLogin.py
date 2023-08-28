@@ -7,7 +7,7 @@ from home.view.VistaRegisterDipendente import VistaRegisterDipendente
 from home.view.VistaLogAmm import VistaLogAmm
 from utilizzatore.view.HomeAmministratore import HomeAmministratore
 from utilizzatore.view.HomeDipendente import HomeDipendente
-from utilizzatore.view.HomeCliente import HomeCliente
+from cliente.view.HomeCliente import HomeCliente
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
 from listaclienti.model.lista_clienti import ListaClienti
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti

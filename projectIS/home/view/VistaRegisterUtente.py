@@ -1,7 +1,7 @@
 
 from PyQt6.QtWidgets import QFrame
 from PyQt6 import uic
-from utilizzatore.model.Cliente import Cliente
+from cliente.model.Cliente import Cliente
 from validazionecampi.validazione_campi import Validation
 class VistaRegisterUtente(QFrame):
     def __init__(self,controller):

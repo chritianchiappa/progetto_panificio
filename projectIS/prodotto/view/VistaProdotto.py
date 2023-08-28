@@ -2,6 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QWidget
 from PyQt6 import uic
 from prodotto.controller.ControllerProdotto import ControllerProdotto
+from cliente.controller.ControllerCliente import ControllerCliente
 
 class VistaProdotto(QWidget):
     def __init__(self,prodotto,cliente,lista_prodotti):
@@ -10,6 +11,7 @@ class VistaProdotto(QWidget):
         self.cliente=cliente
         self.prodotto=prodotto
         self.controller_prodotto = ControllerProdotto(prodotto)
+        self.controller_cliente = ControllerCliente(cliente)
         self.lista_prodotti = lista_prodotti
         self.lista_ingredienti = self.controller_prodotto.get_lista_ingredienti()
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
@@ -22,7 +24,7 @@ class VistaProdotto(QWidget):
         self.dettagli_button.clicked.connect(self.mostra_dettagli)
 
     def aggiungi_al_carrello(self):
-        self.cliente.carrello.append(self.prodotto)
+        self.controller_cliente.aggiungi_prodotto_carrello(self.prodotto)
         print(f"{self.prodotto.nome} aggiunto al carrello di {self.cliente.nome}")
     def acquista(self):
         print(f"{self.prodotto.nome} acquistato da {self.cliente.nome}")
@@ -38,7 +40,7 @@ class VistaProdotto(QWidget):
         for ingrediente in self.lista_ingredienti:
             print(ingrediente.nome)
     def controlla_like(self):
-        for prodotto_liked in self.cliente.get_whishlist():
+        for prodotto_liked in self.controller_cliente.get_whishlist_cliente():
             print(prodotto_liked.nome)
             if self.prodotto==prodotto_liked:
                 self.like_button.setChecked(True)

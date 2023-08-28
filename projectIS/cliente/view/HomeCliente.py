@@ -9,7 +9,7 @@ from datetime import datetime
 class HomeCliente(QWidget):
     def __init__(self,login,cliente):
         super(HomeCliente,self).__init__()
-        uic.loadUi('utilizzatore/view/vistaCliente.ui',self)
+        uic.loadUi('cliente/view/vistaCliente.ui',self)
         self.setWindowTitle("Home")
         self.cliente=cliente
         self.login=login

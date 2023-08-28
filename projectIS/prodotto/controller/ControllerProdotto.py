@@ -5,7 +5,9 @@ class ControllerProdotto:
     def get_lista_ingredienti(self):
         return self.model.ingredienti
     def get_prezzo(self):
-        return self.model.prezzo*self.model.quantita
+        p=self.model.prezzo
+        q=self.model.quantita
+        return p*q
 
     def get_allergeni(self):
         lista_allergeni=[]

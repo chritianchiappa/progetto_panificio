@@ -157,13 +157,16 @@
          </property>
          <item>
           <widget class="QStackedWidget" name="stackedWidget">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
            <property name="currentIndex">
             <number>0</number>
            </property>
            <widget class="QWidget" name="page_1">
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="QListView" name="listView"/>
+              <widget class="QListView" name="list_view"/>
              </item>
             </layout>
            </widget>
