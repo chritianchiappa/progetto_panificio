@@ -7,15 +7,16 @@ from carrello.view.VistaCarrello import VistaCarrello
 import webbrowser
 from datetime import datetime
 class HomeCliente(QWidget):
-    def __init__(self,login,cliente):
+    def __init__(self,login,cliente,controller):
         super(HomeCliente,self).__init__()
         uic.loadUi('cliente/view/vistaCliente.ui',self)
         self.setWindowTitle("Home")
         self.cliente=cliente
         self.login=login
+        self.controller=controller
         self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente))
         self.whishlist_button.clicked.connect(self.go_Magazzino)
-        self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente))
+        self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente,self.controller))
         self.torte_button.clicked.connect(self.go_Torte)
         self.logo_button.clicked.connect(self.open_sito)
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
@@ -77,6 +78,6 @@ class HomeCliente(QWidget):
         #self.VistaIng=VistaIngredienti()
         #self.VistaIng.show()
         self.close()
-    def go_Prodotti(self,cliente):
-        self.Shop=VistaListaProdotti(cliente)
+    def go_Prodotti(self,cliente,controller):
+        self.Shop=VistaListaProdotti(cliente,controller)
         self.Shop.show()

@@ -62,7 +62,7 @@ class VistaLogin(QDialog):
         utente_cliente = self.controller.check_cliente(email, password)
         utente_dipendente = self.controllerdip.check_dipendente(email, password)
         if utente_cliente:
-            self.HomeC = HomeCliente(self,utente_cliente)
+            self.HomeC = HomeCliente(self,utente_cliente,self.controller)
             self.HomeC.show()
         elif utente_dipendente:
             self.HomeD = HomeDipendente(self,utente_dipendente)

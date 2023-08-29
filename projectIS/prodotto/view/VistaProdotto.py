@@ -5,14 +5,14 @@ from prodotto.controller.ControllerProdotto import ControllerProdotto
 from cliente.controller.ControllerCliente import ControllerCliente
 
 class VistaProdotto(QWidget):
-    def __init__(self,prodotto,cliente,lista_prodotti):
+    def __init__(self,prodotto,cliente):
         super(VistaProdotto, self).__init__()
         uic.loadUi('prodotto/view/vistaProdotto.ui', self)
         self.cliente=cliente
         self.prodotto=prodotto
         self.controller_prodotto = ControllerProdotto(prodotto)
         self.controller_cliente = ControllerCliente(cliente)
-        self.lista_prodotti = lista_prodotti
+
         self.lista_ingredienti = self.controller_prodotto.get_lista_ingredienti()
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
         self.controlla_like()
@@ -25,6 +25,7 @@ class VistaProdotto(QWidget):
 
     def aggiungi_al_carrello(self):
         self.controller_cliente.aggiungi_prodotto_carrello(self.prodotto)
+
         print(f"{self.prodotto.nome} aggiunto al carrello di {self.cliente.nome}")
     def acquista(self):
         print(f"{self.prodotto.nome} acquistato da {self.cliente.nome}")

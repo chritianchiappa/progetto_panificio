@@ -1,12 +1,15 @@
 from prodotto.controller.ControllerProdotto import ControllerProdotto
-from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
+
 class ControllerCliente():
     def __init__(self, cliente):
         self.model = cliente
-        self.controller_lista_clienti= ControllerListaClienti()
+
 
     def get_nome_cliente(self):
         return str(self.model.nome)
+
+    def set_nome_cliente(self,nome):
+        self.model.nome=nome
 
     def get_cognome_cliente(self):
         return str(self.model.cognome)
@@ -16,7 +19,7 @@ class ControllerCliente():
 
     def aggiungi_prodotto_carrello(self,prodotto):
         self.model.carrello.append(prodotto)
-        self.controller_lista_clienti.aggiorna_carrello_cliente(self.model, self.model.carrello)
+
 
     def get_whishlist_cliente(self):
         return self.model.whishlist

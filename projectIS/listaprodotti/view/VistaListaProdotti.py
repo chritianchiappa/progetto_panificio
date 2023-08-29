@@ -5,17 +5,17 @@ from prodotto.view.VistaProdotto import VistaProdotto
 from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
 class VistaListaProdotti(QWidget):
-    def __init__(self,cliente):
+    def __init__(self,cliente,controller):
         super(VistaListaProdotti, self).__init__()
         uic.loadUi('listaprodotti/view/vistaListaProdotti.ui', self)
         self.cliente=cliente
         self.setWindowTitle("Shop")
         self.controller_lista_prodotti = ControllerListaProdotti()
-        self.controller_lista_clienti = ControllerListaClienti()
+        self.controller_lista_clienti=controller
         self.lista_prodotti = self.controller_lista_prodotti.get_lista_prodotti()
         self.popola_shop()
     def aggiungi_prodotto(self,rowNumber,columnNumber,prodotto):
-        self.widget_prodotto=VistaProdotto(prodotto,self.cliente,self.lista_prodotti)
+        self.widget_prodotto=VistaProdotto(prodotto,self.cliente)
         self.gridLayout.addWidget(self.widget_prodotto,rowNumber,columnNumber,1,1,Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
     def popola_shop(self):
@@ -36,6 +36,8 @@ class VistaListaProdotti(QWidget):
         msg.setDefaultButton(QMessageBox.StandardButton.Yes)
         msg.exec()
     def closeEvent(self, event):
+        print(self.cliente.carrello)
+        self.controller_lista_clienti.aggiorna_carrello_cliente(self.cliente.email,self.cliente.password,self.cliente.carrello)
         self.controller_lista_clienti.save_data()
 
 

@@ -23,8 +23,9 @@ class ListaClienti():
     def aggiungi_cliente(self, cliente):
         self.lista_clienti.append(cliente)
 
-    def aggiorna_carrello_cliente(self, cliente, nuovo_carrello):
-        cliente.carrello = nuovo_carrello
+    def aggiorna_carrello_cliente(self, email,password, nuovo_carrello):
+        cliente_t=self.check_cliente(email,password)
+        cliente_t.carrello=nuovo_carrello
         self.save_data()
 
     def rimuovi_cliente_by_id(self, id):

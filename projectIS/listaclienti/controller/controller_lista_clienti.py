@@ -8,8 +8,8 @@ class ControllerListaClienti():
     def aggiungi_cliente(self, cliente):
         self.model.aggiungi_cliente(cliente)
 
-    def aggiorna_carrello_cliente(self,cliente,carrello):
-        self.model.aggiorna_carrello_cliente(cliente,carrello)
+    def aggiorna_carrello_cliente(self,email,password,carrello):
+        self.model.aggiorna_carrello_cliente(email,password,carrello)
 
     def get_lista_clienti(self):
         return self.model.get_lista_clienti()
