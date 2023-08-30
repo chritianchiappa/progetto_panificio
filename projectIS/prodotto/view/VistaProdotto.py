@@ -4,14 +4,16 @@ from PyQt6 import uic
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from cliente.controller.ControllerCliente import ControllerCliente
 
+
 class VistaProdotto(QWidget):
-    def __init__(self,prodotto,cliente):
+    def __init__(self,prodotto,cliente,controller_prodotti):
         super(VistaProdotto, self).__init__()
         uic.loadUi('prodotto/view/vistaProdotto.ui', self)
         self.cliente=cliente
         self.prodotto=prodotto
         self.controller_prodotto = ControllerProdotto(prodotto)
         self.controller_cliente = ControllerCliente(cliente)
+        self.controller_prodotti=controller_prodotti
         self.lista_ingredienti = self.controller_prodotto.get_lista_ingredienti()
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
         self.controlla_like()

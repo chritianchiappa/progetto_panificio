@@ -8,13 +8,14 @@ from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from datetime import datetime
 class VistaCarrello(QWidget):
-     def __init__(self, cliente):
+     def __init__(self, cliente,controller):
         super(VistaCarrello, self).__init__()
         uic.loadUi('carrello/view/vistaCarrello.ui', self)
         self.cliente=cliente
         self.controller = ControllerCliente(cliente)
         self.controllerprod = ControllerListaProdotti()
         self.controllerord = ControllerListaOrdini()
+        self.controller_lista_clienti = controller
         self.update_ui()
         first_index = self.listview_model.index(0, 0)
         self.list_view.setCurrentIndex(first_index)
@@ -36,7 +37,7 @@ class VistaCarrello(QWidget):
 
          self.list_view.setModel(self.listview_model)
          importo=self.controller.prezzo_totale_carrello()
-         self.prezzo_totale.setText(f"{importo} €")
+         self.prezzo_totale.setText(f"{round(importo,2)} €")
 
      def acquista_selezionato(self):
          selected = self.list_view.selectedIndexes()[0].row()
@@ -60,7 +61,7 @@ class VistaCarrello(QWidget):
              self.stackedWidget.setCurrentWidget(self.page_2)
              prodotto_selezionato = self.cliente.carrello[selected_row]
              self.nome.setText(ControllerProdotto(prodotto_selezionato).get_nome())
-             self.prezzo.setText(f"{ControllerProdotto(prodotto_selezionato).get_prezzo()}")
+             self.prezzo.setText(f"{round(ControllerProdotto(prodotto_selezionato).get_prezzo(),2)}")
              str_ingr = ", ".join(ingrediente.nome for ingrediente in ControllerProdotto(prodotto_selezionato).get_lista_ingredienti())
              self.ingredienti.setText(str_ingr)
              str_all = ", ".join(allergene for allergene in ControllerProdotto(prodotto_selezionato).get_allergeni())

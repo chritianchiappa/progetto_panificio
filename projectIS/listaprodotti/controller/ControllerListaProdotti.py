@@ -20,7 +20,11 @@ class ControllerListaProdotti:
     def inserisci_prodotto(self, prodotto):
         self.model.inserisci_prodotto(prodotto)
 
+    def aggiorna_quantita_prodotto(self,nome,quantita):
+        self.model.aggiorna_quantita_prodotto(nome,quantita)
 
+    def check_prodotto(self,nome):
+        self.model.check_prodotto(nome)
 
     def refresh_data(self):
         self.model.refresh_data()

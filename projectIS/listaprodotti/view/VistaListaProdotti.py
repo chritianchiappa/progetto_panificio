@@ -18,13 +18,14 @@ class VistaListaProdotti(QWidget):
         self.filtro_prodotti.activated.connect(self.filtro_tipologia)
         self.cerca_button.clicked.connect(self.ricerca)
     def aggiungi_prodotto(self,rowNumber,columnNumber,prodotto):
-        self.widget_prodotto=VistaProdotto(prodotto,self.cliente)
+        self.widget_prodotto=VistaProdotto(prodotto,self.cliente,self.controller_lista_prodotti)
         self.gridLayout.addWidget(self.widget_prodotto,rowNumber,columnNumber,1,1,Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
     def popola_shop(self,lista):
         col=0
         row=0
         for prodotto in lista:
+            print(prodotto.nome + str(prodotto.quantita))
             self.aggiungi_prodotto(row,col,prodotto)
             col += 1
             if col >= 3:

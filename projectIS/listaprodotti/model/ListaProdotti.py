@@ -18,6 +18,8 @@ class ListaProdotti:
     def get_lista_prodotti(self):
         return self.lista_prodotti
 
+
+
     def get_prodotto_by_index(self,index):
         return self.lista_prodotti[index]
     def get_lista_marche(self):
@@ -31,8 +33,16 @@ class ListaProdotti:
     def get_dimensione_lista(self):
         return len(self.lista_prodotti)
 
+    def aggiorna_quantita_prodotto(self,nome, quantita):
+        prodotto_c=self.check_prodotto(nome)
+        prodotto_c.quantita=quantita
+        self.save_data()
 
-
+    def check_prodotto(self, nome):
+        for prodotto in self.lista_prodotti:
+            if prodotto.nome==nome:
+                return prodotto
+        return None
 
     # Metodo: ricarica in lista i dati da file pickle, se esistente e non vuoto, o dal file json
     def refresh_data(self):
@@ -69,7 +79,7 @@ class ListaProdotti:
 
     # Metodo: salva il contenuto della lista su file pickle
     def save_data(self):
-        with open('listaprodotti/data/DatabaseProdotti.pickle', 'wb') as handle:
+        with open('listaprodotti/data/lista_prodotti_salvata.pickle', 'wb') as handle:
             pickle.dump(self.lista_prodotti, handle, pickle.HIGHEST_PROTOCOL)
 
     # Metodo: salvo il contenuto di una lista in particolare su file pickle

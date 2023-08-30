@@ -23,6 +23,8 @@ class ControllerCliente():
 
     def rimuovi_prodotto_carrello_index(self,index):
         self.model.carrello.pop(index)
+    def rimuovi_prodotto_whishlist_index(self,index):
+        self.model.whishlist.pop(index)
 
     def aggiungi_prodotto_whishlist(self,prodotto):
         self.model.whishlist.append(prodotto)

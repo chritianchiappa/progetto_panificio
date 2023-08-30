@@ -4,6 +4,7 @@ from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QTimer
 from torta.view.PersonalizzaTorta import PersonalizzaTorta
 from listaprodotti.view.VistaListaProdotti import VistaListaProdotti
 from carrello.view.VistaCarrello import VistaCarrello
+from whishlist.view.VistaWhishlist import VistaWhishlist
 import webbrowser
 from datetime import datetime
 class HomeCliente(QWidget):
@@ -14,8 +15,8 @@ class HomeCliente(QWidget):
         self.cliente=cliente
         self.login=login
         self.controller=controller
-        self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente))
-        self.whishlist_button.clicked.connect(self.go_Magazzino)
+        self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente,self.controller))
+        self.whishlist_button.clicked.connect(lambda: self.go_Whishlist(cliente,self.controller))
         self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente,self.controller))
         self.torte_button.clicked.connect(self.go_Torte)
         self.logo_button.clicked.connect(self.open_sito)
@@ -68,16 +69,16 @@ class HomeCliente(QWidget):
         self.Ora.setText(formatted_time)
         self.Data.setText(formatted_data)
 
-    def go_carrello(self,cliente):
-        self.Carrello=VistaCarrello(cliente)
+    def go_carrello(self,cliente,controller):
+        self.Carrello=VistaCarrello(cliente,controller)
         self.Carrello.show()
     def go_Torte(self):
         self.Torte=PersonalizzaTorta()
         self.Torte.show()
-    def go_Magazzino(self):
-        #self.VistaIng=VistaIngredienti()
-        #self.VistaIng.show()
-        self.close()
+    def go_Whishlist(self,cliente,controller):
+        self.Whishlist=VistaWhishlist(cliente,controller)
+        self.Whishlist.show()
+
     def go_Prodotti(self,cliente,controller):
         self.Shop=VistaListaProdotti(cliente,controller)
         self.Shop.show()
