@@ -15,10 +15,6 @@ class ListaClienti():
                 dati_decriptati=crypto_manager.decrittografa_dati(dati_criptati)
                 self.lista_clienti = pickle.loads(dati_decriptati)
 
-        for cliente in self.get_lista_clienti():
-            print(cliente.nome)
-            for prodotto in cliente.carrello:
-                print(prodotto.nome)
 
     def aggiungi_cliente(self, cliente):
         self.lista_clienti.append(cliente)
@@ -26,6 +22,10 @@ class ListaClienti():
     def aggiorna_carrello_cliente(self, email,password, nuovo_carrello):
         cliente_t=self.check_cliente(email,password)
         cliente_t.carrello=nuovo_carrello
+        self.save_data()
+    def aggiorna_whishlist_cliente(self,email,password,nuova_whishlist):
+        cliente_t=self.check_cliente(email,password)
+        cliente_t.whishlist=nuova_whishlist
         self.save_data()
 
     def rimuovi_cliente_by_id(self, id):
@@ -49,10 +49,6 @@ class ListaClienti():
         return self.lista_clienti
 
     def save_data(self):
-        for cliente in self.get_lista_clienti():
-            print(cliente.nome)
-            for prodotto in cliente.carrello:
-                print(prodotto.nome)
         dati_criptati = crypto_manager.cripta_dati(pickle.dumps(self.lista_clienti))
         with open('listaclienti/data/lista_clienti_salvata.pickle', 'wb') as handle:
             handle.write(dati_criptati)

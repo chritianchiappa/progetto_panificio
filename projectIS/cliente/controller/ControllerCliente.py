@@ -20,7 +20,13 @@ class ControllerCliente():
     def aggiungi_prodotto_carrello(self,prodotto):
         self.model.carrello.append(prodotto)
 
+    def aggiungi_prodotto_whishlist(self,prodotto):
+        self.model.whishlist.append(prodotto)
 
+    def rimuovi_prodotto_whishlist(self,prodotto_c):
+        for prodotto in self.get_whishlist_cliente():
+            if prodotto_c.nome== prodotto.nome:
+                self.model.whishlist.remove(prodotto)
     def get_whishlist_cliente(self):
         return self.model.whishlist
 

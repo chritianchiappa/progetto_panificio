@@ -5,6 +5,7 @@ from cliente.controller.ControllerCliente import ControllerCliente
 from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
 from ordine.model.Ordine import Ordine
 from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
+from prodotto.controller.ControllerProdotto import ControllerProdotto
 from datetime import datetime
 class VistaCarrello(QWidget):
      def __init__(self, cliente):
@@ -23,9 +24,8 @@ class VistaCarrello(QWidget):
      def update_ui(self):
          self.listview_model = QStandardItemModel(self.list_view)
          for prodotto in self.controller.get_carrello_cliente():
-             print("prodotto")
              item = QStandardItem()
-             item.setText(f"{prodotto.nome}  {prodotto.prezzo} €")
+             item.setText(f"{prodotto.nome}  {prodotto.quantita} pz")
              item.setEditable(False)
              font = item.font()
              font.setPointSize(18)
@@ -48,10 +48,23 @@ class VistaCarrello(QWidget):
          )
 
      def dettagli_selezionato(self):
-         selected = self.list_view.selectedIndexes()[0].row()
-         prodotto_selezionato = self.cliente.carrello[selected]
-         #collega il bottone con la seconda pag pag_2
-         #setText delle label con i dettagli tipo allergeni ingredienti
+         if self.dettagli_button.isChecked():
+             self.stackedWidget.setCurrentWidget(self.page_2)
+             selected = self.list_view.selectedIndexes()[0].row()
+             prodotto_selezionato = self.cliente.carrello[selected]
+             self.nome.setText(ControllerProdotto(prodotto_selezionato).get_nome())
+             self.prezzo.setText(f"{ControllerProdotto(prodotto_selezionato).get_prezzo()}")
+             str_ingr = ""
+             str_all = ""
+             for ingrediente in ControllerProdotto(prodotto_selezionato).get_lista_ingredienti():
+                 str_ingr+=ingrediente.nome+" "
+
+             self.ingredienti.setText(str_ingr)
+             for allergene in ControllerProdotto(prodotto_selezionato).get_allergeni():
+                 str_all+=allergene+" "
+             self.allergeni.setText(str_all)
+         else:
+             self.stackedWidget.setCurrentWidget(self.page_1)
 
 
      def rimuovi_selezionato(self):

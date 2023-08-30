@@ -16,3 +16,5 @@ class ControllerProdotto:
                 if allergene not in lista_allergeni:
                     lista_allergeni.append(allergene)
         return lista_allergeni
+    def get_nome(self):
+        return self.model.nome

@@ -5,6 +5,8 @@
     <file>../../immagini/sfondologin2.png</file>
   </qresource>
   <qresource prefix="icone">
+    <file>../../icone/meno.png</file>
+    <file>../../icone/piu.png</file>
     <file>../../icone/chiusura.png</file>
     <file>../../icone/cuore_pieno.png</file>
     <file>../../icone/cuore.png</file>

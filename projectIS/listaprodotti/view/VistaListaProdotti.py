@@ -36,8 +36,8 @@ class VistaListaProdotti(QWidget):
         msg.setDefaultButton(QMessageBox.StandardButton.Yes)
         msg.exec()
     def closeEvent(self, event):
-        print(self.cliente.carrello)
         self.controller_lista_clienti.aggiorna_carrello_cliente(self.cliente.email,self.cliente.password,self.cliente.carrello)
+        self.controller_lista_clienti.aggiorna_whishlist_cliente(self.cliente.email,self.cliente.password,self.cliente.whishlist)
         self.controller_lista_clienti.save_data()
 
 

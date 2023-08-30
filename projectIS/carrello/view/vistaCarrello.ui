@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>604</width>
-    <height>449</height>
+    <height>441</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -171,19 +171,86 @@
             </layout>
            </widget>
            <widget class="QWidget" name="page_2">
-            <widget class="QLabel" name="label_3">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>50</y>
-               <width>151</width>
-               <height>16</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>DETTAGLI</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QFrame" name="frame_6">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QLabel" name="nome">
+                  <property name="text">
+                   <string>Nome</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="prezzo">
+                  <property name="text">
+                   <string>Prezzo</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_8">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <item>
+                 <widget class="QLabel" name="titolo1">
+                  <property name="text">
+                   <string>INGREDIENTI:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ingredienti">
+                  <property name="text">
+                   <string>Text</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_7">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="QLabel" name="titolo2">
+                  <property name="text">
+                   <string>ALLERGENI:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="allergeni">
+                  <property name="text">
+                   <string>Text</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </widget>
          </item>
@@ -228,20 +295,61 @@
          </property>
          <item>
           <widget class="QPushButton" name="acquista_button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
            <property name="text">
             <string>ACQUISTA</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="dettagli_button">
+          <widget class="QToolButton" name="dettagli_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left:20px;</string>
+           </property>
            <property name="text">
-            <string>DETTAGLI</string>
+            <string>         DETTAGLI</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../home/view/res.qrc">
+             <normaloff>:/icone/icone/piu.png</normaloff>
+             <normalon>:/icone/icone/meno.png</normalon>:/icone/icone/piu.png</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="rimuovi_button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
            <property name="text">
             <string>RIMUOVI</string>
            </property>
@@ -268,6 +376,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../home/view/res.qrc"/>
+ </resources>
  <connections/>
 </ui>

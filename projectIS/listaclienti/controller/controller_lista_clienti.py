@@ -11,6 +11,9 @@ class ControllerListaClienti():
     def aggiorna_carrello_cliente(self,email,password,carrello):
         self.model.aggiorna_carrello_cliente(email,password,carrello)
 
+    def aggiorna_whishlist_cliente(self,email,password,whishlist):
+        self.model.aggiorna_whishlist_cliente(email, password, whishlist)
+
     def get_lista_clienti(self):
         return self.model.get_lista_clienti()
 
