@@ -24,12 +24,15 @@ class VistaProdotto(QWidget):
         self.dettagli_button.clicked.connect(self.mostra_dettagli)
 
 
+
     def popola_combobox(self):
         self.selettore_quantita.clear()
         for quantita in range(1, self.prodotto.quantita + 1):
             self.selettore_quantita.addItem(str(quantita))
     def aggiungi_al_carrello(self):
-        self.controller_cliente.aggiungi_prodotto_carrello(self.prodotto)
+        quantita_selezionata = int(self.selettore_quantita.currentText())
+        self.controller_cliente.aggiungi_prodotto_carrello(self.prodotto,quantita_selezionata)
+
         print(f"{self.prodotto.nome} aggiunto al carrello di {self.cliente.nome}")
     def acquista(self):
         print(f"{self.prodotto.nome} acquistato da {self.cliente.nome}")

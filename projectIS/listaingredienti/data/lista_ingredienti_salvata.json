@@ -1,6 +1,6 @@
 [
 {
-   "nome": "farina",
+   "nome": "farina 0",
    "prezzo": 10,
    "quantita": 10,
    "peso": null,
@@ -43,6 +43,54 @@
    "allergeni": [
       "glutine"],
    "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "margarina",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [
+      ],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "vino",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "zucchero",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "vanillina",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "semi d'anice",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "lievito chimico",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [],
+   "scadenza": "31-12-2023"
    }
-
 ]

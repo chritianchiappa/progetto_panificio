@@ -16,6 +16,8 @@ class VistaCarrello(QWidget):
         self.controllerprod = ControllerListaProdotti()
         self.controllerord = ControllerListaOrdini()
         self.update_ui()
+        first_index = self.listview_model.index(0, 0)
+        self.list_view.setCurrentIndex(first_index)
         self.acquista_button.clicked.connect(self.acquista_selezionato)
         self.dettagli_button.clicked.connect(self.dettagli_selezionato)
         self.rimuovi_button.clicked.connect(self.rimuovi_selezionato)
@@ -42,26 +44,26 @@ class VistaCarrello(QWidget):
          self.controllerord.inserisci_ordine(Ordine(
              prodotto_selezionato,
              datetime.now(),
-             prodotto_selezionato.get_prezzo(),
              self.cliente,
              False)
          )
 
      def dettagli_selezionato(self):
          if self.dettagli_button.isChecked():
+             selected_indexes = self.list_view.selectedIndexes()
+             if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
+                 return
+
+             selected_row = selected_indexes[0].row()
+             if selected_row < 0:  # Verifica se l'indice è valido
+                 return
              self.stackedWidget.setCurrentWidget(self.page_2)
-             selected = self.list_view.selectedIndexes()[0].row()
-             prodotto_selezionato = self.cliente.carrello[selected]
+             prodotto_selezionato = self.cliente.carrello[selected_row]
              self.nome.setText(ControllerProdotto(prodotto_selezionato).get_nome())
              self.prezzo.setText(f"{ControllerProdotto(prodotto_selezionato).get_prezzo()}")
-             str_ingr = ""
-             str_all = ""
-             for ingrediente in ControllerProdotto(prodotto_selezionato).get_lista_ingredienti():
-                 str_ingr+=ingrediente.nome+" "
-
+             str_ingr = ", ".join(ingrediente.nome for ingrediente in ControllerProdotto(prodotto_selezionato).get_lista_ingredienti())
              self.ingredienti.setText(str_ingr)
-             for allergene in ControllerProdotto(prodotto_selezionato).get_allergeni():
-                 str_all+=allergene+" "
+             str_all = ", ".join(allergene for allergene in ControllerProdotto(prodotto_selezionato).get_allergeni())
              self.allergeni.setText(str_all)
          else:
              self.stackedWidget.setCurrentWidget(self.page_1)
@@ -72,10 +74,15 @@ class VistaCarrello(QWidget):
          if not selected:
             return
          selected_index = selected[0].row()
-         self.cliente.carrello.pop(selected_index)
-         #fai una funzione che elimina il prodotto in controllerCliente guarda controller dipendente
+         self.controller.rimuovi_prodotto_carrello_index(selected_index)
          self.listview_model.removeRow(selected_index)
+         self.update_ui()
 
      def ordina_tutto(self):
          print("ordina tutto")
+
+     def closeEvent(self, event):
+         self.controller_lista_clienti.aggiorna_carrello_cliente(self.cliente.email, self.cliente.password,
+                                                                 self.cliente.carrello)
+         self.controller_lista_clienti.save_data()
 

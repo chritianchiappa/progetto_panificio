@@ -12,6 +12,8 @@ class VistaListaDipendenti(QWidget):
         uic.loadUi('listadipendenti/view/vistalistadipendenti.ui', self)
         self.controller = ControllerListaDipendenti()
         self.update_ui()
+        first_index = self.listview_model.index(0, 0)
+        self.list_view.setCurrentIndex(first_index)
         self.new_button.clicked.connect(self.show_new_dipendente)
         self.open_button.clicked.connect(self.mostra_selezionato)
         self.delete_button.clicked.connect(self.elimina_selezionato)

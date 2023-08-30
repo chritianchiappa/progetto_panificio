@@ -1,11 +1,11 @@
 [
 {
    "nome": "brioche alla nutella",
-   "tipo": "dolce",
+   "tipo": "Dolci",
    "prezzo": 1.2,
    "peso": null,
    "ingredienti":[
-      "farina",
+      "farina 0",
       "uova",
       "cioccolata"],
    "liked": false,
@@ -13,11 +13,11 @@
  },
  {
     "nome": "brioche alla crema",
-   "tipo": "dolce",
+   "tipo": "Dolci",
    "prezzo": 1.2,
    "peso": null,
    "ingredienti": [
-      "farina",
+      "farina 0",
       "uova",
       "crema"],
    "liked": false,
@@ -25,11 +25,11 @@
  },
    {
     "nome": "pizza margherita",
-   "tipo": "salato",
+   "tipo": "Pizze",
    "prezzo": 1,
    "peso": null,
    "ingredienti": [
-      "farina",
+      "farina 0",
       "uova",
       "pomodoro"],
    "liked": false,
@@ -37,13 +37,29 @@
  },
    {
     "nome": "pizza bianca",
-   "tipo": "dolce",
+   "tipo": "Pizze",
    "prezzo": 0.50,
    "peso": null,
    "ingredienti": [
-      "farina",
+      "farina 0",
       "uova"],
    "liked": false,
      "quantita": 20
+ },
+  {
+    "nome": "Ciambelline al vino ",
+   "tipo": "Biscotti",
+   "prezzo": 4.80,
+   "peso": null,
+   "ingredienti": [
+      "farina 0",
+     "zucchero",
+     "vino",
+     "margarina",
+     "semi d'anice",
+     "lievito chimico",
+     "vanillina"],
+   "liked": false,
+     "quantita": 10
  }
 ]

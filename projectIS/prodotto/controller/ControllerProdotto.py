@@ -18,3 +18,7 @@ class ControllerProdotto:
         return lista_allergeni
     def get_nome(self):
         return self.model.nome
+    def get_quantita(self):
+        return self.model.quantita
+    def set_quantita(self,quantita):
+        self.model.quantita=quantita

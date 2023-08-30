@@ -17,8 +17,12 @@ class ControllerCliente():
     def get_carrello_cliente(self):
         return self.model.carrello
 
-    def aggiungi_prodotto_carrello(self,prodotto):
+    def aggiungi_prodotto_carrello(self,prodotto,quantita):
+        ControllerProdotto(prodotto).set_quantita(quantita)
         self.model.carrello.append(prodotto)
+
+    def rimuovi_prodotto_carrello_index(self,index):
+        self.model.carrello.pop(index)
 
     def aggiungi_prodotto_whishlist(self,prodotto):
         self.model.whishlist.append(prodotto)

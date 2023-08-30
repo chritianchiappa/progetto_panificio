@@ -20,7 +20,7 @@ class ListaOrdini:
         return lista_ordini_non_completati
 
 
-    # Metodo: ricarica in lista i dati da file pickle, se esistente e non vuoto, o dal file json
+
     def load_data(self):
         if os.path.isfile('listaordini/data/lista_ordini_salvata.pickle') and os.stat('listaordini/data/lista_ordini_salvata.pickle').st_size!=0:
             with open('listaordini/data/lista_ordini_salvata.pickle', 'rb') as f:
