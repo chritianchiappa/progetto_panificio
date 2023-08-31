@@ -3,10 +3,12 @@ from PyQt6.QtGui import QStandardItemModel, QStandardItem
 from PyQt6.QtWidgets import QWidget
 from cliente.controller.ControllerCliente import ControllerCliente
 from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
-from ordine.model.Ordine import Ordine
-from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
+
+from ordine.view.VistaPagamento import VistaPagamento
+
 from prodotto.controller.ControllerProdotto import ControllerProdotto
-from datetime import datetime
+
+
 class VistaCarrello(QWidget):
      def __init__(self, cliente,controller):
         super(VistaCarrello, self).__init__()
@@ -14,7 +16,7 @@ class VistaCarrello(QWidget):
         self.cliente=cliente
         self.controller = ControllerCliente(cliente)
         self.controllerprod = ControllerListaProdotti()
-        self.controllerord = ControllerListaOrdini()
+
         self.controller_lista_clienti = controller
         self.update_ui()
         first_index = self.listview_model.index(0, 0)
@@ -42,12 +44,9 @@ class VistaCarrello(QWidget):
      def acquista_selezionato(self):
          selected = self.list_view.selectedIndexes()[0].row()
          prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected)
-         self.controllerord.inserisci_ordine(Ordine(
-             prodotto_selezionato,
-             datetime.now(),
-             self.cliente,
-             False)
-         )
+         self.VistaOrdFin = VistaPagamento(prodotto_selezionato,self.cliente)
+         self.VistaOrdFin.show()
+
 
      def dettagli_selezionato(self):
          if self.dettagli_button.isChecked():

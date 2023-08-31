@@ -9,7 +9,7 @@ from listaordini.view.vista_lista_ordini import VistaListaOrdini
 
 
 class HomeDipendente(QWidget):
-    def __init__(self,dipendente,ciao):
+    def __init__(self,dipendente):
         super(HomeDipendente,self).__init__()
         uic.loadUi('utilizzatore/view/vistaDipendente.ui',self)
         self.setWindowTitle("Home")
