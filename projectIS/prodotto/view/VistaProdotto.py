@@ -1,6 +1,9 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QWidget
 from PyQt6 import uic
+import os
+from PyQt6.QtGui import QPixmap,QPainter, QPainterPath
+
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from cliente.controller.ControllerCliente import ControllerCliente
 
@@ -18,6 +21,7 @@ class VistaProdotto(QWidget):
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
         self.controlla_like()
         self.popola_combobox()
+        self.mostra_immagine()
         self.nome.setText(self.prodotto.nome)
         self.prezzo.setText(f"{self.prodotto.prezzo} €")
         self.agg_carrello_button.clicked.connect(self.aggiungi_al_carrello)
@@ -31,6 +35,17 @@ class VistaProdotto(QWidget):
         self.selettore_quantita.clear()
         for quantita in range(1, self.prodotto.quantita + 1):
             self.selettore_quantita.addItem(str(quantita))
+
+    def mostra_immagine(self):
+        if os.path.isfile('immagini/' + str(self.prodotto.nome) + '.png'):
+            pixmap = QPixmap('immagini/' + str(self.prodotto.nome) + '.png')
+        else:
+            pixmap = QPixmap('immagini/noimage.png')
+        pixmap_scaled = pixmap.scaled(320, 220, Qt.AspectRatioMode.KeepAspectRatio)
+
+        self.immagine_prodotto.setPixmap(pixmap_scaled)
+
+
     def aggiungi_al_carrello(self):
         quantita_selezionata = int(self.selettore_quantita.currentText())
         self.controller_cliente.aggiungi_prodotto_carrello(self.prodotto,quantita_selezionata)
@@ -49,6 +64,7 @@ class VistaProdotto(QWidget):
     def mostra_dettagli(self):
         for ingrediente in self.lista_ingredienti:
             print(ingrediente.nome)
+
     def controlla_like(self):
         for prodotto_liked in self.controller_cliente.get_whishlist_cliente():
             if self.prodotto.nome==prodotto_liked.nome:

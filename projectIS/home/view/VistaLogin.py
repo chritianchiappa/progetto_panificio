@@ -65,7 +65,7 @@ class VistaLogin(QDialog):
             self.HomeC = HomeCliente(self,utente_cliente,self.controller)
             self.HomeC.show()
         elif utente_dipendente:
-            self.HomeD = HomeDipendente(self,utente_dipendente)
+            self.HomeD = HomeDipendente(utente_dipendente)
             self.HomeD.show()
         else:
             self.error.setText("email o password non corette")

@@ -70,6 +70,9 @@ background-color: rgb(204, 204, 204);</string>
           <height>50</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -130,8 +133,14 @@ background-color: rgb(204, 204, 204);</string>
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>200</height>
+          <height>220</height>
          </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -143,8 +152,14 @@ background-color: rgb(204, 204, 204);</string>
          <property name="leftMargin">
           <number>25</number>
          </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
          <property name="rightMargin">
           <number>25</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
          </property>
          <item>
           <widget class="QLabel" name="immagine_prodotto">
@@ -154,8 +169,30 @@ background-color: rgb(204, 204, 204);</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>350</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-bottom:2px solid black;
+border-left:2px solid black;
+border-right:2px solid black;
+border-top:2px solid black;
+border-radius:5px;
+
+
+</string>
+           </property>
            <property name="text">
-            <string>Immagine</string>
+            <string/>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -172,6 +209,12 @@ background-color: rgb(204, 204, 204);</string>
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>80</height>
+         </size>
         </property>
         <property name="styleSheet">
          <string notr="true">border:none;</string>
@@ -261,7 +304,7 @@ background-color: rgb(204, 204, 204);</string>
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>70</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -305,7 +348,7 @@ background-color: rgb(204, 204, 204);</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignRight">
              <widget class="QFrame" name="frame_5">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -365,14 +408,17 @@ background-color: rgb(204, 204, 204);</string>
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>22</height>
+                   <height>20</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>100</width>
+                   <width>80</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
                  </property>
                 </widget>
                </item>

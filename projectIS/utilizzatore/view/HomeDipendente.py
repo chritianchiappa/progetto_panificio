@@ -4,8 +4,12 @@ from PyQt6.QtCore import  QTimer, Qt
 
 import webbrowser
 from datetime import datetime
+
+from listaordini.view.vista_lista_ordini import VistaListaOrdini
+
+
 class HomeDipendente(QWidget):
-    def __init__(self,dipendente):
+    def __init__(self,dipendente,ciao):
         super(HomeDipendente,self).__init__()
         uic.loadUi('utilizzatore/view/vistaDipendente.ui',self)
         self.setWindowTitle("Home")
@@ -33,7 +37,9 @@ class HomeDipendente(QWidget):
         self.Data.setText(formatted_data)
 
     def go_Lista_Ordini(self):
-        self.close()
+        self.VistaOrdini=VistaListaOrdini()
+        self.VistaOrdini.show()
+
     def go_Magazzino(self):
         #self.VistaIng=VistaIngredienti()
         #self.VistaIng.show()
