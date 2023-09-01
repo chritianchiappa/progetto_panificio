@@ -33,7 +33,7 @@ class VistaListaProdotti(QWidget):
                 row += 1
 
     def ricerca(self):
-        nome_prodotto = self.cerca_prodotto.text()
+        nome_prodotto = self.cerca_prodotto.text().strip()
         if len(nome_prodotto) == 0:
             self.popup_ricerca("Immetti qualcosa per la ricerca")
         else:

@@ -8,10 +8,13 @@ class ControllerOrdine:
         return self.model.prodotti
 
     def get_nome_cliente(self):
-        return ControllerCliente(self.model.cliente).get_nome_cliente
+        return ControllerCliente(self.model.cliente).get_nome_cliente()
 
     def get_cognome_cliente(self):
-        return ControllerCliente(self.model.cliente).get_cognome_cliente
+        return ControllerCliente(self.model.cliente).get_cognome_cliente()
+
+    def get_indirizzo(self):
+        return self.model.indirizzo
     def get_importo(self):
         importo=0
         for prodotto in self.get_lista_prodotti_ordinati():
@@ -21,4 +24,6 @@ class ControllerOrdine:
 
 
     def get_data_ordine(self):
-        return self.model.data
+        return self.model.data.strftime("%d/%m/%Y %H:%M")
+    def completa_ordine(self):
+        self.model.completato=True

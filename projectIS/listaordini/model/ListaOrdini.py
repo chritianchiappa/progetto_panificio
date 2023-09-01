@@ -10,6 +10,8 @@ class ListaOrdini:
     def inserisci_ordine(self, ordine):
         self.lista_ordini.append(ordine)
 
+
+
     def get_lista_ordini(self):
         return self.lista_ordini
     def get_lista_ordini_non_completati(self):
