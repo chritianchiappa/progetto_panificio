@@ -122,22 +122,116 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QTableWidget" name="tableWidget">
-           <column>
-            <property name="text">
-             <string>Cliente</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Data ordine</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Consegna</string>
-            </property>
-           </column>
+          <widget class="QStackedWidget" name="stackedWidget">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <widget class="QWidget" name="page_1">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QTableWidget" name="tableWidget">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <column>
+                <property name="text">
+                 <string>Cliente</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Data ordine</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Consegna</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_2">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QFrame" name="frame_6">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <widget class="QLabel" name="prezzo">
+                  <property name="text">
+                   <string>INFORMAZIONI SUL CLIENTE</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_5">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <item>
+                    <widget class="QLabel" name="nome">
+                     <property name="text">
+                      <string>Nome</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_8">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <item>
+                 <widget class="QLabel" name="titolo1">
+                  <property name="text">
+                   <string>PRODOTTI ORDINATI</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_7">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_5">
+                   <item>
+                    <widget class="QLabel" name="ingredienti">
+                     <property name="text">
+                      <string>Text</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -165,7 +259,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="spacing">
-          <number>15</number>
+          <number>10</number>
          </property>
          <property name="leftMargin">
           <number>0</number>
@@ -180,14 +274,49 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QPushButton" name="dettagli_ordine_button">
+          <widget class="QToolButton" name="dettagli_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left:20px;</string>
+           </property>
            <property name="text">
-            <string>DETTAGLI ORDINE</string>
+            <string>   DETTAGLI ORDINE</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../home/view/res.qrc">
+             <normaloff>:/icone/icone/piu.png</normaloff>
+             <normalon>:/icone/icone/meno.png</normalon>:/icone/icone/piu.png</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="completato_button">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="text">
             <string>COMPLETATO</string>
            </property>
@@ -214,6 +343,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../home/view/res.qrc"/>
+ </resources>
  <connections/>
 </ui>
