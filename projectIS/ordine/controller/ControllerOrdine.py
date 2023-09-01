@@ -13,6 +13,11 @@ class ControllerOrdine:
     def get_cognome_cliente(self):
         return ControllerCliente(self.model.cliente).get_cognome_cliente()
 
+    def get_email_cliente(self):
+        return ControllerCliente(self.model.cliente).get_email()
+
+    def get_telefono_cliente(self):
+        return ControllerCliente(self.model.cliente).get_telefono()
     def get_indirizzo(self):
         return self.model.indirizzo
     def get_importo(self):

@@ -64,9 +64,11 @@ class VistaLogin(QDialog):
         if utente_cliente:
             self.HomeC = HomeCliente(self,utente_cliente,self.controller)
             self.HomeC.show()
+            self.hide()
         elif utente_dipendente:
-            self.HomeD = HomeDipendente(utente_dipendente)
+            self.HomeD = HomeDipendente(self,utente_dipendente)
             self.HomeD.show()
+            self.hide()
         else:
             self.error.setText("email o password non corette")
 
@@ -80,8 +82,6 @@ class VistaLogin(QDialog):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Icon.Question)
         msg.setText("Sei sicuro di voler chiudere il programma?")
-        msg.setStyleSheet('color: white; '
-                          )
         msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
         result = msg.exec()
 

@@ -8,6 +8,12 @@ class ControllerCliente():
     def get_nome_cliente(self):
         return str(self.model.nome)
 
+    def get_email(self):
+        return str(self.model.email)
+
+    def get_telefono(self):
+        return str(self.model.telefono)
+
     def set_nome_cliente(self,nome):
         self.model.nome=nome
 

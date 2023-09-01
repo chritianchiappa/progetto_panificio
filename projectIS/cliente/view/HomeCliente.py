@@ -82,3 +82,16 @@ class HomeCliente(QWidget):
     def go_Prodotti(self,cliente,controller):
         self.Shop=VistaListaProdotti(cliente,controller)
         self.Shop.show()
+
+    def closeEvent(self,event):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Icon.Question)
+        msg.setText("Sei sicuro di voler chiudere il programma?")
+        msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+        result = msg.exec()
+
+        if result == QMessageBox.StandardButton.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
