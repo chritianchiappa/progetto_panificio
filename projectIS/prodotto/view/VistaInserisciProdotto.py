@@ -1,8 +1,7 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget,QMessageBox
 import os
-from PyQt6.QtGui import QPixmap
-from PyQt6.QtCore import Qt
+import shutil
 from prodotto.model.Prodotto import Prodotto
 from listaingredienti.controller.controller_lista_ingredienti import ControllerListaIngredienti
 
@@ -13,32 +12,23 @@ class VistaInserisciProdotto(QWidget):
         uic.loadUi('prodotto/view/VistaInserisciProdotto.ui', self)
         self.controllerprod = controller_prodotti
         self.new_prodotto_button.clicked.connect(self.aggiungi_prodotto)
-        self.pixmap = None
 
-    def dragEnterEvent(self, event):
-        if event.mimeData().hasImage:
-            event.accept()
-        else:
-            event.ignore()
+    def sposta_file(self,percorso_file, cartella_destinazione,nome_prodotto):
+        try:
+            if os.path.exists(percorso_file):
+                if not os.path.exists(cartella_destinazione):
+                    os.makedirs(cartella_destinazione)
 
-    def dragMoveEvent(self, event):
-        if event.mimeData().hasImage:
-            event.accept()
-        else:
-            event.ignore()
+                percorso_destinazione = os.path.join(cartella_destinazione, nome_prodotto)
+
+                shutil.move(percorso_file, percorso_destinazione)
 
 
-    def dropEvent(self, event):
-        if event.mimeData().hasUrls():
-            event.setDropAction(Qt.CopyAction)
-            file_path = event.mimeData().urls()[0].toLocalFile()
-            pixmap = QPixmap(file_path)
-            pixmap_scaled = pixmap.scaled(320, 220, Qt.AspectRatioMode.KeepAspectRatio)
-            self.label_immagine.setPixmap(pixmap_scaled)
-            event.accept()
-            self.pixmap = pixmap
-        else:
-            print("non accetto")
+            else:
+                print(f"Il percorso del file '{percorso_file}' non esiste.")
+
+        except Exception as e:
+            print(f"Si è verificato un errore durante lo spostamento del file: {str(e)}")
 
 
 
@@ -48,6 +38,7 @@ class VistaInserisciProdotto(QWidget):
         tipo=self.tipo.currentText()
         prezzo=self.prezzo.text().strip()
         ingredienti=self.ingredienti.text()
+        url_immagine= self.url_immagine.text()
         if tipo.strip() == "":
             self.popup("Seleziona un tipo di prodotto", QMessageBox.Icon.Warning, QMessageBox.StandardButton.Ok)
             return  # Interrompi il processo se non è stato selezionato un tipo
@@ -55,14 +46,9 @@ class VistaInserisciProdotto(QWidget):
         elif len(nome)==0 or len(quantita)==0 or len(prezzo)==0 or len(ingredienti)==0:
             self.popup("Alcuni campi non sono compilati",QMessageBox.Icon.Warning,QMessageBox.StandardButton.Ok)
             return
-        elif self.pixmap is None:
-            self.popup("Carica un'immagine", QMessageBox.Icon.Warning, QMessageBox.StandardButton.Ok)
-            return
-        else:
-            output_folder = "immagini"
-            output_file = os.path.join(output_folder, nome + ".png")
-            self.pixmap.save(output_file)
 
+        else:
+            self.sposta_file(url_immagine,"immagini/",nome)
             lista_ingredienti=[]
             lista_nomi_ingredienti = ingredienti.split(',')
             for ingrediente_nome in lista_nomi_ingredienti:

@@ -197,31 +197,28 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_immagine">
+    <widget class="QFrame" name="frame_7">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="maximumSize">
-      <size>
-       <width>350</width>
-       <height>220</height>
-      </size>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
      </property>
-     <property name="acceptDrops">
-      <bool>true</bool>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
      </property>
-     <property name="styleSheet">
-      <string notr="true">border:2px solid black</string>
-     </property>
-     <property name="text">
-      <string>Trascina qui l' immagine</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLineEdit" name="url_immagine">
+        <property name="text">
+         <string>Immetti l url dell immagine da caricare</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
