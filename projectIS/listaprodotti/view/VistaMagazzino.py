@@ -23,6 +23,7 @@ class VistaMagazzino(QWidget):
         self.scorte_button.clicked.connect(self.show_scorte)
         self.mod_quantita1_button.clicked.connect(self.mod_quantita_prodotto)
         self.agg_prod_button.clicked.connect(self.agg_prodotto)
+        self.rim_prod_button.clicked.connect(self.rim_prodotto)
         #self.mod_quantita2_button.clicked.connect(self.mod_quantita_scorta)
         #self.agg_scorta_button.clicked.connect(self.agg_scorta)
 
@@ -86,6 +87,18 @@ class VistaMagazzino(QWidget):
     def agg_prodotto(self):
         self.InsertProd=VistaInserisciProdotto(self.controllerprod)
         self.InsertProd.show()
+
+    def rim_prodotto(self):
+        selected_indexes = self.list_view1.selectedIndexes()
+        if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
+            return
+
+        selected_row = selected_indexes[0].row()
+        if selected_row < 0:  # Verifica se l'indice è valido
+            return
+        prodotto_selezionato = self.controllerprod.get_prodotto_by_index(selected_row)
+        if not prodotto_selezionato:
+            return
 
 
 

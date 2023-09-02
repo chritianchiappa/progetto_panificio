@@ -163,6 +163,13 @@
               </widget>
              </item>
              <item>
+              <widget class="QPushButton" name="rim_prod_button">
+               <property name="text">
+                <string>Rimuovi Prodotto</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <spacer name="verticalSpacer">
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -211,6 +218,13 @@
               <widget class="QPushButton" name="agg_scorta_button">
                <property name="text">
                 <string>Aggiungi scorta</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="rim_scorta_button">
+               <property name="text">
+                <string>Rimuovi Scorta</string>
                </property>
               </widget>
              </item>
