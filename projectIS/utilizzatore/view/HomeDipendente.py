@@ -15,6 +15,7 @@ class HomeDipendente(QWidget):
         self.setWindowTitle("Home")
         self.login=login
         self.dipendente=dipendente
+        self.logout_requested=False
         self.ordini_button.clicked.connect(self.go_Lista_Ordini)
         self.prodotti_button.clicked.connect(self.go_Prodotti)
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
@@ -45,8 +46,10 @@ class HomeDipendente(QWidget):
         result = msg.exec()
 
         if result == QMessageBox.StandardButton.Yes:
-            self.close()
+            self.logout_requested=True
+            self.login.clear_fields()
             self.login.show()
+            self.close()
     def slideMenu(self):
         self.animation = QPropertyAnimation(self.slide_menu, b"maximumWidth")
         self.animation.setDuration(250)
@@ -69,15 +72,19 @@ class HomeDipendente(QWidget):
     def go_Prodotti(self):
         self.close()
 
-    def closeEvent(self,event):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Icon.Question)
-        msg.setText("Sei sicuro di voler chiudere il programma?")
-        msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-        result = msg.exec()
-
-        if result == QMessageBox.StandardButton.Yes:
-            event.accept()
+    def closeEvent(self, event):
+        if self.logout_requested:
+            event.accept()  # La finestra verrà chiusa senza popup di conferma
         else:
-            event.ignore()
+            # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Icon.Question)
+            msg.setText("Sei sicuro di voler chiudere la finestra?")
+            msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            result = msg.exec()
+
+            if result == QMessageBox.StandardButton.Yes:
+                event.accept()
+            else:
+                event.ignore()
 

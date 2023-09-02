@@ -15,6 +15,7 @@ class HomeCliente(QWidget):
         self.cliente=cliente
         self.login=login
         self.controller=controller
+        self.logout_requested = False
         self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente,self.controller))
         self.whishlist_button.clicked.connect(lambda: self.go_Whishlist(cliente,self.controller))
         self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente,self.controller))
@@ -38,8 +39,10 @@ class HomeCliente(QWidget):
         result = msg.exec()
 
         if result == QMessageBox.StandardButton.Yes:
-            self.close()
+            self.logout_requested = True
+            self.login.clear_fields()
             self.login.show()
+            self.close()
 
 
     def slideMenu(self):
@@ -84,14 +87,18 @@ class HomeCliente(QWidget):
         self.Shop.show()
 
     def closeEvent(self,event):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Icon.Question)
-        msg.setText("Sei sicuro di voler chiudere il programma?")
-        msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-        result = msg.exec()
-
-        if result == QMessageBox.StandardButton.Yes:
-            event.accept()
+        if self.logout_requested:
+            event.accept()  # La finestra verrà chiusa senza popup di conferma
         else:
-            event.ignore()
+            # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Icon.Question)
+            msg.setText("Sei sicuro di voler chiudere la finestra?")
+            msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            result = msg.exec()
+
+            if result == QMessageBox.StandardButton.Yes:
+                event.accept()
+            else:
+                event.ignore()
 

@@ -20,6 +20,7 @@ class VistaLogin(QDialog):
         super(VistaLogin, self).__init__(parent)
         uic.loadUi('home/view/vistalogin2.ui', self)
         self.setWindowTitle("Login")
+        self.clear_fields()
         self.controller=ControllerListaClienti()
         self.controllerdip=ControllerListaDipendenti()
         self.accedi_button.clicked.connect(self.go_Home)
@@ -32,6 +33,13 @@ class VistaLogin(QDialog):
         shadow.setOffset(0, 0)
         self.frame.setGraphicsEffect(shadow)
         self.frame_5.setGraphicsEffect(shadow)
+
+    def clear_fields(self):
+        self.emailfield.clear()
+        self.passwordfield.clear()
+        self.error.clear()
+        self.sp_button.setChecked(False)
+
 
 
     def show_password(self):
@@ -49,9 +57,6 @@ class VistaLogin(QDialog):
         elif selected_option=="Dipendente":
             self.RegistraDipendente = VistaRegisterDipendente(self.controllerdip)
             self.RegistraDipendente.show()
-
-    def show_login(self):
-        self.show()
 
     def go_Home(self):
         email= self.emailfield.text()
