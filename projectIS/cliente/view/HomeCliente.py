@@ -93,7 +93,7 @@ class HomeCliente(QWidget):
             # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Icon.Question)
-            msg.setText("Sei sicuro di voler chiudere la finestra?")
+            msg.setText("Sei sicuro di voler chiudere il programma?")
             msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
             result = msg.exec()
 

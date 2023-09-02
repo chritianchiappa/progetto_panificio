@@ -4,7 +4,7 @@ from PyQt6.QtCore import  QTimer, Qt,QPropertyAnimation,QEasingCurve
 
 import webbrowser
 from datetime import datetime
-
+from listaprodotti.view.VistaMagazzino import VistaMagazzino
 from listaordini.view.vista_lista_ordini import VistaListaOrdini
 
 
@@ -70,7 +70,8 @@ class HomeDipendente(QWidget):
         self.VistaOrdini.show()
 
     def go_Prodotti(self):
-        self.close()
+        self.Magazzino=VistaMagazzino()
+        self.Magazzino.show()
 
     def closeEvent(self, event):
         if self.logout_requested:
@@ -79,7 +80,7 @@ class HomeDipendente(QWidget):
             # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Icon.Question)
-            msg.setText("Sei sicuro di voler chiudere la finestra?")
+            msg.setText("Sei sicuro di voler chiudere lil programma?")
             msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
             result = msg.exec()
 

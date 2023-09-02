@@ -72,9 +72,7 @@ class ListaProdotti:
                             prodotto_da_caricare['nome'],
                             prodotto_da_caricare['tipo'],
                             prodotto_da_caricare['prezzo'],
-                            prodotto_da_caricare['peso'],
                             ingredienti_caricati,
-                            prodotto_da_caricare['liked'],
                             prodotto_da_caricare['quantita']))
 
     # Metodo: salva il contenuto della lista su file pickle

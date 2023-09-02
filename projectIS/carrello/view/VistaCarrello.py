@@ -52,6 +52,7 @@ class VistaCarrello(QWidget):
          if self.dettagli_button.isChecked():
              selected_indexes = self.list_view.selectedIndexes()
              if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
+                 self.dettagli_button.setChecked(False)
                  return
 
              selected_row = selected_indexes[0].row()

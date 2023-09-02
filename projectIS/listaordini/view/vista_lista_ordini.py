@@ -31,14 +31,16 @@ class VistaListaOrdini(QWidget):
     def mostra_dettagli(self):
         if self.dettagli_ordine_button.isChecked():
             selected_item = self.tableWidget.selectedItems()
-            if selected_item:
-                selected_row = selected_item[0].row()
-                self.stackedWidget.setCurrentWidget(self.page_2)
-                ordine_selezionato = self.controller.get_lista_ordini_non_completati()[selected_row]
-                self.nome.setText(f"{ControllerOrdine(ordine_selezionato).get_nome_cliente()} {ControllerOrdine(ordine_selezionato).get_cognome_cliente()}")
-                self.telefono.setText(f"{ControllerOrdine(ordine_selezionato).get_telefono_cliente()}")
-                self.email.setText(f"{ControllerOrdine(ordine_selezionato).get_email_cliente()}")
-                self.update_list(ordine_selezionato)
+            if not selected_item:
+                self.dettagli_ordine_button.setChecked(False)
+                return
+            selected_row = selected_item[0].row()
+            self.stackedWidget.setCurrentWidget(self.page_2)
+            ordine_selezionato = self.controller.get_lista_ordini_non_completati()[selected_row]
+            self.nome.setText(f"{ControllerOrdine(ordine_selezionato).get_nome_cliente()} {ControllerOrdine(ordine_selezionato).get_cognome_cliente()}")
+            self.telefono.setText(f"{ControllerOrdine(ordine_selezionato).get_telefono_cliente()}")
+            self.email.setText(f"{ControllerOrdine(ordine_selezionato).get_email_cliente()}")
+            self.update_list(ordine_selezionato)
         else:
             self.stackedWidget.setCurrentWidget(self.page_1)
     def update_list(self,ordine):
