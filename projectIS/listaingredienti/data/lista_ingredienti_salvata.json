@@ -6,7 +6,7 @@
    "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
  },
    {
       "nome": "uova",
@@ -15,7 +15,7 @@
    "unita_misura": "Pz",
    "allergeni": [
       "glutine"],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
    {
        "nome": "cioccolata",
@@ -24,7 +24,7 @@
    "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
    {
        "nome": "crema",
@@ -33,7 +33,7 @@
    "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
    {
        "nome": "pomodoro",
@@ -42,7 +42,7 @@
    "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "margarina",
@@ -51,7 +51,7 @@
    "unita_misura": "Kg",
    "allergeni": [
       ],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "vino",
@@ -59,7 +59,7 @@
    "quantita": 10,
    "unita_misura": "L",
    "allergeni": [],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "zucchero",
@@ -67,7 +67,7 @@
    "quantita": 10,
    "unita_misura": "kg",
    "allergeni": [],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "vanillina",
@@ -75,7 +75,7 @@
    "quantita": 10,
    "unita_misura": "Kg",
    "allergeni": [],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "semi d'anice",
@@ -83,7 +83,7 @@
    "quantita": 10,
    "unita_misura": "g",
    "allergeni": [],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "lievito chimico",
@@ -91,7 +91,7 @@
    "quantita": 10,
    "unita_misura": "g",
    "allergeni": [],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    },
   {
       "nome": "sale",
@@ -99,6 +99,6 @@
    "quantita": 10,
    "unita_misura": "Kg",
    "allergeni": [],
-   "scadenza": "31-12-2023"
+   "scadenza": "31/12/2023"
    }
 ]

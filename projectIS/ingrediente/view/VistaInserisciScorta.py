@@ -34,10 +34,6 @@ class VistaInserisciScorta(QWidget):
             return
 
         else:
-            for ingrediente in self.controlleringr.get_lista_ingredienti():
-                if ingrediente.nome.lower() == nome.lower():
-                    self.popup("ingrediente gia presente", QMessageBox.Icon.Information,QMessageBox.StandardButton.Ok)
-                    return
 
             self.controlleringr.inserisci_ingrediente(Ingrediente(
                 nome,
@@ -45,7 +41,7 @@ class VistaInserisciScorta(QWidget):
                 unita_misura,
                 quantita,
                 lista_allergeni,
-                selected_date
+                selected_date.strftime("%d/%m/%Y")
 
             ))
             self.popup("ingrediente aggiunto all elenco", QMessageBox.Icon.Information, QMessageBox.StandardButton.Ok)

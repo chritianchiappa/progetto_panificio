@@ -10,7 +10,8 @@ class ControllerListaIngredienti:
     def get_lista_ingredienti(self):
         return self.model.get_lista_ingredienti()
 
-
+    def get_ingrediente_by_index(self,index):
+        return self.model.get_ingrediente_by_index(index)
     def inserisci_ingrediente(self, ingrediente):
         self.model.inserisci_ingrediente(ingrediente)
     def rimuovi_ingrediente_by_index(self,index):

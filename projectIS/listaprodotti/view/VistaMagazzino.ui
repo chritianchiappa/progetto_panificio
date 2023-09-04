@@ -79,6 +79,21 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QFrame" name="frame">
         <property name="sizePolicy">
@@ -148,6 +163,18 @@
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QPushButton" name="mod_quantita1_button">
                <property name="text">
@@ -190,7 +217,31 @@
         <widget class="QWidget" name="page_2">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
-           <widget class="QListView" name="list_view2"/>
+           <widget class="QTableWidget" name="tableWidget">
+            <property name="showGrid">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>nome</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>prezzo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>quantita</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>data scadenza</string>
+             </property>
+            </column>
+           </widget>
           </item>
           <item>
            <widget class="QFrame" name="frame_5">
@@ -207,6 +258,18 @@
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QPushButton" name="mod_quantita2_button">
                <property name="text">

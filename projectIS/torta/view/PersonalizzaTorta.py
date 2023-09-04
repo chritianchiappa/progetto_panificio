@@ -6,4 +6,5 @@ class PersonalizzaTorta(QWidget):
         uic.loadUi('torta/view/Personalizza_torta.ui',self)
         self.base_button.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_1))
         self.farcitura_button.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_2))
-        self.other_button.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_3))
+        self.copertura_button.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_3))
+        self.other_button.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_4))
