@@ -6,6 +6,8 @@ from listaingredienti.controller.controller_lista_ingredienti import ControllerL
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from prodotto.view.VistaModificaQuantita import VistaModificaQuantita
 from prodotto.view.VistaInserisciProdotto import VistaInserisciProdotto
+from ingrediente.view.VistaInserisciScorta import VistaInserisciScorta
+
 
 class VistaMagazzino(QWidget):
     def __init__(self):
@@ -53,7 +55,7 @@ class VistaMagazzino(QWidget):
             if ingrediente.quantita == 0:
                 quantita = "esaurito"
             else:
-                quantita = str(ingrediente.quantita) + "pz"
+                quantita = str(ingrediente.quantita) + ingrediente.unita_misura
             item.setText(f"{ingrediente.nome}  {quantita}")
             item.setEditable(False)
             font = item.font()
@@ -93,7 +95,8 @@ class VistaMagazzino(QWidget):
         self.InsertProd.show()
 
     def agg_scorta(self):
-        print("agg scorta")
+        self.InsertScorta=VistaInserisciScorta(self,self.controlleringr)
+        self.InsertScorta.show()
 
     def rim_prodotto(self):
         selected_index = self.list_view1.selectedIndexes()

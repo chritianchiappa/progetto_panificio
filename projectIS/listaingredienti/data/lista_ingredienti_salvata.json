@@ -3,7 +3,7 @@
    "nome": "farina 0",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
    "scadenza": "31-12-2023"
@@ -12,7 +12,7 @@
       "nome": "uova",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Pz",
    "allergeni": [
       "glutine"],
    "scadenza": "31-12-2023"
@@ -21,7 +21,7 @@
        "nome": "cioccolata",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
    "scadenza": "31-12-2023"
@@ -30,7 +30,7 @@
        "nome": "crema",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
    "scadenza": "31-12-2023"
@@ -39,7 +39,7 @@
        "nome": "pomodoro",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
    "scadenza": "31-12-2023"
@@ -48,7 +48,7 @@
       "nome": "margarina",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [
       ],
    "scadenza": "31-12-2023"
@@ -57,7 +57,7 @@
       "nome": "vino",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "L",
    "allergeni": [],
    "scadenza": "31-12-2023"
    },
@@ -65,7 +65,7 @@
       "nome": "zucchero",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "kg",
    "allergeni": [],
    "scadenza": "31-12-2023"
    },
@@ -73,7 +73,7 @@
       "nome": "vanillina",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [],
    "scadenza": "31-12-2023"
    },
@@ -81,7 +81,7 @@
       "nome": "semi d'anice",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "g",
    "allergeni": [],
    "scadenza": "31-12-2023"
    },
@@ -89,7 +89,7 @@
       "nome": "lievito chimico",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "g",
    "allergeni": [],
    "scadenza": "31-12-2023"
    },
@@ -97,7 +97,7 @@
       "nome": "sale",
    "prezzo": 10,
    "quantita": 10,
-   "peso": null,
+   "unita_misura": "Kg",
    "allergeni": [],
    "scadenza": "31-12-2023"
    }

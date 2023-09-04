@@ -214,6 +214,9 @@
       <item>
        <widget class="QLineEdit" name="url_immagine">
         <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
          <string>Immetti l url dell immagine da caricare</string>
         </property>
        </widget>

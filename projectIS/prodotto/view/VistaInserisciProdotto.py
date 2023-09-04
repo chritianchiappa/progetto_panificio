@@ -70,6 +70,7 @@ class VistaInserisciProdotto(QWidget):
                 lista_ingredienti,
                 quantita
             ))
+            self.popup("prodotto aggiunto all elenco",QMessageBox.Icon.Information,QMessageBox.StandardButton.Ok)
             self.controllerprod.save_data()
 
     def popup(self,text,icon,button):

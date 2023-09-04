@@ -47,6 +47,7 @@ class ListaIngredienti():
                         Ingrediente(
                             ingrediente_da_caricare['nome'],
                             ingrediente_da_caricare['prezzo'],
+                            ingrediente_da_caricare['unita_misura'],
                             ingrediente_da_caricare['quantita'],
                             ingrediente_da_caricare['allergeni'],
                             ingrediente_da_caricare['scadenza']))
