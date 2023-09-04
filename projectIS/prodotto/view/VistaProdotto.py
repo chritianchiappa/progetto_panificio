@@ -33,7 +33,7 @@ class VistaProdotto(QWidget):
 
     def popola_combobox(self):
         self.selettore_quantita.clear()
-        for quantita in range(1, self.prodotto.quantita + 1):
+        for quantita in range(1, int(self.prodotto.quantita) + 1):
             self.selettore_quantita.addItem(str(quantita))
 
     def mostra_immagine(self):

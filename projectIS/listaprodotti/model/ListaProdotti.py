@@ -18,7 +18,9 @@ class ListaProdotti:
     def get_lista_prodotti(self):
         return self.lista_prodotti
 
-
+    def rimuovi_prodotto_by_index(self,index):
+        self.lista_prodotti.pop(index)
+        self.save_data()
 
     def get_prodotto_by_index(self,index):
         return self.lista_prodotti[index]

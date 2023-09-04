@@ -6,54 +6,42 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>400</height>
+    <width>500</width>
+    <height>450</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>400</width>
-    <height>400</height>
-   </size>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
-  <property name="maximumSize">
+  <property name="minimumSize">
    <size>
     <width>450</width>
     <height>450</height>
    </size>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">border:none;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
    <item>
-    <widget class="QFrame" name="frame_2">
+    <widget class="QFrame" name="frame_5">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>100</height>
-      </size>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -61,22 +49,70 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
-          <family>Arial Black</family>
-          <pointsize>18</pointsize>
-          <bold>true</bold>
+          <family>Tiro Kannada</family>
+          <pointsize>15</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Pagamento</string>
+         <string>Scegli la data di consegna</string>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QDateTimeEdit" name="time_edit_consegna">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:5px;</string>
+        </property>
+        <property name="minimumDateTime">
+         <datetime>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2022</year>
+          <month>9</month>
+          <day>14</day>
+         </datetime>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="styleSheet">
+      <string notr="true">
+border:2px solid black;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
     </widget>
    </item>
    <item>
@@ -98,9 +134,9 @@
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
-          <family>Arial</family>
+          <family>Tiro Kannada</family>
           <pointsize>15</pointsize>
-          <italic>true</italic>
+          <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
@@ -111,6 +147,9 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QRadioButton" name="ritiro_negozio">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="text">
          <string>Ritiro in negozio</string>
         </property>
@@ -118,6 +157,9 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QRadioButton" name="spedizione">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="text">
          <string>Spedizione a domicilio</string>
         </property>
@@ -179,12 +221,29 @@
     </widget>
    </item>
    <item>
+    <widget class="Line" name="line_2">
+     <property name="styleSheet">
+      <string notr="true">
+border:2px solid black;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="frame">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>100</height>
+      </size>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -254,8 +313,38 @@
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QPushButton" name="ordina_button">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>40</height>
+         </size>
+        </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     color:rgb(255,255,255); 
+     border-radius:20px;
+   
+}
+QPushButton:hover {
+	
+	background-color: rgba(242, 155, 20,150);
+     border-left: 2px solid rgb(173, 107,0);
+     border-right: 2px solid rgb(173, 107,0);
+     border-bottom: 3px solid rgb(173, 107,0);
+}
+QPushButton:pressed {
+	
+	background-color: rgba(255, 224, 0,75);
+     border-left: 2px solid rgb(173, 107,0);
+     border-right: 2px solid rgb(173, 107,0); 
+     border-bottom: none;
+}</string>
         </property>
         <property name="text">
          <string>Procedi con l'ordine</string>

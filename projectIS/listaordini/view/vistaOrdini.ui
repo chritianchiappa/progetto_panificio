@@ -140,12 +140,12 @@
                </column>
                <column>
                 <property name="text">
-                 <string>Data ordine</string>
+                 <string>Data consegna</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Consegna</string>
+                 <string>Luogo consegna</string>
                 </property>
                </column>
               </widget>

@@ -8,6 +8,7 @@ from ingrediente.model.Ingrediente import Ingrediente
 
 class ListaIngredienti():
     def __init__(self):
+        super(ListaIngredienti, self).__init__()
         self.lista_ingredienti = []
         self.refresh_data()
 
@@ -19,19 +20,10 @@ class ListaIngredienti():
 
     def rimuovi_ingrediente_by_index(self,index):
         self.lista_ingredienti.pop(index)
+        print("eliminato")
+        self.save_data()
 
-    def check_ingrediente_by_id(self,id):
-        for ingrediente in self.lista_ingredienti:
-            if ingrediente.id==id:
-                return ingrediente
-        return None
 
-    def rimuovi_ingrediente_by_id(self, id):
-        def is_selected(ingrediente):
-            if ingrediente.id == id:
-                return True
-            return False
-        self.lista_ingredienti.remove(list(filter(is_selected, self.lista_ingredienti))[0])
 
     def get_lista_ingredienti(self):
         return self.lista_ingredienti

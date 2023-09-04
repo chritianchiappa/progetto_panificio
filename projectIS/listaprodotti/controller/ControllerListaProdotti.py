@@ -20,6 +20,9 @@ class ControllerListaProdotti:
     def inserisci_prodotto(self, prodotto):
         self.model.inserisci_prodotto(prodotto)
 
+    def rimuovi_prodotto_by_index(self,index):
+        self.model.rimuovi_prodotto_by_index(index)
+
     def aggiorna_quantita_prodotto(self,nome,quantita):
         self.model.aggiorna_quantita_prodotto(nome,quantita)
 

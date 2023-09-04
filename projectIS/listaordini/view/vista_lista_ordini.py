@@ -21,12 +21,14 @@ class VistaListaOrdini(QWidget):
         self.tableWidget.setColumnWidth(0,150)
         self.tableWidget.setColumnWidth(1,120)
         self.tableWidget.setColumnWidth(2, 150)
+
         self.tableWidget.setRowCount(len(self.controller.get_lista_ordini_non_completati()))
         row=0
         for ordine in self.controller.get_lista_ordini_non_completati():
             self.tableWidget.setItem(row, 0, QTableWidgetItem(f"{ControllerOrdine(ordine).get_nome_cliente()} {ControllerOrdine(ordine).get_cognome_cliente()}"))
-            self.tableWidget.setItem(row,1,QTableWidgetItem(f"{ControllerOrdine(ordine).get_data_ordine()}"))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(f"{ControllerOrdine(ordine).get_data_consegna()}"))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(f"{ControllerOrdine(ordine).get_indirizzo()}"))
+
             row+=1
     def mostra_dettagli(self):
         if self.dettagli_ordine_button.isChecked():

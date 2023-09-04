@@ -24,8 +24,9 @@ class VistaMagazzino(QWidget):
         self.mod_quantita1_button.clicked.connect(self.mod_quantita_prodotto)
         self.agg_prod_button.clicked.connect(self.agg_prodotto)
         self.rim_prod_button.clicked.connect(self.rim_prodotto)
-        #self.mod_quantita2_button.clicked.connect(self.mod_quantita_scorta)
-        #self.agg_scorta_button.clicked.connect(self.agg_scorta)
+        self.rim_scorta_button.clicked.connect(self.rim_scorta)
+        self.mod_quantita2_button.clicked.connect(self.mod_quantita_scorta)
+        self.agg_scorta_button.clicked.connect(self.agg_scorta)
 
 
     def update_list_prodotti(self):
@@ -84,21 +85,39 @@ class VistaMagazzino(QWidget):
         self.ModQuantita=VistaModificaQuantita(self,prodotto_selezionato,self.controllerprod)
         self.ModQuantita.show()
 
+    def mod_quantita_scorta(self):
+        print("mod quantita")
+
     def agg_prodotto(self):
         self.InsertProd=VistaInserisciProdotto(self.controllerprod)
         self.InsertProd.show()
 
+    def agg_scorta(self):
+        print("agg scorta")
+
     def rim_prodotto(self):
-        selected_indexes = self.list_view1.selectedIndexes()
-        if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
+        selected_index = self.list_view1.selectedIndexes()
+        if not selected_index:  # Verifica se la lista è vuota o nessun elemento selezionato
             return
 
-        selected_row = selected_indexes[0].row()
+        selected_row = selected_index[0].row()
         if selected_row < 0:  # Verifica se l'indice è valido
             return
-        prodotto_selezionato = self.controllerprod.get_prodotto_by_index(selected_row)
-        if not prodotto_selezionato:
+        self.controllerprod.rimuovi_prodotto_by_index(selected_row)
+        self.listview_model1.removeRow(selected_row)
+
+    def rim_scorta(self):
+        selected_index = self.list_view2.selectedIndexes()
+        if not selected_index:  # Verifica se la lista è vuota o nessun elemento selezionato
             return
+
+        selected_row = selected_index[0].row()
+        if selected_row < 0:  # Verifica se l'indice è valido
+            return
+        self.controlleringr.rimuovi_ingrediente_by_index(selected_row)
+        self.listview_model2.removeRow(selected_row)
+
+
 
 
 

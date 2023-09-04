@@ -92,5 +92,13 @@
    "peso": null,
    "allergeni": [],
    "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "sale",
+   "prezzo": 10,
+   "quantita": 10,
+   "peso": null,
+   "allergeni": [],
+   "scadenza": "31-12-2023"
    }
 ]

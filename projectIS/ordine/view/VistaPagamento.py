@@ -1,6 +1,6 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget,QMessageBox
-from PyQt6.QtCore import QPropertyAnimation,QEasingCurve
+from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QDateTime, QDate, QTime
 from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from ordine.model.Ordine import Ordine
@@ -17,6 +17,9 @@ class VistaPagamento(QWidget):
         self.animation.setDuration(250)
         self.easing_curve = QEasingCurve(QEasingCurve.Type.Linear)
         self.indirizzo_consegna.setVisible(False)
+        current_datetime = QDateTime.currentDateTime()
+        self.time_edit_consegna.setDateTime(current_datetime)
+        self.time_edit_consegna.setMinimumDateTime(current_datetime)
         self.prezzo_totale.setText(f"{self.calcola_importo()}")
         self.ritiro_negozio.toggled.connect(self.toggle_indirizzo_label)
         self.spedizione.toggled.connect(self.toggle_indirizzo_label)
@@ -46,6 +49,7 @@ class VistaPagamento(QWidget):
         self.animation.start()
 
     def check_out(self):
+        selected_datetime = self.time_edit_consegna.dateTime().toPyDateTime()
 
         if self.ritiro_negozio.isChecked():
             str_indirizzo = "Negozio"
@@ -54,24 +58,26 @@ class VistaPagamento(QWidget):
             if len(str_indirizzo) == 0:
                 self.popup("Inserisci un indirizzo di consegna valido",QMessageBox.Icon.Warning)
                 return
+
         else:
             self.popup("Seleziona una procedura per l'ordine",QMessageBox.Icon.Warning)
             return
 
-        self.ordina(str_indirizzo)
+        self.ordina(str_indirizzo,selected_datetime)
 
 
-    def ordina(self,indirizzo):
+    def ordina(self,indirizzo,data_consegna):
         self.controllerord.inserisci_ordine(Ordine(
             self.prodotti,
             datetime.now(),
             self.cliente,
             indirizzo,
+            data_consegna,
             False)
         )
 
         self.controllerord.save_data()
-        self.popup("Oridne effettuato con successo",QMessageBox.Icon.Information)
+        self.popup("Ordine effettuato con successo",QMessageBox.Icon.Information)
         self.close()
 
     def popup(self,text,icon):

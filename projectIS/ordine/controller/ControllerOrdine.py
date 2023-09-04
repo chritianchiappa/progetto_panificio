@@ -30,5 +30,7 @@ class ControllerOrdine:
 
     def get_data_ordine(self):
         return self.model.data.strftime("%d/%m/%Y %H:%M")
+    def get_data_consegna(self):
+        return self.model.data_consegna.strftime("%d/%m/%Y %H:%M")
     def completa_ordine(self):
         self.model.completato=True

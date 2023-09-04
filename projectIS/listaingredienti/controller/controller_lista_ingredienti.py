@@ -13,6 +13,8 @@ class ControllerListaIngredienti:
 
     def inserisci_ingrediente(self, ingrediente):
         self.model.inserisci_ingrediente(ingrediente)
+    def rimuovi_ingrediente_by_index(self,index):
+        self.model.rimuovi_ingrediente_by_index(index)
 
     def refresh_data(self):
         self.model.refresh_data()
