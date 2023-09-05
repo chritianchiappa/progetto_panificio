@@ -41,6 +41,15 @@ class VistaStatistiche(QWidget):
         ax.set_title('Vendite Mensili')
         ax.grid(True)  # Aggiungi una griglia al grafico
 
+        '''cursor = mplcursors.cursor(hover=True)
+
+        def formatta_etichetta(sel):
+            # mese_selezionato = mesi[sel.target.index]
+            vendita_corrispondente = valori[sel.target.index]
+            sel.annotation.set_text(f'Vendite: {vendita_corrispondente}')
+
+        cursor.connect("add", formatta_etichetta)'''
+
         self.canvas.draw()
 
 
@@ -70,49 +79,34 @@ class VistaStatistiche(QWidget):
         # Aggiorna il canvas per mostrare il nuovo grafico
         self.canvas.draw()
 
-    def mostra_grafico3(self):
-        mesi = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"]
-        prodotto_mensile = {}
-
-        for mese in mesi:
-            prodotto_mensile[mese] = {"prodotto": "", "quantita": 0, "incasso": 0}
+    '''def mostra_grafico3(self):
+        conteggi = {}
 
         for ordine in self.controllerlistord.get_lista_ordini():
-            mese_ordine = ControllerOrdine(ordine).get_mese_ordine()
-            nome_mese = mesi[mese_ordine - 1]
-            for prodotto in ControllerOrdine(ordine).get_lista_prodotti_ordinati():
-                nome_prodotto = ControllerProdotto(prodotto).get_nome()
-                quantita = ControllerProdotto(prodotto).get_quantita()
-                incasso = ControllerProdotto(prodotto).get_prezzo()
+            print(ordine)
+            for prod in ControllerOrdine(ordine).get_lista_prodotti_ordinati():
+                print(prod)
+                if ControllerProdotto(prod).get_nome() in conteggi:
+                    conteggi[ControllerProdotto(prod).get_nome()] += ControllerProdotto(prod).get_quantita()
+                else:
+                    conteggi[ControllerProdotto(prod).get_nome()] = ControllerProdotto(prod).get_quantita()
 
-                if quantita > prodotto_mensile[nome_mese]["quantita"]:
-                    prodotto_mensile[nome_mese]["prodotto"] = nome_prodotto
-                    prodotto_mensile[nome_mese]["quantita"] = quantita
-                    prodotto_mensile[nome_mese]["incasso"] = incasso
+        print(conteggi)
 
-        # Estrai dati per il grafico
-        prodotti = [data["prodotto"] for data in prodotto_mensile.values()]
-        incassi = [data["incasso"] for data in prodotto_mensile.values()]
         self.figure.clear()
         ax = self.figure.add_subplot(111)
 
-        x = range(len(mesi))
-        larghezza_barre = 0.6
+        tabella = ax.table(cellText=dati, loc='center', cellLoc='center')
 
-        bars = ax.bar(x, incassi, width=larghezza_barre, color='dodgerblue', alpha=0.7)
+        ax.axis('off')
 
-        ax.set_xlabel('Mesi')
-        ax.set_ylabel('Incasso')
-        ax.set_xticks([i for i in x])
-        ax.set_xticklabels(mesi)
+        tabella.auto_set_font_size(False)
+        tabella.set_fontsize(12)
+        tabella.scale(1.2, 1.2)
 
-        for i, (bar, incasso, prodotto) in enumerate(zip(bars, incassi, prodotti)):
-            ax.annotate(f"{prodotto}\n{quantita}", xy=(bar.get_x() + bar.get_width() / 2, quantita),
-                        xytext=(0, 3),  # Sposta l'etichetta verso l'alto di 3 punti
-                        textcoords='offset points',
-                        ha='center', va='bottom')
+        self.canvas.draw()'''
 
-        self.canvas.draw()
+
 
 
 

@@ -68,7 +68,7 @@ class VistaInserisciProdotto(QWidget):
                 tipo,
                 prezzo,
                 lista_ingredienti,
-                quantita
+                float(quantita)
             ))
             self.popup("prodotto aggiunto all elenco",QMessageBox.Icon.Information,QMessageBox.StandardButton.Ok)
             self.controllerprod.save_data()

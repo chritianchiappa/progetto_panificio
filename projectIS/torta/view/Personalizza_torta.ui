@@ -15,46 +15,6 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QFrame" name="frame">
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="base_button">
-        <property name="text">
-         <string>Base</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="farcitura_button">
-        <property name="text">
-         <string>Farcitura</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="copertura_button">
-        <property name="text">
-         <string>Copertura</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="other_button">
-        <property name="text">
-         <string>Altre richieste</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -67,8 +27,20 @@
      </property>
      <widget class="QWidget" name="page_1">
       <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item alignment="Qt::AlignTop">
+       <item>
         <widget class="QFrame" name="frame_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>100</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -94,6 +66,12 @@
        </item>
        <item alignment="Qt::AlignTop">
         <widget class="QFrame" name="frame_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="font">
           <font>
            <family>American Typewriter</family>
@@ -108,35 +86,35 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item alignment="Qt::AlignHCenter">
-           <widget class="QRadioButton" name="radioButton">
+           <widget class="QRadioButton" name="pandispagna">
             <property name="text">
              <string>Pan di Spagna</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QRadioButton" name="radioButton_2">
+           <widget class="QRadioButton" name="pasta_biscuit">
             <property name="text">
              <string>Pasta biscuit</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QRadioButton" name="radioButton_3">
+           <widget class="QRadioButton" name="pasta_frolla">
             <property name="text">
              <string>Pasta frolla</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QRadioButton" name="radioButton_4">
+           <widget class="QRadioButton" name="pasta_bigne">
             <property name="text">
              <string>Pasta bignè</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QRadioButton" name="radioButton_5">
+           <widget class="QRadioButton" name="pasta_sfoglia">
             <property name="text">
              <string>Pasta sfoglia</string>
             </property>
@@ -145,27 +123,11 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>60</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
       <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item alignment="Qt::AlignTop">
+       <item>
         <widget class="QFrame" name="frame_5">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -285,22 +247,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>60</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_3">
@@ -313,8 +259,8 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="label_3">
             <property name="font">
              <font>
@@ -383,22 +329,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>60</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_4">
@@ -431,6 +361,25 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QPushButton" name="ordina_button">
+               <property name="text">
+                <string>Ordina</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -439,18 +388,55 @@
     </widget>
    </item>
    <item>
-    <widget class="QFrame" name="frame_2">
+    <widget class="QFrame" name="frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>100</height>
+      </size>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QPushButton" name="pushButton_4">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="indietro_button">
         <property name="text">
-         <string>Ordina</string>
+         <string>Indietro</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../home/view/res.qrc">
+          <normaloff>:/icone/icone/doppia_frecciasx.png</normaloff>:/icone/icone/doppia_frecciasx.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="avanti_button">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>Avanti</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../home/view/res.qrc">
+          <normaloff>:/icone/icone/doppia_frecciadx.png</normaloff>:/icone/icone/doppia_frecciadx.png</iconset>
         </property>
        </widget>
       </item>
@@ -459,6 +445,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../home/view/res.qrc"/>
+ </resources>
  <connections/>
 </ui>
