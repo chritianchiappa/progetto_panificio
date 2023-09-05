@@ -5,7 +5,7 @@ from PyQt6 import uic
 from home.view.VistaRegisterUtente import VistaRegisterUtente
 from home.view.VistaRegisterDipendente import VistaRegisterDipendente
 from home.view.VistaLogAmm import VistaLogAmm
-from utilizzatore.view.HomeAmministratore import HomeAmministratore
+
 from utilizzatore.view.HomeDipendente import HomeDipendente
 from cliente.view.HomeCliente import HomeCliente
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
@@ -79,7 +79,7 @@ class VistaLogin(QDialog):
 
 
     def accedi_Amm(self):
-        self.LogAmm= VistaLogAmm(self,HomeAmministratore())
+        self.LogAmm= VistaLogAmm(self)
         self.LogAmm.show()
 
     def closeEvent(self, event):

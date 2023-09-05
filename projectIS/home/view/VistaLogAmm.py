@@ -1,13 +1,13 @@
 from PyQt6.QtWidgets import QFrame
 from PyQt6 import uic
 from utilizzatore.model.Amministratore import Amministratore
+from utilizzatore.view.HomeAmministratore import HomeAmministratore
 
 class VistaLogAmm(QFrame):
-    def __init__(self,login,home):
+    def __init__(self,login):
         super(VistaLogAmm, self).__init__()
         uic.loadUi('home/view/vistalogamm.ui', self)
-        self.login=login;
-        self.home=home;
+        self.login=login
         self.la_button.clicked.connect(self.go_HomeAmm)
 
     def go_HomeAmm(self):
@@ -17,6 +17,7 @@ class VistaLogAmm(QFrame):
         else:
             self.close()
             self.login.hide()
+            self.home=HomeAmministratore(self.login)
             self.home.show()
 
 

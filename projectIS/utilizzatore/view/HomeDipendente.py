@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
-from PyQt6.QtCore import  QTimer, Qt,QPropertyAnimation,QEasingCurve
+from PyQt6.QtCore import QTimer,QPropertyAnimation,QEasingCurve
 
 import webbrowser
 from datetime import datetime
@@ -80,7 +80,7 @@ class HomeDipendente(QWidget):
             # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Icon.Question)
-            msg.setText("Sei sicuro di voler chiudere lil programma?")
+            msg.setText("Sei sicuro di voler chiudere il programma?")
             msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
             result = msg.exec()
 
