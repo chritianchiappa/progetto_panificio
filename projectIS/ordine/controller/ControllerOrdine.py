@@ -26,7 +26,8 @@ class ControllerOrdine:
             importo+=ControllerProdotto(prodotto).get_prezzo()
 
         return importo
-
+    def get_mese_ordine(self):
+        return self.model.data.month
 
     def get_data_ordine(self):
         return self.model.data.strftime("%d/%m/%Y %H:%M")

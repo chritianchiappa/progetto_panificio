@@ -22,3 +22,5 @@ class ControllerProdotto:
         return self.model.quantita
     def set_quantita(self,quantita):
         self.model.quantita=quantita
+    def get_tipo(self):
+        return self.model.tipo

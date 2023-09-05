@@ -4,6 +4,10 @@ from PyQt6.QtCore import QTime, QTimer, Qt
 from listadipendenti.view.vista_lista_dipendenti import VistaListaDipendenti
 import webbrowser
 from datetime import datetime
+
+from statistiche.view.VistaStatistiche import VistaStatistiche
+
+
 class HomeAmministratore(QWidget):
     def __init__(self):
         super(HomeAmministratore,self).__init__()
@@ -40,7 +44,8 @@ class HomeAmministratore(QWidget):
         #self.VistaIng.show()
         self.close()
     def go_Statistiche(self):
-        self.close()
+        self.stats= VistaStatistiche()
+        self.stats.show()
 
     def go_Cassa(self):
         self.close()

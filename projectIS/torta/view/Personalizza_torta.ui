@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>651</width>
-    <height>539</height>
+    <width>632</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -213,6 +213,13 @@
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
+           <widget class="QCheckBox" name="checkBox_7">
+            <property name="text">
+             <string>crema chantilly</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="checkBox_2">
             <property name="text">
              <string>Marmellate</string>
@@ -220,9 +227,44 @@
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_7">
+           <widget class="QCheckBox" name="checkBox_9">
             <property name="text">
-             <string>Creme al cioccolato</string>
+             <string>Crema al pistacchio</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QCheckBox" name="checkBox_16">
+            <property name="text">
+             <string>Crema al cioccolato</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QCheckBox" name="checkBox_11">
+            <property name="text">
+             <string>Crema alla nocciola</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QCheckBox" name="checkBox_10">
+            <property name="text">
+             <string>Crema al caffe</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QCheckBox" name="checkBox_15">
+            <property name="text">
+             <string>Creme al cioccolato mandorla</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QCheckBox" name="checkBox_14">
+            <property name="text">
+             <string>Crema al cioccolato bianco</string>
             </property>
            </widget>
           </item>
