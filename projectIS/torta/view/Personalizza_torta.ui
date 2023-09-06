@@ -168,77 +168,77 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="crema_pasticcera">
             <property name="text">
              <string>A base di crema pasticcera</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_7">
+           <widget class="QCheckBox" name="crema_chantilly">
             <property name="text">
              <string>crema chantilly</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_2">
+           <widget class="QCheckBox" name="marmellate">
             <property name="text">
              <string>Marmellate</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_9">
+           <widget class="QCheckBox" name="crema_pistacchio">
             <property name="text">
              <string>Crema al pistacchio</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_16">
+           <widget class="QCheckBox" name="crema_cioccolato">
             <property name="text">
              <string>Crema al cioccolato</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_11">
+           <widget class="QCheckBox" name="crema_nocciola">
             <property name="text">
              <string>Crema alla nocciola</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_10">
+           <widget class="QCheckBox" name="crema_caffe">
             <property name="text">
              <string>Crema al caffe</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_15">
+           <widget class="QCheckBox" name="crema_ciocc_mandorla">
             <property name="text">
              <string>Creme al cioccolato mandorla</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_14">
+           <widget class="QCheckBox" name="crema_ciocc_bianco">
             <property name="text">
              <string>Crema al cioccolato bianco</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_8">
+           <widget class="QCheckBox" name="crema_semifreddi_mousse">
             <property name="text">
              <string>Crema semifreddi o mousse</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_3">
+           <widget class="QCheckBox" name="frutta">
             <property name="text">
              <string>Frutta fresca a pezzi o purea</string>
             </property>
@@ -292,35 +292,35 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_4">
+           <widget class="QRadioButton" name="panna_montata">
             <property name="text">
              <string>Panna montata</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_5">
+           <widget class="QRadioButton" name="glasse_frutta">
             <property name="text">
              <string>Glasse frutta</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_12">
+           <widget class="QRadioButton" name="cioccolato_ganache">
             <property name="text">
              <string>Cioccolato puro o ganache</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_13">
+           <widget class="QRadioButton" name="mousse_creme">
             <property name="text">
              <string>Mousse o creme</string>
             </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
-           <widget class="QCheckBox" name="checkBox_6">
+           <widget class="QRadioButton" name="pasta_zucchero">
             <property name="text">
              <string>Pasta di zucchero</string>
             </property>
@@ -343,7 +343,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
           <item alignment="Qt::AlignTop">
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="richieste">
             <property name="minimumSize">
              <size>
               <width>0</width>
