@@ -75,8 +75,8 @@ class HomeCliente(QWidget):
     def go_carrello(self,cliente,controller):
         self.Carrello=VistaCarrello(cliente,controller)
         self.Carrello.show()
-    def go_Torte(self,cliente):
-        self.Torte=PersonalizzaTorta(cliente)
+    def go_Torte(self):
+        self.Torte=PersonalizzaTorta(self.cliente)
         self.Torte.show()
     def go_Whishlist(self,cliente,controller):
         self.Whishlist=VistaWhishlist(cliente,controller)

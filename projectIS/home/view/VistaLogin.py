@@ -38,6 +38,7 @@ class VistaLogin(QDialog):
         self.emailfield.clear()
         self.passwordfield.clear()
         self.error.clear()
+        self.passwordfield.setEchoMode(QLineEdit.EchoMode.Password)
         self.sp_button.setChecked(False)
 
 

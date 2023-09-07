@@ -22,8 +22,12 @@ class ControllerOrdine:
         return self.model.indirizzo
     def get_importo(self):
         importo=0
-        for prodotto in self.get_lista_prodotti_ordinati():
-            importo+=ControllerProdotto(prodotto).get_prezzo()
+        prodotti_ordinati=self.get_lista_prodotti_ordinati()
+        if isinstance(prodotti_ordinati,list):
+            for prodotto in self.get_lista_prodotti_ordinati():
+                importo+=ControllerProdotto(prodotto).get_prezzo()
+        else:
+            importo=prodotti_ordinati.prezzo
 
         return importo
     def get_mese_ordine(self):

@@ -9,9 +9,9 @@ class PersonalizzaTorta(QWidget):
         self.cliente=cliente
         self.current_page = self.stackedWidget.currentIndex()
         self.avanti_button.setEnabled(False)
-        self.selected_page1=False
-        self.selected_page2 = False
-        self.selected_page3 = False
+
+        self.selected_page2 = None
+
         self.avanti_button.clicked.connect(self.nextPage)
         self.indietro_button.clicked.connect(self.prevPage)
         self.ordina_button.clicked.connect(self.ordina_torta)
@@ -57,9 +57,10 @@ class PersonalizzaTorta(QWidget):
         # Abilita il pulsante "Avanti" se almeno un radio button è selezionato
         if self.selezione_pagina_1:
             self.selected_page1=True
-            #self.avanti_button.setEnabled(True)
-        #else:
-            #self.avanti_button.setEnabled(False)
+
+            self.avanti_button.setEnabled(True)
+        else:
+            self.avanti_button.setEnabled(False)
 
     def checkCheckbox(self):
         # Abilita il pulsante "Avanti" solo se almeno una checkbox è selezionata
@@ -79,9 +80,9 @@ class PersonalizzaTorta(QWidget):
 
         if num_checked >= 1 and num_checked <= 2:
             self.selected_page2=True
-            #self.avanti_button.setEnabled(True)
-        #else:
-            #self.avanti_button.setEnabled(False)
+            self.avanti_button.setEnabled(True)
+        else:
+            self.avanti_button.setEnabled(False)
 
     def checkRadioButton2(self):
 
@@ -94,14 +95,14 @@ class PersonalizzaTorta(QWidget):
         elif self.mousse_creme.isChecked():
             self.selezione_pagina_3 = self.mousse_creme.text()
         elif self.pasta_zucchero.isChecked():
-            self.selezione_pagina_1 = self.pasta_zucchero.text()
+            self.selezione_pagina_3 = self.pasta_zucchero.text()
         else:
             self.selezione_pagina_3 = None
         if self.selezione_pagina_3:
-            self.selected_page3 = True
-            #self.avanti_button.setEnabled(True)
-        #else:
-            #self.avanti_button.setEnabled(False)
+
+            self.avanti_button.setEnabled(True)
+        else:
+            self.avanti_button.setEnabled(False)
 
     def prevPage(self):
 
@@ -109,18 +110,18 @@ class PersonalizzaTorta(QWidget):
             self.current_page -= 1
             self.stackedWidget.setCurrentIndex(self.current_page)
             self.updateProgressBar()
-            #self.avanti_button.setEnabled(True)
+            self.avanti_button.setEnabled(True)
 
     def nextPage(self):
         if self.current_page < self.stackedWidget.count() - 1:
 
-            #self.avanti_button.setEnabled(False)
-            if self.current_page == 0 and self.selected_page1==True:
+            if self.current_page==0 and self.selected_page2==True:
                 self.avanti_button.setEnabled(True)
-            elif self.current_page == 1 and self.selected_page2==True:
+            elif self.current_page==1 and self.selezione_pagina_3:
                 self.avanti_button.setEnabled(True)
-            elif self.current_page == 2 and self.selected_page3==True:
-                self.avanti_button.setEnabled(True)
+            else:
+                self.avanti_button.setEnabled(False)
+
             self.current_page += 1
             self.stackedWidget.setCurrentIndex(self.current_page)
             self.updateProgressBar()
@@ -147,8 +148,9 @@ class PersonalizzaTorta(QWidget):
         ]
         self.selezione_pagina_2 = [checkbox.text() for checkbox in checkbox_selezionate if checkbox.isChecked()]
         ulteriori_richieste = self.richieste.text().strip()
-
-        self.ComplOrd=RiepilogoTorta(Torta(self.selezione_pagina_1,self.selezione_pagina_2,self.selezione_pagina_3,ulteriori_richieste,None,None),self.cliente)
+        torta=Torta(self.selezione_pagina_1,self.selezione_pagina_2,self.selezione_pagina_3,ulteriori_richieste,None,None)
+        print(self.cliente)
+        self.ComplOrd=RiepilogoTorta(torta,self.cliente)
         self.ComplOrd.show()
 
 

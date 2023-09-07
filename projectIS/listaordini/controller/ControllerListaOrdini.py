@@ -12,6 +12,9 @@ class ControllerListaOrdini:
     def get_lista_ordini_non_completati(self):
         return self.model.get_lista_ordini_non_completati()
 
+    def get_lista_ordini_completati(self):
+        return self.model.get_lista_ordini_completati()
+
     def inserisci_ordine(self, ordine):
         self.model.inserisci_ordine(ordine)
 

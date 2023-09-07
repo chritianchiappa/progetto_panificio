@@ -21,7 +21,12 @@ class ListaOrdini:
                 lista_ordini_non_completati.append(ordine)
         return lista_ordini_non_completati
 
-
+    def get_lista_ordini_completati(self):
+        lista_ordini_completati=[]
+        for ordine in self.get_lista_ordini():
+            if ordine.completato:
+                lista_ordini_completati.append(ordine)
+        return lista_ordini_completati
 
     def load_data(self):
         if os.path.isfile('listaordini/data/lista_ordini_salvata.pickle') and os.stat('listaordini/data/lista_ordini_salvata.pickle').st_size!=0:
