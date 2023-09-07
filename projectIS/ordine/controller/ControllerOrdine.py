@@ -7,6 +7,7 @@ class ControllerOrdine:
     def get_lista_prodotti_ordinati(self):
         return self.model.prodotti
 
+
     def get_nome_cliente(self):
         return ControllerCliente(self.model.cliente).get_nome_cliente()
 
