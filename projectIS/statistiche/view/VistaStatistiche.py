@@ -24,21 +24,46 @@ class VistaStatistiche(QWidget):
         self.horizontaLayout = QHBoxLayout(self.frame_plot)
         self.horizontaLayout.addWidget(self.canvas)
         self.controllerlistord=ControllerListaOrdini()
+        anno_corrente = datetime.datetime.now().year
+        for anno in range(2020, anno_corrente + 1):
+            self.selettore_anno.addItem(str(anno))
+        self.selettore_anno.activated.connect(self.update_graph)
+        self.grafico_attuale = None
+        self.anno_selezionato=anno_corrente
         self.mostra_grafico1()
         self.vendite_mensili_button.clicked.connect(self.mostra_grafico1)
         self.vendite_tipologia_button.clicked.connect(self.mostra_grafico2)
         #self.prodotti_piu_venduti_button.clicked.connect(self.mostra_grafico3)
         self.stats_torte_button.clicked.connect(self.mostra_grafico4)
         self.stats_clienti_button.clicked.connect(self.mostra_grafico5)
+        self.stats_consegna_button.clicked.connect(self.mostra_grafico6)
+
+    def update_graph(self):
+
+        self.anno_selezionato = int(self.selettore_anno.currentText())
+
+        # Controlla quale tipo di grafico era visualizzato prima del cambiamento
+        if self.grafico_attuale == "G1":
+            self.mostra_grafico1()
+        elif self.grafico_attuale == "G2":
+            self.mostra_grafico2()
+        elif self.grafico_attuale == "G4":
+            self.mostra_grafico4()
+        elif self.grafico_attuale == "G5":
+            self.mostra_grafico5()
+        elif self.grafico_attuale == "G6":
+            self.mostra_grafico6()
 
 
     def mostra_grafico1(self):
+        self.grafico_attuale="G1"
         mesi = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"]
         valori = [0] * len(mesi)  # Inizializza una lista di zeri per i valori
 
         for ordine in self.controllerlistord.get_lista_ordini_completati():
-            mese_ordine = ControllerOrdine(ordine).get_mese_ordine() # Ottieni il mese dell'ordine
-            valori[mese_ordine - 1] += ControllerOrdine(ordine).get_importo()
+            if ControllerOrdine(ordine).get_anno_ordine()==self.anno_selezionato:
+                mese_ordine = ControllerOrdine(ordine).get_mese_ordine()
+                valori[mese_ordine - 1] += ControllerOrdine(ordine).get_importo()
 
 
         # Crea il grafico a barre
@@ -64,31 +89,42 @@ class VistaStatistiche(QWidget):
 
 
     def mostra_grafico2(self):
+        self.grafico_attuale="G2"
         distribuzione = {"Pane": 0,"Dolci": 0, "Biscotti": 0, "Pizze": 0}
 
         for ordine in self.controllerlistord.get_lista_ordini_completati():
-            prodotti_ordinati = ControllerOrdine(ordine).get_lista_prodotti_ordinati()
-            if isinstance(prodotti_ordinati,list):
-                for prodotto in prodotti_ordinati:
-                    if ControllerProdotto(prodotto).get_tipo() in distribuzione:
-                        distribuzione[ControllerProdotto(prodotto).get_tipo()]+=1
+            if ControllerOrdine(ordine).get_anno_ordine()==self.anno_selezionato:
+                prodotti_ordinati = ControllerOrdine(ordine).get_lista_prodotti_ordinati()
+                if isinstance(prodotti_ordinati,list):
+                    for prodotto in prodotti_ordinati:
+                        if ControllerProdotto(prodotto).get_tipo() in distribuzione:
+                            distribuzione[ControllerProdotto(prodotto).get_tipo()]+=1
 
         # Creare il grafico a torta
         labels = list(distribuzione.keys())
         sizes = list(distribuzione.values())
-        explode=[0.05,0.05,0.05,0.05]
-        colors = plt.get_cmap('YlOrBr')(np.linspace(0.2, 0.7, len(sizes)))
-        self.figure.clear()  # Cancella qualsiasi grafico precedente dal canvas
 
-        ax = self.figure.add_subplot(111)
+        if any(sizes):
+            explode = [0.05, 0.05, 0.05, 0.05]
+            colors = plt.get_cmap('YlOrBr')(np.linspace(0.2, 0.7, len(sizes)))
+            self.figure.clear()  # Cancella qualsiasi grafico precedente dal canvas
 
-        ax.pie(sizes, labels=labels,
-        wedgeprops = {"linewidth": 1, "edgecolor": "black"}, autopct='%1.1f%%', startangle=90,explode=explode,colors=colors)
+            ax = self.figure.add_subplot(111)
 
-        ax.axis('equal')  # Equal aspect ratio per un grafico circolare
+            ax.pie(sizes, labels=labels,
+                   wedgeprops={"linewidth": 1, "edgecolor": "black"}, autopct='%1.1f%%', startangle=90, explode=explode,
+                   colors=colors)
 
-        # Aggiorna il canvas per mostrare il nuovo grafico
+            ax.axis('equal')
+
+        else:
+            self.figure.clear()
+            ax = self.figure.add_subplot(111)
+            ax.text(0.5, 0.5, 'Nessun dato disponibile', ha='center', va='center', fontsize=12)
+
         self.canvas.draw()
+
+
 
     '''def mostra_grafico3(self):
         conteggi = {}
@@ -117,19 +153,21 @@ class VistaStatistiche(QWidget):
 
         self.canvas.draw()'''
     def mostra_grafico4(self):
+        self.grafico_attuale = "G4"
         categorie_base = Counter()
         categorie_farcitura = Counter()
         categorie_copertura = Counter()
         for ordine in self.controllerlistord.get_lista_ordini_completati():
-            prodotti_ordinati = ControllerOrdine(ordine).get_lista_prodotti_ordinati()
-            if isinstance(prodotti_ordinati,Torta):
-                base = prodotti_ordinati.base
-                farcitura = prodotti_ordinati.farciture
-                copertura = prodotti_ordinati.copertura
+            if ControllerOrdine(ordine).get_anno_ordine()==self.anno_selezionato:
+                prodotti_ordinati = ControllerOrdine(ordine).get_lista_prodotti_ordinati()
+                if isinstance(prodotti_ordinati,Torta):
+                    base = prodotti_ordinati.base
+                    farcitura = prodotti_ordinati.farciture
+                    copertura = prodotti_ordinati.copertura
 
-                categorie_base[base] += 1
-                categorie_farcitura.update(farcitura)
-                categorie_copertura[copertura] += 1
+                    categorie_base[base] += 1
+                    categorie_farcitura.update(farcitura)
+                    categorie_copertura[copertura] += 1
 
         categorie_b = list(categorie_base.keys())
         quantita_b = list(categorie_base.values())
@@ -161,24 +199,26 @@ class VistaStatistiche(QWidget):
         plt.subplots_adjust(hspace=0.5)
         self.canvas.draw()
     def mostra_grafico5(self):
+        self.grafico_attuale = "G5"
         clienti_ordini = {}
         clienti_spese ={}
         for ordine in self.controllerlistord.get_lista_ordini_completati():
+            if ControllerOrdine(ordine).get_anno_ordine() == self.anno_selezionato:
 
-            nome_cliente = ControllerOrdine(ordine).get_nome_cliente()
-            email_cliente = ControllerOrdine(ordine).get_email_cliente()
+                nome_cliente = ControllerOrdine(ordine).get_nome_cliente()
+                email_cliente = ControllerOrdine(ordine).get_email_cliente()
 
             # Usare la combinazione di nome ed email come chiave per identificare univocamente i clienti
-            chiave_cliente = (nome_cliente, email_cliente)
+                chiave_cliente = (nome_cliente, email_cliente)
 
-            if chiave_cliente in clienti_ordini:
-                clienti_ordini[chiave_cliente] += 1
-            else:
-                clienti_ordini[chiave_cliente] = 1
-            if chiave_cliente in clienti_spese:
-                clienti_spese[chiave_cliente] += ControllerOrdine(ordine).get_importo()
-            else:
-                clienti_spese[chiave_cliente] = ControllerOrdine(ordine).get_importo()
+                if chiave_cliente in clienti_ordini:
+                    clienti_ordini[chiave_cliente] += 1
+                else:
+                    clienti_ordini[chiave_cliente] = 1
+                if chiave_cliente in clienti_spese:
+                    clienti_spese[chiave_cliente] += ControllerOrdine(ordine).get_importo()
+                else:
+                    clienti_spese[chiave_cliente] = ControllerOrdine(ordine).get_importo()
 
         clienti_ordini_ordinati = dict(sorted(clienti_ordini.items(), key=lambda item: item[1], reverse=True))
         clienti_spese_ordinati = dict(sorted(clienti_spese.items(), key=lambda item: item[1], reverse=True))
@@ -230,9 +270,9 @@ class VistaStatistiche(QWidget):
                 dati_tabella2.append(["N/A", "N/A", "N/A"])
 
         tabella = ax1.table(cellText=dati_tabella1, colLabels=["Cliente", "Email","Numero di Ordini"],loc='upper left',
-                           cellLoc='center',bbox=[0.1,0.5,0.8,0.5])
+                           cellLoc='center',bbox=[0.1,0.5,0.8,0.6])
         tabella2 = ax2.table(cellText=dati_tabella2, colLabels=["Cliente", "Email", "Spese"],loc='lower left',
-                            cellLoc='center',bbox=[0.1,0.0,0.8,0.5])
+                            cellLoc='center',bbox=[0.1,0.0,0.8,0.6])
         tabella.auto_set_font_size(False)
         tabella.set_fontsize(12)
         tabella.scale(1.5, 1.5)
@@ -241,6 +281,40 @@ class VistaStatistiche(QWidget):
         tabella2.scale(1.5, 1.5)
 
         self.canvas.draw()
+
+    def mostra_grafico6(self):
+        self.grafico_attuale = "G6"
+        categorie_ordini = Counter()
+        for ordine in self.controllerlistord.get_lista_ordini_completati():
+            if ControllerOrdine(ordine).get_anno_ordine() == self.anno_selezionato:
+                if ControllerOrdine(ordine).get_indirizzo()=="Negozio":
+                    categorie_ordini["Ritiro in negozio"] += 1
+                else:
+                    categorie_ordini["Consegna a domicilio"] += 1
+        categorie = list(categorie_ordini.keys())
+        num_ordini = list(categorie_ordini.values())
+
+        if any(num_ordini):
+            self.figure.clear()  # Cancella qualsiasi grafico precedente dal canvas
+
+            ax = self.figure.add_subplot(111)
+            ax.bar(categorie, num_ordini, width=0.4, color=['#F29B00', '#a36902'])
+            ax.set_ylabel('Numero di ordini')
+            ax.set_xticks(np.arange(len(categorie)))
+            ax.set_xticklabels(categorie)
+        else:
+            # Se non ci sono dati, cancella completamente il grafico e mostra solo il messaggio
+            self.figure.clf()  # Cancella completamente il grafico
+            ax = self.figure.add_subplot(111)
+            ax.text(0.5, 0.5, 'Nessun dato disponibile', ha='center', va='center', fontsize=12)
+
+        self.canvas.draw()
+
+
+
+
+
+
 
 
 

@@ -33,6 +33,9 @@ class ControllerOrdine:
         return importo
     def get_mese_ordine(self):
         return self.model.data.month
+    def get_anno_ordine(self):
+        return self.model.data.year
+
 
     def get_data_ordine(self):
         return self.model.data.strftime("%d/%m/%Y %H:%M")
