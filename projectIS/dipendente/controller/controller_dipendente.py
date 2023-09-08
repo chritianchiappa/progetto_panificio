@@ -19,3 +19,15 @@ class ControllerDipendente():
 
     def get_cfiscale_dipendente(self):
         return self.model.cfiscale
+
+    def aggiungi_notifica(self, notifica):
+        self.model.notifiche.append(notifica)
+
+    def get_lista_notifiche(self):
+        return self.model.notifiche
+
+    def get_notifica_by_index(self,index):
+        return self.model.notifiche[index]
+
+    def rimuovi_notifica_by_index(self, index):
+        self.model.notifiche.pop(index)

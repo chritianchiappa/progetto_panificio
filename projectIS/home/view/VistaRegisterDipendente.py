@@ -47,6 +47,7 @@ class VistaRegisterDipendente(QFrame):
                                "minuscola e un numero")
         else:
             dipendente_cercato= self.controller.check_dipendente_by_id(id)
+            print(dipendente_cercato.id)
             if dipendente_cercato:
                 self.controller.aggiorna_dipendente(id, email, password)
                 msg = QMessageBox()

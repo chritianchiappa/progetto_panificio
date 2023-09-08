@@ -30,10 +30,6 @@ class VistaListaDipendenti(QWidget):
             self.listview_model.appendRow(item)
         self.list_view.setModel(self.listview_model)
 
-    def closeEvent(self, event):
-        self.controller.save_data()
-        super(VistaListaDipendenti, self).closeEvent(event)
-
     def mostra_selezionato(self):
         selected = self.list_view.selectedIndexes()[0].row()
         dipendente_selezionato = self.controller.get_dipendente_by_index(selected)
@@ -50,7 +46,9 @@ class VistaListaDipendenti(QWidget):
             return
         selected_index=selected[0].row()
         self.controller.rimuovi_dipendente_by_index(selected_index)
+        self.controller.save_data()
         self.listview_model.removeRow(selected_index)
+
 
 
 

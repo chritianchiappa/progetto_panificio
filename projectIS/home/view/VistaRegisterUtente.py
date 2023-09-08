@@ -39,6 +39,7 @@ class VistaRegisterUtente(QFrame):
                 password,
                 telefono,
                 [],
+                [],
                 []
                 )
             )

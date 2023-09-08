@@ -9,8 +9,6 @@ class VistaInserisciDipendente(QWidget):
         self.controller = controller
         self.callback = callback
         self.reg_dip_button.clicked.connect(self.registra_Dipendente)
-    def closeEvent(self, event):
-        self.controller.save_data()
     def registra_Dipendente(self):
         id = self.idfield.text()
         nome = self.nomefield.text()
@@ -30,7 +28,9 @@ class VistaInserisciDipendente(QWidget):
                 indirizzo,
                 id,
                 telefono,
+                []
                 )
             )
             self.callback()
+            self.controller.save_data()
             self.close()

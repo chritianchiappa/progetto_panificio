@@ -5,6 +5,7 @@ from torta.view.PersonalizzaTorta import PersonalizzaTorta
 from listaprodotti.view.VistaListaProdotti import VistaListaProdotti
 from carrello.view.VistaCarrello import VistaCarrello
 from whishlist.view.VistaWhishlist import VistaWhishlist
+from notifica.view.VistaNotifica import VistaNotifica
 import webbrowser
 from datetime import datetime
 class HomeCliente(QWidget):
@@ -22,6 +23,7 @@ class HomeCliente(QWidget):
         self.torte_button.clicked.connect(self.go_Torte)
         self.logo_button.clicked.connect(self.open_sito)
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
+        self.notifiche_button.clicked.connect(self.vedi_notifiche)
         self.nome.setText(cliente.nome)
         self.logout_button.clicked.connect(self.logout)
         self.timer=QTimer()
@@ -59,6 +61,10 @@ class HomeCliente(QWidget):
             self.animation.setEndValue(0)
             self.animation.setEasingCurve(easing_curve)
             self.animation.start()
+
+    def vedi_notifiche(self):
+        self.VistaNotifiche=VistaNotifica(self.cliente,self.controller)
+        self.VistaNotifiche.show()
 
 
     def open_sito(self):

@@ -6,15 +6,16 @@ import webbrowser
 from datetime import datetime
 from listaprodotti.view.VistaMagazzino import VistaMagazzino
 from listaordini.view.vista_lista_ordini import VistaListaOrdini
-
+from notifica.view.VistaNotifica import VistaNotifica
 
 class HomeDipendente(QWidget):
-    def __init__(self,login,dipendente):
+    def __init__(self,login,dipendente,controller):
         super(HomeDipendente,self).__init__()
         uic.loadUi('utilizzatore/view/vistaDipendente.ui',self)
         self.setWindowTitle("Home")
         self.login=login
         self.dipendente=dipendente
+        self.controllerdip=controller
         self.logout_requested=False
         self.ordini_button.clicked.connect(self.go_Lista_Ordini)
         self.prodotti_button.clicked.connect(self.go_Prodotti)
@@ -22,6 +23,7 @@ class HomeDipendente(QWidget):
         self.nome.setText(dipendente.nome)
         self.logout_button.clicked.connect(self.logout)
         self.logo_button.clicked.connect(self.open_sito)
+        self.notifiche_button.clicked.connect(self.vedi_notifiche)
         self.timer=QTimer()
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
@@ -31,6 +33,9 @@ class HomeDipendente(QWidget):
         webbrowser.open(
             "https://www.tripadvisor.it/Restaurant_Review-g1934128-d15861838-Reviews-Il_Piccolo_Forno-Castelplanio_Province_of_Ancona_Marche.html")
 
+    def vedi_notifiche(self):
+        self.VistaNotifiche=VistaNotifica(self.dipendente,self.controllerdip)
+        self.VistaNotifiche.show()
     def update_time(self):
         time=datetime.now()
         formatted_time= time.strftime("%H:%M:%S")

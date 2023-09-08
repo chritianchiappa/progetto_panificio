@@ -72,7 +72,7 @@ class VistaLogin(QDialog):
             self.HomeC.show()
             self.hide()
         elif utente_dipendente:
-            self.HomeD = HomeDipendente(self,utente_dipendente)
+            self.HomeD = HomeDipendente(self,utente_dipendente,self.controllerdip)
             self.HomeD.show()
             self.hide()
         else:
@@ -80,7 +80,7 @@ class VistaLogin(QDialog):
 
 
     def accedi_Amm(self):
-        self.LogAmm= VistaLogAmm(self)
+        self.LogAmm= VistaLogAmm(self,self.controller,self.controllerdip)
         self.LogAmm.show()
 
     def closeEvent(self, event):

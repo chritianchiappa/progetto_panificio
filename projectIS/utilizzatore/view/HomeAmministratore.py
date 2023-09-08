@@ -4,16 +4,18 @@ from PyQt6.QtCore import QTimer,QPropertyAnimation,QEasingCurve
 from listadipendenti.view.vista_lista_dipendenti import VistaListaDipendenti
 import webbrowser
 from datetime import datetime
-
+from notifica.view.InviaNotifica import InviaNotifica
 from statistiche.view.VistaStatistiche import VistaStatistiche
 
 
 class HomeAmministratore(QWidget):
-    def __init__(self,login):
+    def __init__(self,login,controller,controllerdip):
         super(HomeAmministratore,self).__init__()
         uic.loadUi('utilizzatore/view/vistaAmministratore.ui',self)
         self.setWindowTitle("Home")
         self.login=login
+        self.controller=controller
+        self.controllerdip=controllerdip
         self.logout_requested = False
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
         self.dipendenti_button.clicked.connect(self.go_Lista_Dipendenti)
@@ -22,6 +24,7 @@ class HomeAmministratore(QWidget):
         self.cassa_button.clicked.connect(self.go_Cassa)
         self.logout_button.clicked.connect(self.logout)
         self.logo_button.clicked.connect(self.open_sito)
+        self.notifiche_button.clicked.connect(self.crea_notifica)
         self.timer=QTimer()
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
@@ -50,6 +53,9 @@ class HomeAmministratore(QWidget):
             self.login.clear_fields()
             self.login.show()
             self.close()
+    def crea_notifica(self):
+        self.SendNot=InviaNotifica(self.controller,self.controllerdip)
+        self.SendNot.show()
 
     def slideMenu(self):
         self.animation = QPropertyAnimation(self.slide_menu, b"maximumWidth")
