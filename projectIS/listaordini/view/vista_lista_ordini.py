@@ -1,18 +1,23 @@
 from PyQt6 import uic
-from PyQt6.QtWidgets import QWidget,QTableWidgetItem,QAbstractItemView
+from PyQt6.QtWidgets import QWidget,QTableWidgetItem
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
 from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
+from cliente.controller.ControllerCliente import ControllerCliente
+
 from ordine.controller.ControllerOrdine import ControllerOrdine
 from torta.model.Torta import Torta
 from torta.view.CompletaTorta import CompletaTorta
 
+from notifica.model.Notifica import Notifica
+
 
 class VistaListaOrdini(QWidget):
 
-    def __init__(self, parent=None):
-        super(VistaListaOrdini, self).__init__(parent)
+    def __init__(self, controllerc):
+        super(VistaListaOrdini, self).__init__()
         uic.loadUi('listaordini/view/vistaOrdini.ui', self)
         self.controller = ControllerListaOrdini()
+        self.controllerc=controllerc
         self.update_ui()
         self.dettagli_ordine_button.clicked.connect(self.mostra_dettagli)
         self.completato_button.clicked.connect(self.completa_ordine)
@@ -121,8 +126,16 @@ class VistaListaOrdini(QWidget):
                 self.completa_salva_rimuovi(ordine_selezionato,selected_row)
 
     def completa_salva_rimuovi(self,ordine_selezionato,selected_row):
+        cliente_email=ControllerOrdine(ordine_selezionato).get_email_cliente()
+        cliente_password=ControllerOrdine(ordine_selezionato).get_password_cliente()
+        cliente_c=self.controllerc.check_cliente(cliente_email,cliente_password)
+
+        data_ordine=ControllerOrdine(ordine_selezionato).get_data_ordine()
+        notifica=Notifica("Ordine completato",f"il tuo ordine effettuato in data {data_ordine} è stato completato")
         ControllerOrdine(ordine_selezionato).completa_ordine()
+        ControllerCliente(cliente_c).aggiungi_notifica(notifica)
         self.tableWidget.removeRow(selected_row)
+        self.controllerc.save_data()
         self.controller.save_data()
 
 

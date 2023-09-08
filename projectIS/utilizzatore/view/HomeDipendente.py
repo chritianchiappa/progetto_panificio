@@ -9,13 +9,14 @@ from listaordini.view.vista_lista_ordini import VistaListaOrdini
 from notifica.view.VistaNotifica import VistaNotifica
 
 class HomeDipendente(QWidget):
-    def __init__(self,login,dipendente,controller):
+    def __init__(self,login,dipendente,controllerdip,controllerc):
         super(HomeDipendente,self).__init__()
         uic.loadUi('utilizzatore/view/vistaDipendente.ui',self)
         self.setWindowTitle("Home")
         self.login=login
         self.dipendente=dipendente
-        self.controllerdip=controller
+        self.controllerdip=controllerdip
+        self.controllerc=controllerc
         self.logout_requested=False
         self.ordini_button.clicked.connect(self.go_Lista_Ordini)
         self.prodotti_button.clicked.connect(self.go_Prodotti)
@@ -71,7 +72,7 @@ class HomeDipendente(QWidget):
             self.animation.start()
 
     def go_Lista_Ordini(self):
-        self.VistaOrdini=VistaListaOrdini()
+        self.VistaOrdini=VistaListaOrdini(self.controllerc)
         self.VistaOrdini.show()
 
     def go_Prodotti(self):

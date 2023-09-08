@@ -33,7 +33,7 @@ class VistaStatistiche(QWidget):
         self.mostra_grafico1()
         self.vendite_mensili_button.clicked.connect(self.mostra_grafico1)
         self.vendite_tipologia_button.clicked.connect(self.mostra_grafico2)
-        #self.prodotti_piu_venduti_button.clicked.connect(self.mostra_grafico3)
+        self.prodotti_piu_venduti_button.clicked.connect(self.mostra_grafico3)
         self.stats_torte_button.clicked.connect(self.mostra_grafico4)
         self.stats_clienti_button.clicked.connect(self.mostra_grafico5)
         self.stats_consegna_button.clicked.connect(self.mostra_grafico6)
@@ -47,6 +47,8 @@ class VistaStatistiche(QWidget):
             self.mostra_grafico1()
         elif self.grafico_attuale == "G2":
             self.mostra_grafico2()
+        elif self.grafico_attuale == "G3":
+            self.mostra_grafico3()
         elif self.grafico_attuale == "G4":
             self.mostra_grafico4()
         elif self.grafico_attuale == "G5":
@@ -70,20 +72,14 @@ class VistaStatistiche(QWidget):
         self.figure.clear()  # Cancella qualsiasi grafico precedente dal canvas
         ax = self.figure.add_subplot(111)
 
-        ax.plot(mesi, valori, marker='o', linestyle='-', color='#F29B00',linewidth=2)
+        ax.plot(mesi, valori, marker='o', linestyle='none', color='#F29B00',linewidth=2)
         ax.set_xlabel('Mesi')
-        ax.set_ylabel('Vendite')
+        ax.set_ylabel('Vendite (€)')
         ax.set_title('Vendite Mensili')
         ax.grid(True)  # Aggiungi una griglia al grafico
 
-        '''cursor = mplcursors.cursor(hover=True)
-
-        def formatta_etichetta(sel):
-            # mese_selezionato = mesi[sel.target.index]
-            vendita_corrispondente = valori[sel.target.index]
-            sel.annotation.set_text(f'Vendite: {vendita_corrispondente}')
-
-        cursor.connect("add", formatta_etichetta)'''
+        for i, txt in enumerate(valori):
+            ax.annotate(round(txt,2), (mesi[i], valori[i]), textcoords="offset points", xytext=(0, 10), ha='center')
 
         self.canvas.draw()
 
@@ -126,32 +122,45 @@ class VistaStatistiche(QWidget):
 
 
 
-    '''def mostra_grafico3(self):
-        conteggi = {}
+    def mostra_grafico3(self):
+        self.grafico_attuale = "G3"
+        mesi = {"gen": {"conteggi": {}}, "feb": {"conteggi": {}}, "mar": {"conteggi": {}}, "apr": {"conteggi": {}},
+                "mag": {"conteggi": {}}, "giu": {"conteggi": {}}, "lug": {"conteggi": {}}, "ago": {"conteggi": {}},
+                "set": {"conteggi": {}}, "ott": {"conteggi": {}}, "nov": {"conteggi": {}}, "dic": {"conteggi": {}}}
+
+        mesiNum = {1: "gen", 2: "feb", 3: "mar", 4: "apr", 5: "mag", 6: "giu", 7: "lug", 8: "ago", 9: "set", 10: "ott",
+                   11: "nov", 12: "dic"}
+        dati_tabella = [["Mese", "Prodotto", "Quantità"]]
 
         for ordine in self.controllerlistord.get_lista_ordini():
-            print(ordine)
-            for prod in ControllerOrdine(ordine).get_lista_prodotti_ordinati():
-                print(prod)
-                if ControllerProdotto(prod).get_nome() in conteggi:
-                    conteggi[ControllerProdotto(prod).get_nome()] += ControllerProdotto(prod).get_quantita()
-                else:
-                    conteggi[ControllerProdotto(prod).get_nome()] = ControllerProdotto(prod).get_quantita()
+            for mese, mesiNome in zip(mesiNum, mesi):
+                if mese == ControllerOrdine(ordine).get_mese_ordine():
+                    for prod in ControllerOrdine(ordine).get_lista_prodotti_ordinati():
+                        if ControllerProdotto(prod).get_nome() in mesi[mesiNome]["conteggi"]:
+                            mesi[mesiNome]["conteggi"][ControllerProdotto(prod).get_nome()] += ControllerProdotto(
+                                prod).get_quantita()
+                        else:
+                            mesi[mesiNome]["conteggi"][ControllerProdotto(prod).get_nome()] = ControllerProdotto(
+                                prod).get_quantita()
 
-        print(conteggi)
+        for mesiNome in mesi:
+            prodotti_ordinati = sorted(mesi[mesiNome]["conteggi"].items(), key=lambda x: x[1], reverse=True)
+            primo_prodotto = dict(prodotti_ordinati[:1])
+            nome = list(primo_prodotto.keys())
+            quantita = list(primo_prodotto.values())
+            dati_tabella.append([mesiNome, nome, quantita])
 
         self.figure.clear()
         ax = self.figure.add_subplot(111)
 
-        tabella = ax.table(cellText=dati, loc='center', cellLoc='center')
+        tabella = ax.table(cellText=dati_tabella, loc='center', cellLoc='center')
 
         ax.axis('off')
 
         tabella.auto_set_font_size(False)
         tabella.set_fontsize(12)
         tabella.scale(1.2, 1.2)
-
-        self.canvas.draw()'''
+        self.canvas.draw()
     def mostra_grafico4(self):
         self.grafico_attuale = "G4"
         categorie_base = Counter()

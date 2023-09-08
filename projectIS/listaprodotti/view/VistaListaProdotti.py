@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QWidget, QMessageBox
 from PyQt6 import uic
 from prodotto.view.VistaProdotto import VistaProdotto
 from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
-from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
+
 class VistaListaProdotti(QWidget):
     def __init__(self,cliente,controller):
         super(VistaListaProdotti, self).__init__()

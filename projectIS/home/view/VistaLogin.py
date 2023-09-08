@@ -72,7 +72,7 @@ class VistaLogin(QDialog):
             self.HomeC.show()
             self.hide()
         elif utente_dipendente:
-            self.HomeD = HomeDipendente(self,utente_dipendente,self.controllerdip)
+            self.HomeD = HomeDipendente(self,utente_dipendente,self.controllerdip,self.controller)
             self.HomeD.show()
             self.hide()
         else:

@@ -10,6 +10,8 @@ class ControllerCliente():
 
     def get_email(self):
         return str(self.model.email)
+    def get_password(self):
+        return str(self.model.password)
 
     def get_telefono(self):
         return str(self.model.telefono)
