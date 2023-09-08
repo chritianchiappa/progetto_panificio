@@ -5,12 +5,12 @@ from prodotto.view.VistaProdotto import VistaProdotto
 from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
 
 class VistaListaProdotti(QWidget):
-    def __init__(self,cliente,controller):
+    def __init__(self,cliente,controller,controllerp):
         super(VistaListaProdotti, self).__init__()
         uic.loadUi('listaprodotti/view/vistaListaProdotti.ui', self)
         self.cliente=cliente
         self.setWindowTitle("Shop")
-        self.controller_lista_prodotti = ControllerListaProdotti()
+        self.controller_lista_prodotti = controllerp
         self.controller_lista_clienti=controller
         self.lista_prodotti = self.controller_lista_prodotti.get_lista_prodotti()
         self.lista_prodotti_filtrata = self.lista_prodotti[:]
@@ -25,7 +25,6 @@ class VistaListaProdotti(QWidget):
         col=0
         row=0
         for prodotto in lista:
-            print(prodotto.nome + str(prodotto.quantita))
             self.aggiungi_prodotto(row,col,prodotto)
             col += 1
             if col >= 3:

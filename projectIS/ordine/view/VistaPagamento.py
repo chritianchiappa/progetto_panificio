@@ -1,18 +1,19 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget,QMessageBox
-from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QDateTime, QDate, QTime
+from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QDateTime
 from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from ordine.model.Ordine import Ordine
 from datetime import datetime
 class VistaPagamento(QWidget):
 
-    def __init__(self, prodotti,cliente):
+    def __init__(self, prodotti,cliente,controllerp):
         super(VistaPagamento, self).__init__()
         uic.loadUi('ordine/view/VistaPagamento.ui', self)
         self.prodotti=prodotti
         self.cliente=cliente
         self.controllerord = ControllerListaOrdini()
+        self.controllerprodotti=controllerp
         self.animation = QPropertyAnimation(self.slide_frame, b"maximumHeight")
         self.animation.setDuration(250)
         self.easing_curve = QEasingCurve(QEasingCurve.Type.Linear)
@@ -32,8 +33,16 @@ class VistaPagamento(QWidget):
             importo+=ControllerProdotto(prodotto).get_prezzo()
         return round(importo,2)
 
-
-
+    def scala_quantita(self):
+        for prodotto in self.prodotti:
+            print(prodotto.nome)
+            quantita_ord=ControllerProdotto(prodotto).get_quantita()
+            print(f"quantita ordinata {quantita_ord}")
+            #prod_c=self.controllerprodotti.check_prodotto(prodotto.nome)
+            #quantita_prod=ControllerProdotto(prod_c).get_quantita()
+            #print(f"quantita ordinata {quantita_prod}")
+            #ControllerProdotto(prod_c).set_quantita(quantita_prod-quantita_ord)
+        self.controllerprodotti.save_data()
     def toggle_indirizzo_label(self):
         if self.spedizione.isChecked():
             self.animation.setStartValue(0)
@@ -75,6 +84,7 @@ class VistaPagamento(QWidget):
             data_consegna,
             False)
         )
+        self.scala_quantita()
 
         self.controllerord.save_data()
         self.popup("Ordine effettuato con successo",QMessageBox.Icon.Information)

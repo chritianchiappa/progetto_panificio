@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
 from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QTimer
 from torta.view.PersonalizzaTorta import PersonalizzaTorta
+from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
 from listaprodotti.view.VistaListaProdotti import VistaListaProdotti
 from carrello.view.VistaCarrello import VistaCarrello
 from whishlist.view.VistaWhishlist import VistaWhishlist
@@ -16,6 +17,7 @@ class HomeCliente(QWidget):
         self.cliente=cliente
         self.login=login
         self.controller=controller
+        self.controllerp=ControllerListaProdotti()
         self.logout_requested = False
         self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente,self.controller))
         self.whishlist_button.clicked.connect(lambda: self.go_Whishlist(cliente,self.controller))
@@ -79,7 +81,7 @@ class HomeCliente(QWidget):
         self.Data.setText(formatted_data)
 
     def go_carrello(self,cliente,controller):
-        self.Carrello=VistaCarrello(cliente,controller)
+        self.Carrello=VistaCarrello(cliente,controller,self.controllerp)
         self.Carrello.show()
     def go_Torte(self):
         self.Torte=PersonalizzaTorta(self.cliente)
@@ -89,7 +91,7 @@ class HomeCliente(QWidget):
         self.Whishlist.show()
 
     def go_Prodotti(self,cliente,controller):
-        self.Shop=VistaListaProdotti(cliente,controller)
+        self.Shop=VistaListaProdotti(cliente,controller,self.controllerp)
         self.Shop.show()
 
     def closeEvent(self,event):

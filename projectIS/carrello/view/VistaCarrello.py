@@ -2,7 +2,7 @@ from PyQt6 import uic
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
 from PyQt6.QtWidgets import QWidget
 from cliente.controller.ControllerCliente import ControllerCliente
-from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
+
 
 from ordine.view.VistaPagamento import VistaPagamento
 
@@ -10,12 +10,12 @@ from prodotto.controller.ControllerProdotto import ControllerProdotto
 
 
 class VistaCarrello(QWidget):
-     def __init__(self, cliente,controller):
+     def __init__(self, cliente,controller,controllerp):
         super(VistaCarrello, self).__init__()
         uic.loadUi('carrello/view/vistaCarrello.ui', self)
         self.cliente=cliente
         self.controller = ControllerCliente(cliente)
-        self.controllerprod = ControllerListaProdotti()
+        self.controllerprodotti = controllerp
 
         self.controller_lista_clienti = controller
         self.update_ui()
@@ -44,7 +44,7 @@ class VistaCarrello(QWidget):
      def acquista_selezionato(self):
          selected = self.list_view.selectedIndexes()[0].row()
          prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected)
-         self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente)
+         self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti)
          self.VistaOrdFin.show()
 
 
@@ -80,7 +80,7 @@ class VistaCarrello(QWidget):
          self.update_ui()
 
      def ordina_tutto(self):
-         self.VistaOrdFin = VistaPagamento(self.controller.get_carrello_cliente(), self.cliente)
+         self.VistaOrdFin = VistaPagamento(self.controller.get_carrello_cliente(), self.cliente,self.controllerprodotti)
          self.VistaOrdFin.show()
 
 

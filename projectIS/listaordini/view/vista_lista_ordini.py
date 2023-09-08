@@ -120,18 +120,24 @@ class VistaListaOrdini(QWidget):
             prodotti_ordinati=ControllerOrdine(ordine_selezionato).get_lista_prodotti_ordinati()
 
             if isinstance(prodotti_ordinati,Torta):
+
                 self.complTorta=CompletaTorta(self,ordine_selezionato,selected_row,prodotti_ordinati)
                 self.complTorta.show()
             else:
-                self.completa_salva_rimuovi(ordine_selezionato,selected_row)
+                self.completa_salva_rimuovi(ordine_selezionato,selected_row,None)
 
-    def completa_salva_rimuovi(self,ordine_selezionato,selected_row):
+    def completa_salva_rimuovi(self,ordine_selezionato,selected_row,prezzo):
         cliente_email=ControllerOrdine(ordine_selezionato).get_email_cliente()
         cliente_password=ControllerOrdine(ordine_selezionato).get_password_cliente()
         cliente_c=self.controllerc.check_cliente(cliente_email,cliente_password)
+        data_ordine = ControllerOrdine(ordine_selezionato).get_data_ordine()
+        if prezzo:
+            notifica = Notifica("Torta completata",
+                                f"la torta ordinata in data {data_ordine} è stata completata, il prezzo ammonta a {prezzo}€")
+        else:
+            notifica = Notifica("Ordine completato",
+                                f"il tuo ordine effettuato in data {data_ordine} è stato completato")
 
-        data_ordine=ControllerOrdine(ordine_selezionato).get_data_ordine()
-        notifica=Notifica("Ordine completato",f"il tuo ordine effettuato in data {data_ordine} è stato completato")
         ControllerOrdine(ordine_selezionato).completa_ordine()
         ControllerCliente(cliente_c).aggiungi_notifica(notifica)
         self.tableWidget.removeRow(selected_row)

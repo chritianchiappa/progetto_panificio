@@ -26,7 +26,7 @@ class CompletaTorta(QDialog):
             self.torta.peso=peso
             self.torta.prezzo=prezzo
 
-            self.lista_ordini.completa_salva_rimuovi(self.ordine_selezionato,self.selected_row)
+            self.lista_ordini.completa_salva_rimuovi(self.ordine_selezionato,self.selected_row,prezzo)
             self.close()
         else:
             self.pop_up()
