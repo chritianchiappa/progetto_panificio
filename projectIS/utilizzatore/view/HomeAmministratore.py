@@ -73,7 +73,7 @@ class HomeAmministratore(QWidget):
             self.animation.start()
 
     def go_Lista_Dipendenti(self):
-        self.VistaDip = VistaListaDipendenti()
+        self.VistaDip = VistaListaDipendenti(self.controllerdip)
         self.VistaDip.show()
     def go_Magazzino(self):
         #self.VistaIng=VistaIngredienti()

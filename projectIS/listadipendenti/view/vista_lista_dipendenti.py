@@ -3,14 +3,14 @@ from PyQt6.QtGui import QStandardItemModel, QStandardItem
 from PyQt6.QtWidgets import QWidget
 
 from listadipendenti.view.vista_inserisci_dipendente import VistaInserisciDipendente
-from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
+
 from dipendente.view.vista_dipendente import VistaDipendente
 class VistaListaDipendenti(QWidget):
 
-    def __init__(self, parent=None):
-        super(VistaListaDipendenti, self).__init__(parent)
+    def __init__(self,controllerdip):
+        super(VistaListaDipendenti, self).__init__()
         uic.loadUi('listadipendenti/view/vistalistadipendenti.ui', self)
-        self.controller = ControllerListaDipendenti()
+        self.controller = controllerdip
         self.update_ui()
         first_index = self.listview_model.index(0, 0)
         self.list_view.setCurrentIndex(first_index)
