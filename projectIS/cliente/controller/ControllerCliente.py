@@ -31,6 +31,8 @@ class ControllerCliente():
 
     def rimuovi_prodotto_carrello_index(self,index):
         self.model.carrello.pop(index)
+    def rimuovi_prodotto_carrello(self,prodotto):
+        self.model.carrello.remove(prodotto)
     def rimuovi_prodotto_whishlist_index(self,index):
         self.model.whishlist.pop(index)
 

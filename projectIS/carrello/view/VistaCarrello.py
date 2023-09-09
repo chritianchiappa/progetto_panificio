@@ -44,7 +44,7 @@ class VistaCarrello(QWidget):
      def acquista_selezionato(self):
          selected = self.list_view.selectedIndexes()[0].row()
          prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected)
-         self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti)
+         self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
          self.VistaOrdFin.show()
 
 
@@ -80,12 +80,14 @@ class VistaCarrello(QWidget):
          self.update_ui()
 
      def ordina_tutto(self):
-         self.VistaOrdFin = VistaPagamento(self.controller.get_carrello_cliente(), self.cliente,self.controllerprodotti)
+         self.VistaOrdFin = VistaPagamento(self.controller.get_carrello_cliente(), self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
          self.VistaOrdFin.show()
 
 
      def closeEvent(self, event):
-         self.controller_lista_clienti.aggiorna_carrello_cliente(self.cliente.email, self.cliente.password,
-                                                                 self.cliente.carrello)
+         #self.controller_lista_clienti.aggiorna_carrello_cliente(self.cliente.email, self.cliente.password,
+                                                                 #self.cliente.carrello)
          self.controller_lista_clienti.save_data()
+
+
 

@@ -27,7 +27,7 @@ class ControllerListaProdotti:
         self.model.aggiorna_quantita_prodotto(nome,quantita)
 
     def check_prodotto(self,nome):
-        self.model.check_prodotto(nome)
+        return self.model.check_prodotto(nome)
 
     def refresh_data(self):
         self.model.refresh_data()

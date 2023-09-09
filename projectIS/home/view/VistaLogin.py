@@ -9,9 +9,9 @@ from home.view.VistaLogAmm import VistaLogAmm
 from utilizzatore.view.HomeDipendente import HomeDipendente
 from cliente.view.HomeCliente import HomeCliente
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
-from listaclienti.model.lista_clienti import ListaClienti
+
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
-from listadipendenti.model.lista_dipendenti import ListaDipendenti
+
 
 from home.view import res_rc
 

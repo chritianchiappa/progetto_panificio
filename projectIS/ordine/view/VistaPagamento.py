@@ -3,15 +3,20 @@ from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QDateTime
 from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from prodotto.controller.ControllerProdotto import ControllerProdotto
+from cliente.controller.ControllerCliente import ControllerCliente
 from ordine.model.Ordine import Ordine
 from datetime import datetime
 class VistaPagamento(QWidget):
 
-    def __init__(self, prodotti,cliente,controllerp):
+    def __init__(self, prodotti,cliente,controllerp,controllerc,callback):
         super(VistaPagamento, self).__init__()
         uic.loadUi('ordine/view/VistaPagamento.ui', self)
         self.prodotti=prodotti
+        for prodotto in self.prodotti:
+            print(prodotto.nome)
         self.cliente=cliente
+        self.controller_lista_clienti=controllerc
+        self.callback=callback
         self.controllerord = ControllerListaOrdini()
         self.controllerprodotti=controllerp
         self.animation = QPropertyAnimation(self.slide_frame, b"maximumHeight")
@@ -37,11 +42,9 @@ class VistaPagamento(QWidget):
         for prodotto in self.prodotti:
             print(prodotto.nome)
             quantita_ord=ControllerProdotto(prodotto).get_quantita()
-            print(f"quantita ordinata {quantita_ord}")
-            #prod_c=self.controllerprodotti.check_prodotto(prodotto.nome)
-            #quantita_prod=ControllerProdotto(prod_c).get_quantita()
-            #print(f"quantita ordinata {quantita_prod}")
-            #ControllerProdotto(prod_c).set_quantita(quantita_prod-quantita_ord)
+            prod_c=self.controllerprodotti.check_prodotto(prodotto.nome)
+            quantita_prod=ControllerProdotto(prod_c).get_quantita()
+            ControllerProdotto(prod_c).set_quantita(quantita_prod-quantita_ord)
         self.controllerprodotti.save_data()
     def toggle_indirizzo_label(self):
         if self.spedizione.isChecked():
@@ -76,6 +79,7 @@ class VistaPagamento(QWidget):
 
 
     def ordina(self,indirizzo,data_consegna):
+
         self.controllerord.inserisci_ordine(Ordine(
             self.prodotti,
             datetime.now(),
@@ -84,10 +88,15 @@ class VistaPagamento(QWidget):
             data_consegna,
             False)
         )
+        prodotti_da_rimuovere = self.prodotti[:]
         self.scala_quantita()
-
+        for prodotto_carrello in prodotti_da_rimuovere:
+            print(prodotto_carrello.nome)
+            ControllerCliente(self.cliente).rimuovi_prodotto_carrello(prodotto_carrello)
+        self.controller_lista_clienti.save_data()
         self.controllerord.save_data()
         self.popup("Ordine effettuato con successo",QMessageBox.Icon.Information)
+        self.callback()
         self.close()
 
     def popup(self,text,icon):

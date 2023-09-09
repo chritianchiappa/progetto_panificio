@@ -1,5 +1,5 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
 import os
 from PyQt6.QtGui import QPixmap,QPainter, QPainterPath
@@ -25,16 +25,21 @@ class VistaProdotto(QWidget):
         self.nome.setText(self.prodotto.nome)
         self.prezzo.setText(f"{self.prodotto.prezzo} €")
         self.agg_carrello_button.clicked.connect(self.aggiungi_al_carrello)
-        self.acquista_button.clicked.connect(self.acquista)
+
         self.like_button.clicked.connect(self.aggiungi_whishlist)
         self.dettagli_button.clicked.connect(self.mostra_dettagli)
 
-
-
     def popola_combobox(self):
         self.selettore_quantita.clear()
-        for quantita in range(1, int(self.prodotto.quantita) + 1):
-            self.selettore_quantita.addItem(str(quantita))
+        quantita_disponibile = int(self.prodotto.quantita)
+
+        # Aggiungi le opzioni solo se la quantità è maggiore di 0
+        if quantita_disponibile > 0:
+            for quantita in range(1, quantita_disponibile + 1):
+                self.selettore_quantita.addItem(str(quantita))
+        else:
+            self.selettore_quantita.addItem("Esaurito")
+            self.agg_carrello_button.setDisabled(False)
 
     def mostra_immagine(self):
         if os.path.isfile('immagini/' + str(self.prodotto.nome) + '.png'):
@@ -48,11 +53,11 @@ class VistaProdotto(QWidget):
 
     def aggiungi_al_carrello(self):
         quantita_selezionata = int(self.selettore_quantita.currentText())
-        self.controller_cliente.aggiungi_prodotto_carrello(self.prodotto,quantita_selezionata)
+        prodotto_copia = self.prodotto.copia()
+        self.controller_cliente.aggiungi_prodotto_carrello(prodotto_copia,quantita_selezionata)
+        self.popup(f"{self.prodotto.nome} aggiunto al carrello",QMessageBox.Icon.Information)
 
-        print(f"{self.prodotto.nome} aggiunto al carrello di {self.cliente.nome}")
-    def acquista(self):
-        print(f"{self.prodotto.nome} acquistato da {self.cliente.nome}")
+
 
     def aggiungi_whishlist(self):
         if self.like_button.isChecked():
@@ -70,4 +75,11 @@ class VistaProdotto(QWidget):
             if self.prodotto.nome==prodotto_liked.nome:
                 self.like_button.setChecked(True)
 
-
+    def popup(self, text, icon):
+        msg = QMessageBox()
+        msg.setWindowTitle("ATTENZIONE")
+        msg.setText(text)
+        msg.setIcon(icon)
+        msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msg.setDefaultButton(QMessageBox.StandardButton.Ok)
+        msg.exec()

@@ -20,6 +20,9 @@ class ControllerListaClienti():
     def check_cliente(self,email,password):
         return self.model.check_cliente(email,password)
 
+    def check_email(self,email):
+        return self.model.check_email(email)
+
     def ritorna_nome(self,cognome):
         return self.model.ritorna_nome(cognome)
 

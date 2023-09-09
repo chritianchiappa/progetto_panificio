@@ -19,7 +19,7 @@ class HomeCliente(QWidget):
         self.controller=controller
         self.controllerp=ControllerListaProdotti()
         self.logout_requested = False
-        self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente,self.controller))
+        self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente))
         self.whishlist_button.clicked.connect(lambda: self.go_Whishlist(cliente,self.controller))
         self.shop_button.clicked.connect(lambda: self.go_Prodotti(cliente,self.controller))
         self.torte_button.clicked.connect(self.go_Torte)
@@ -80,8 +80,8 @@ class HomeCliente(QWidget):
         self.Ora.setText(formatted_time)
         self.Data.setText(formatted_data)
 
-    def go_carrello(self,cliente,controller):
-        self.Carrello=VistaCarrello(cliente,controller,self.controllerp)
+    def go_carrello(self,cliente):
+        self.Carrello=VistaCarrello(cliente,self.controller,self.controllerp)
         self.Carrello.show()
     def go_Torte(self):
         self.Torte=PersonalizzaTorta(self.cliente)

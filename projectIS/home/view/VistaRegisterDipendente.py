@@ -10,6 +10,7 @@ class VistaRegisterDipendente(QFrame):
         super(VistaRegisterDipendente,self).__init__()
         uic.loadUi('home/view/vistaregisterdipendente.ui',self)
         self.controller = controller
+        self.setWindowTitle("Registrazione dipendente")
         self.registrati_button.clicked.connect(self.reg_dipendente)
         self.sp_button.clicked.connect(self.show_password)
         self.scp_button.clicked.connect(self.show_cpassword)
