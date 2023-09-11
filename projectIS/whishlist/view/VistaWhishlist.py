@@ -9,6 +9,7 @@ class VistaWhishlist(QWidget):
     def __init__(self, cliente,controller):
         super(VistaWhishlist, self).__init__()
         uic.loadUi('whishlist/view/vistaWhishlist.ui', self)
+        self.setWindowTitle("Lista dei desideri")
         self.cliente = cliente
         self.controller_lista_clienti = controller
         self.controller = ControllerCliente(cliente)

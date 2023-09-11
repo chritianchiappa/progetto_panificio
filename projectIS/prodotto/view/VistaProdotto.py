@@ -39,14 +39,14 @@ class VistaProdotto(QWidget):
                 self.selettore_quantita.addItem(str(quantita))
         else:
             self.selettore_quantita.addItem("Esaurito")
-            self.agg_carrello_button.setDisabled(False)
+            self.agg_carrello_button.setEnabled(False)
 
     def mostra_immagine(self):
         if os.path.isfile('immagini/' + str(self.prodotto.nome) + '.png'):
             pixmap = QPixmap('immagini/' + str(self.prodotto.nome) + '.png')
         else:
             pixmap = QPixmap('immagini/noimage.png')
-        pixmap_scaled = pixmap.scaled(320, 220, Qt.AspectRatioMode.KeepAspectRatio)
+        pixmap_scaled = pixmap.scaled(320, 200, Qt.AspectRatioMode.KeepAspectRatio)
 
         self.immagine_prodotto.setPixmap(pixmap_scaled)
 
@@ -64,11 +64,18 @@ class VistaProdotto(QWidget):
             self.controller_cliente.aggiungi_prodotto_whishlist(self.prodotto)
         else:
             self.controller_cliente.rimuovi_prodotto_whishlist(self.prodotto)
-        print(f"{self.prodotto.nome} aggiunto a Whishlist di {self.cliente.nome}")
+
 
     def mostra_dettagli(self):
-        for ingrediente in self.lista_ingredienti:
-            print(ingrediente.nome)
+        if self.dettagli_button.isChecked():
+            self.stackedWidget.setCurrentWidget(self.page_2)
+            str_ingr = ", ".join(
+                ingrediente.nome for ingrediente in ControllerProdotto(self.prodotto).get_lista_ingredienti())
+            self.ingredienti.setText(str_ingr)
+            str_all = ", ".join(allergene for allergene in ControllerProdotto(self.prodotto).get_allergeni())
+            self.allergeni.setText(str_all)
+        else:
+            self.stackedWidget.setCurrentWidget(self.page_1)
 
     def controlla_like(self):
         for prodotto_liked in self.controller_cliente.get_whishlist_cliente():

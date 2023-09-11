@@ -25,60 +25,27 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:none;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>0</number>
+    <number>6</number>
    </property>
    <property name="leftMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
    <property name="rightMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
-   <item>
-    <widget class="QFrame" name="frame_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>70</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <family>Arial Black</family>
-          <pointsize>18</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Ordini</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item>
     <widget class="QFrame" name="frame">
      <property name="frameShape">
@@ -145,6 +112,9 @@
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
               <widget class="QTableWidget" name="tableWidget">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -223,6 +193,11 @@
                        <height>16777215</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <family>Tiro Kannada</family>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>Nome:</string>
                      </property>
@@ -230,6 +205,11 @@
                    </item>
                    <item>
                     <widget class="QLabel" name="nome">
+                     <property name="font">
+                      <font>
+                       <family>Tiro Kannada</family>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>TextLabel</string>
                      </property>
@@ -255,6 +235,11 @@
                        <height>16777215</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <family>Tiro Kannada</family>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>Telefono:</string>
                      </property>
@@ -262,6 +247,11 @@
                    </item>
                    <item>
                     <widget class="QLabel" name="telefono">
+                     <property name="font">
+                      <font>
+                       <family>Tiro Kannada</family>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>TextLabel</string>
                      </property>
@@ -287,6 +277,11 @@
                        <height>16777215</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <family>Tiro Kannada</family>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>Email:</string>
                      </property>
@@ -294,6 +289,11 @@
                    </item>
                    <item>
                     <widget class="QLabel" name="email">
+                     <property name="font">
+                      <font>
+                       <family>Tiro Kannada</family>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>TextLabel</string>
                      </property>
@@ -365,7 +365,29 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QListView" name="list_view"/>
+                 <widget class="QListView" name="list_view">
+                  <property name="font">
+                   <font>
+                    <family>Tiro Kannada</family>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QListView{
+background-color:rgba(0,0,0,225);
+border-radius:10px;
+color:white;
+padding-left:5px;
+padding-top:10px;
+padding-right:5px;
+}
+
+QListView::item:selected {
+border-radius:3px;
+background-color: rgb(242, 155, 0);
+color:black;
+}</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -385,11 +407,20 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>170</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>150</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-left:2px solid black;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -399,63 +430,92 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="spacing">
-          <number>10</number>
+          <number>6</number>
          </property>
          <property name="leftMargin">
-          <number>0</number>
+          <number>9</number>
          </property>
          <property name="topMargin">
-          <number>10</number>
+          <number>15</number>
          </property>
          <property name="rightMargin">
-          <number>0</number>
+          <number>9</number>
          </property>
          <property name="bottomMargin">
-          <number>0</number>
+          <number>9</number>
          </property>
          <item>
-          <widget class="QToolButton" name="dettagli_ordine_button">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
+          <widget class="QPushButton" name="dettagli_ordine_button">
            <property name="minimumSize">
             <size>
              <width>0</width>
              <height>30</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
            <property name="styleSheet">
-            <string notr="true">padding-left:20px;</string>
+            <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
            </property>
            <property name="text">
-            <string>   DETTAGLI ORDINE</string>
+            <string>DETTAGLI ORDINE</string>
            </property>
            <property name="icon">
             <iconset resource="../../home/view/res.qrc">
              <normaloff>:/icone/icone/piu.png</normaloff>
              <normalon>:/icone/icone/meno.png</normalon>:/icone/icone/piu.png</iconset>
            </property>
+           <property name="iconSize">
+            <size>
+             <width>13</width>
+             <height>13</height>
+            </size>
+           </property>
            <property name="checkable">
             <bool>true</bool>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextBesideIcon</enum>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="completato_button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
            </property>
            <property name="text">
             <string>COMPLETATO</string>

@@ -11,6 +11,7 @@ class VistaPagamento(QWidget):
     def __init__(self, prodotti,cliente,controllerp,controllerc,callback):
         super(VistaPagamento, self).__init__()
         uic.loadUi('ordine/view/VistaPagamento.ui', self)
+        self.setWindowTitle("Check out")
         self.prodotti=prodotti
         self.cliente=cliente
         self.controller_lista_clienti=controllerc

@@ -137,19 +137,21 @@ background-color: rgba(0,0,0,150)</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <spacer name="verticalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <property name="topMargin">
+          <number>20</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
          <item>
           <widget class="QLineEdit" name="id">
            <property name="sizePolicy">
@@ -196,22 +198,6 @@ border:2px solid rgb(242, 155, 0);
           </widget>
          </item>
          <item>
-          <spacer name="verticalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Fixed</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>15</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
           <widget class="QLineEdit" name="email">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -255,22 +241,6 @@ border:2px solid rgb(242, 155, 0);
             <bool>false</bool>
            </property>
           </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Fixed</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>15</height>
-            </size>
-           </property>
-          </spacer>
          </item>
          <item>
           <widget class="QFrame" name="frame_4">
@@ -358,7 +328,7 @@ border:2px solid rgb(255, 148, 8);
                <string/>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="res.qrc">
                 <normaloff>:/icone/icone/hidepass.png</normaloff>
                 <normalon>:/icone/icone/showpass.png</normalon>:/icone/icone/hidepass.png</iconset>
               </property>
@@ -468,7 +438,7 @@ border:2px solid rgb(255, 148, 8);
                <string/>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="res.qrc">
                 <normaloff>:/icone/icone/hidepass.png</normaloff>
                 <normalon>:/icone/icone/showpass.png</normalon>:/icone/icone/hidepass.png</iconset>
               </property>
@@ -491,19 +461,6 @@ border:2px solid rgb(255, 148, 8);
             </item>
            </layout>
           </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_8">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </widget>
@@ -636,6 +593,8 @@ QPushButton:pressed {
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

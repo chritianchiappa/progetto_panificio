@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>450</height>
+    <width>473</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,7 +32,9 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border:none;</string>
+   <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:none;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -50,8 +52,17 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>70</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Tiro Kannada</family>
@@ -73,18 +84,38 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>150</width>
+          <width>100</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>150</width>
           <height>30</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border-radius:5px;</string>
+         <string notr="true">QDateTimeEdit {
+    background-color: rgb(242, 155, 0);
+    color:black;
+    border: none;
+    border-radius: 5px;
+   padding-top:6px;
+   padding-bottom:6px;
+   padding-left:8px;
+   
+}
+
+
+</string>
         </property>
         <property name="minimumDateTime">
          <datetime>
@@ -130,8 +161,17 @@ border:2px solid black;</string>
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>70</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Tiro Kannada</family>
@@ -147,6 +187,11 @@ border:2px solid black;</string>
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QRadioButton" name="ritiro_negozio">
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
+        </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
@@ -157,6 +202,11 @@ border:2px solid black;</string>
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QRadioButton" name="spedizione">
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
+        </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
@@ -189,13 +239,19 @@ border:2px solid black;</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="leftMargin">
+          <number>12</number>
+         </property>
          <property name="topMargin">
           <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>12</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item>
+         <item alignment="Qt::AlignHCenter">
           <widget class="QLineEdit" name="indirizzo_consegna">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -203,11 +259,33 @@ border:2px solid black;</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
              <height>30</height>
             </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit:focus{
+border-bottom:2px solid rgb(242, 155, 0);
+}</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
            <property name="placeholderText">
             <string>Immetti un indirizzo di consegna</string>
@@ -296,6 +374,11 @@ border:2px solid black;</string>
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
            <property name="text">
             <string>Costo Totale: </string>
            </property>
@@ -303,6 +386,11 @@ border:2px solid black;</string>
          </item>
          <item alignment="Qt::AlignLeft">
           <widget class="QLabel" name="prezzo_totale">
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
            <property name="text">
             <string>prezzo</string>
            </property>
@@ -315,9 +403,14 @@ border:2px solid black;</string>
        <widget class="QPushButton" name="ordina_button">
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>40</height>
+          <width>170</width>
+          <height>30</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
         </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
@@ -327,23 +420,10 @@ border:2px solid black;</string>
    
 	background-color: rgb(242, 155, 0);
      border:none;
-     color:rgb(255,255,255); 
-     border-radius:20px;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
    
-}
-QPushButton:hover {
-	
-	background-color: rgba(242, 155, 20,150);
-     border-left: 2px solid rgb(173, 107,0);
-     border-right: 2px solid rgb(173, 107,0);
-     border-bottom: 3px solid rgb(173, 107,0);
-}
-QPushButton:pressed {
-	
-	background-color: rgba(255, 224, 0,75);
-     border-left: 2px solid rgb(173, 107,0);
-     border-right: 2px solid rgb(173, 107,0); 
-     border-bottom: none;
 }</string>
         </property>
         <property name="text">

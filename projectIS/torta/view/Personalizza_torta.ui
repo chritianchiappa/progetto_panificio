@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>632</width>
-    <height>624</height>
+    <width>566</width>
+    <height>601</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -72,7 +72,7 @@ color: rgb(0, 0, 0);</string>
            <widget class="QLabel" name="label_2">
             <property name="font">
              <font>
-              <family>American Typewriter</family>
+              <family>Tiro Kannada</family>
               <pointsize>25</pointsize>
              </font>
             </property>
@@ -94,7 +94,7 @@ color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
-       <item alignment="Qt::AlignVCenter">
+       <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QFrame" name="frame_3">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -104,9 +104,17 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="font">
           <font>
-           <family>American Typewriter</family>
+           <family>Tiro Kannada</family>
            <pointsize>17</pointsize>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,150);
+border-radius:10px;
+color:white;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -115,8 +123,30 @@ color: rgb(0, 0, 0);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="spacing">
+           <number>9</number>
+          </property>
+          <property name="leftMargin">
+           <number>50</number>
+          </property>
+          <property name="topMargin">
+           <number>50</number>
+          </property>
+          <property name="rightMargin">
+           <number>50</number>
+          </property>
+          <property name="bottomMargin">
+           <number>50</number>
+          </property>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="pandispagna">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+color:white;</string>
+            </property>
             <property name="text">
              <string>Pan di Spagna</string>
             </property>
@@ -124,6 +154,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="pasta_biscuit">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+color:white;</string>
+            </property>
             <property name="text">
              <string>Pasta biscuit</string>
             </property>
@@ -131,6 +168,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="pasta_frolla">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+color:white;</string>
+            </property>
             <property name="text">
              <string>Pasta frolla</string>
             </property>
@@ -138,6 +182,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="pasta_bigne">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+color:white;</string>
+            </property>
             <property name="text">
              <string>Pasta bignè</string>
             </property>
@@ -145,6 +196,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="pasta_sfoglia">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+color:white;</string>
+            </property>
             <property name="text">
              <string>Pasta sfoglia</string>
             </property>
@@ -176,7 +234,7 @@ color: rgb(0, 0, 0);</string>
            <widget class="QLabel" name="label">
             <property name="font">
              <font>
-              <family>American Typewriter</family>
+              <family>Tiro Kannada</family>
               <pointsize>25</pointsize>
              </font>
             </property>
@@ -198,7 +256,7 @@ color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
-       <item alignment="Qt::AlignVCenter">
+       <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QFrame" name="frame_9">
          <property name="font">
           <font>
@@ -207,7 +265,9 @@ color: rgb(0, 0, 0);</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">background-color:rgba(0,0,0,150);
+border-radius:10px;
+color:white;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -216,8 +276,30 @@ color: rgb(0, 0, 0);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="spacing">
+           <number>9</number>
+          </property>
+          <property name="leftMargin">
+           <number>50</number>
+          </property>
+          <property name="topMargin">
+           <number>50</number>
+          </property>
+          <property name="rightMargin">
+           <number>50</number>
+          </property>
+          <property name="bottomMargin">
+           <number>50</number>
+          </property>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_pasticcera">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>A base di crema pasticcera</string>
             </property>
@@ -225,6 +307,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_chantilly">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>crema chantilly</string>
             </property>
@@ -232,6 +321,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="marmellate">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Marmellate</string>
             </property>
@@ -239,6 +335,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_pistacchio">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Crema al pistacchio</string>
             </property>
@@ -246,6 +349,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_cioccolato">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Crema al cioccolato</string>
             </property>
@@ -253,6 +363,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_nocciola">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Crema alla nocciola</string>
             </property>
@@ -260,6 +377,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_caffe">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Crema al caffe</string>
             </property>
@@ -267,6 +391,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_ciocc_mandorla">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Creme al cioccolato mandorla</string>
             </property>
@@ -274,6 +405,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_ciocc_bianco">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Crema al cioccolato bianco</string>
             </property>
@@ -281,6 +419,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="crema_semifreddi_mousse">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Crema semifreddi o mousse</string>
             </property>
@@ -288,6 +433,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QCheckBox" name="frutta">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Frutta fresca a pezzi o purea</string>
             </property>
@@ -331,7 +483,7 @@ color: rgb(0, 0, 0);</string>
             </property>
             <property name="font">
              <font>
-              <family>American Typewriter</family>
+              <family>Tiro Kannada</family>
               <pointsize>25</pointsize>
              </font>
             </property>
@@ -353,7 +505,7 @@ color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
-       <item alignment="Qt::AlignTop">
+       <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QFrame" name="frame_10">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -367,6 +519,11 @@ color: rgb(0, 0, 0);</string>
            <pointsize>17</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,150);
+border-radius:10px;
+color:white;</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -374,8 +531,30 @@ color: rgb(0, 0, 0);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
+          <property name="spacing">
+           <number>9</number>
+          </property>
+          <property name="leftMargin">
+           <number>50</number>
+          </property>
+          <property name="topMargin">
+           <number>50</number>
+          </property>
+          <property name="rightMargin">
+           <number>50</number>
+          </property>
+          <property name="bottomMargin">
+           <number>50</number>
+          </property>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="panna_montata">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Panna montata</string>
             </property>
@@ -383,6 +562,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="glasse_frutta">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Glasse frutta</string>
             </property>
@@ -390,6 +576,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="cioccolato_ganache">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Cioccolato puro o ganache</string>
             </property>
@@ -397,6 +590,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="mousse_creme">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Mousse o creme</string>
             </property>
@@ -404,6 +604,13 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QRadioButton" name="pasta_zucchero">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:none;
+</string>
+            </property>
             <property name="text">
              <string>Pasta di zucchero</string>
             </property>
@@ -416,7 +623,7 @@ color: rgb(0, 0, 0);</string>
      </widget>
      <widget class="QWidget" name="page_4">
       <layout class="QVBoxLayout" name="verticalLayout_11">
-       <item alignment="Qt::AlignTop">
+       <item alignment="Qt::AlignVCenter">
         <widget class="QFrame" name="frame_14">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -430,7 +637,7 @@ color: rgb(0, 0, 0);</string>
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>200</height>
+              <height>100</height>
              </size>
             </property>
             <property name="maximumSize">
@@ -439,9 +646,55 @@ color: rgb(0, 0, 0);</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Tiro Kannada</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(0,0,0,150);
+border-radius:10px;
+color:white;</string>
+            </property>
             <property name="placeholderText">
              <string>Scrivi qui le tue richieste</string>
             </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="font">
+                <font>
+                 <family>Tiro Kannada</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Ad esempio indicare il numero di persone, il tipo di bagna(alcolica o meno),se si vogliono le candeline o una decorazione particolare ecc..</string>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
           <item>
@@ -458,8 +711,16 @@ color: rgb(0, 0, 0);</string>
                <property name="minimumSize">
                 <size>
                  <width>100</width>
-                 <height>20</height>
+                 <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Tiro Kannada</family>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
@@ -502,6 +763,11 @@ color: rgb(0, 0, 0);</string>
        <height>100</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>Tiro Kannada</family>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
@@ -520,8 +786,16 @@ color: rgb(0, 0, 0);</string>
         <property name="minimumSize">
          <size>
           <width>100</width>
-          <height>20</height>
+          <height>25</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
@@ -577,8 +851,17 @@ QProgressBar::chunk{
         <property name="minimumSize">
          <size>
           <width>100</width>
-          <height>20</height>
+          <height>25</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="layoutDirection">
          <enum>Qt::RightToLeft</enum>
@@ -601,6 +884,12 @@ QProgressBar::chunk{
         <property name="icon">
          <iconset resource="../../home/view/res.qrc">
           <normaloff>:/icone/icone/doppia_frecciadx.png</normaloff>:/icone/icone/doppia_frecciadx.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
         </property>
        </widget>
       </item>

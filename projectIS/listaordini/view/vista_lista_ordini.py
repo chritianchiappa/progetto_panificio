@@ -16,6 +16,7 @@ class VistaListaOrdini(QWidget):
     def __init__(self, controllerc):
         super(VistaListaOrdini, self).__init__()
         uic.loadUi('listaordini/view/vistaOrdini.ui', self)
+        self.setWindowTitle("Lista ordini")
         self.controller = ControllerListaOrdini()
         self.controllerc=controllerc
         self.update_ui()
@@ -141,6 +142,9 @@ class VistaListaOrdini(QWidget):
         ControllerOrdine(ordine_selezionato).completa_ordine()
         ControllerCliente(cliente_c).aggiungi_notifica(notifica)
         self.tableWidget.removeRow(selected_row)
+        if self.stackedWidget.currentWidget() == self.page_2:
+            self.stackedWidget.setCurrentWidget(self.page_1)
+            self.dettagli_ordine_button.setChecked(False)
         self.controllerc.save_data()
         self.controller.save_data()
 

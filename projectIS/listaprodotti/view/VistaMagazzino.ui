@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>602</width>
     <height>600</height>
    </rect>
   </property>
@@ -24,6 +24,11 @@
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:none;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -47,15 +52,65 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
+      <item alignment="Qt::AlignHCenter">
        <widget class="QPushButton" name="prodotti_button">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+        </property>
         <property name="text">
          <string>Prodotti</string>
         </property>
        </widget>
       </item>
-      <item>
+      <item alignment="Qt::AlignHCenter">
        <widget class="QPushButton" name="scorte_button">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+        </property>
         <property name="text">
          <string>Scorte</string>
         </property>
@@ -125,9 +180,9 @@
           <widget class="QLabel" name="label">
            <property name="font">
             <font>
-             <family>Arial Black</family>
+             <family>Tiro Kannada</family>
              <pointsize>18</pointsize>
-             <bold>true</bold>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -146,15 +201,40 @@
         <widget class="QWidget" name="page_1">
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QListView" name="list_view1"/>
+           <widget class="QListView" name="list_view1">
+            <property name="font">
+             <font>
+              <family>Tiro Kannada</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QListView{
+background-color:rgba(0,0,0,225);
+border-radius:10px;
+color:white;
+padding-left:5px;
+padding-top:10px;
+padding-right:5px;
+}
+
+QListView::item:selected {
+border-radius:3px;
+background-color: rgb(242, 155, 0);
+color:black;
+}</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QFrame" name="frame_4">
             <property name="minimumSize">
              <size>
-              <width>130</width>
+              <width>150</width>
               <height>0</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-left:2px solid black;</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -164,19 +244,39 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <property name="leftMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <item>
               <widget class="QPushButton" name="mod_quantita1_button">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+               </property>
                <property name="text">
                 <string>Modifica quantità</string>
                </property>
@@ -184,6 +284,26 @@
              </item>
              <item>
               <widget class="QPushButton" name="agg_prod_button">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+               </property>
                <property name="text">
                 <string>Aggiungi prodotto</string>
                </property>
@@ -191,6 +311,26 @@
              </item>
              <item>
               <widget class="QPushButton" name="rim_prod_button">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+               </property>
                <property name="text">
                 <string>Rimuovi Prodotto</string>
                </property>
@@ -218,6 +358,27 @@
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QTableWidget" name="tableWidget">
+            <property name="font">
+             <font>
+              <family>Tiro Kannada</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTableWidget{
+background-color:rgba(0,0,0,225);
+border-radius:10px;
+color:white;
+padding-left:5px;
+padding-top:10px;
+padding-right:5px;
+}
+
+QTableWidget::item:selected {
+border-radius:3px;
+background-color: rgb(242, 155, 0);
+color:black;
+}</string>
+            </property>
             <property name="showGrid">
              <bool>true</bool>
             </property>
@@ -247,9 +408,12 @@
            <widget class="QFrame" name="frame_5">
             <property name="minimumSize">
              <size>
-              <width>130</width>
+              <width>150</width>
               <height>0</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-left:2px solid black;</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -259,19 +423,39 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <property name="leftMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <item>
               <widget class="QPushButton" name="mod_quantita2_button">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+               </property>
                <property name="text">
                 <string>Modifica quantità</string>
                </property>
@@ -279,6 +463,26 @@
              </item>
              <item>
               <widget class="QPushButton" name="agg_scorta_button">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+               </property>
                <property name="text">
                 <string>Aggiungi scorta</string>
                </property>
@@ -286,6 +490,26 @@
              </item>
              <item>
               <widget class="QPushButton" name="rim_scorta_button">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+               </property>
                <property name="text">
                 <string>Rimuovi Scorta</string>
                </property>

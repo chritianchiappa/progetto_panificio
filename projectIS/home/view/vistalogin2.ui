@@ -314,6 +314,9 @@ background:none;</string>
            <property name="text">
             <string/>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
           </widget>
          </item>
          <item>
@@ -469,6 +472,9 @@ QPushButton:hover {
              <family>American Typewriter</family>
              <pointsize>14</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:white</string>
            </property>
            <property name="text">
             <string>Non hai un account?</string>

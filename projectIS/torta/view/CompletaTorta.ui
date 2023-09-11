@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>335</width>
-    <height>178</height>
+    <width>325</width>
+    <height>180</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>325</width>
+    <height>180</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>325</width>
+    <height>180</height>
+   </size>
   </property>
   <property name="font">
    <font>
@@ -17,6 +35,11 @@
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+color:black;
+border:none;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -34,6 +57,9 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>10</number>
+      </property>
       <item>
        <widget class="QLabel" name="label">
         <property name="maximumSize">
@@ -41,6 +67,12 @@
           <width>16777215</width>
           <height>50</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+          <pointsize>14</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Immetti il peso in Kg</string>
@@ -50,8 +82,14 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item alignment="Qt::AlignHCenter">
        <widget class="QDoubleSpinBox" name="selettore_peso">
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
         <property name="decimals">
          <number>3</number>
         </property>
@@ -78,8 +116,34 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
+      <item alignment="Qt::AlignHCenter">
        <widget class="QPushButton" name="finisci_button">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+        </property>
         <property name="text">
          <string>Conferma</string>
         </property>

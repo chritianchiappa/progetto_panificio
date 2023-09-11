@@ -13,6 +13,7 @@ class VistaCarrello(QWidget):
      def __init__(self, cliente,controller,controllerp):
         super(VistaCarrello, self).__init__()
         uic.loadUi('carrello/view/vistaCarrello.ui', self)
+        self.setWindowTitle("Carrello")
         self.cliente=cliente
         self.controller = ControllerCliente(cliente)
         self.controllerprodotti = controllerp
@@ -48,7 +49,7 @@ class VistaCarrello(QWidget):
          selected_row = selected_index[0].row()
          if selected_row < 0:  # Verifica se l'indice è valido
              return
-         prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected)
+         prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected_row)
          self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
          self.VistaOrdFin.show()
 
@@ -66,7 +67,7 @@ class VistaCarrello(QWidget):
              self.stackedWidget.setCurrentWidget(self.page_2)
              prodotto_selezionato = self.cliente.carrello[selected_row]
              self.nome.setText(ControllerProdotto(prodotto_selezionato).get_nome())
-             self.prezzo.setText(f"{round(ControllerProdotto(prodotto_selezionato).get_prezzo(),2)}")
+             self.prezzo.setText(f"{round(ControllerProdotto(prodotto_selezionato).get_prezzo(),2)}€")
              str_ingr = ", ".join(ingrediente.nome for ingrediente in ControllerProdotto(prodotto_selezionato).get_lista_ingredienti())
              self.ingredienti.setText(str_ingr)
              str_all = ", ".join(allergene for allergene in ControllerProdotto(prodotto_selezionato).get_allergeni())
@@ -82,11 +83,18 @@ class VistaCarrello(QWidget):
          selected_index = selected[0].row()
          self.controller.rimuovi_prodotto_carrello_index(selected_index)
          self.listview_model.removeRow(selected_index)
+         if self.stackedWidget.currentWidget()==self.page_2:
+             self.stackedWidget.setCurrentWidget(self.page_1)
+             self.dettagli_button.setChecked(False)
          self.update_ui()
 
      def ordina_tutto(self):
-         self.VistaOrdFin = VistaPagamento(self.controller.get_carrello_cliente(), self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
-         self.VistaOrdFin.show()
+         if self.list_view.model().rowCount() == 0:
+             return
+         else:
+             self.VistaOrdFin = VistaPagamento(self.controller.get_carrello_cliente(), self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
+             self.VistaOrdFin.show()
+
 
 
      def closeEvent(self, event):

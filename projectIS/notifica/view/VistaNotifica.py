@@ -11,7 +11,7 @@ class VistaNotifica(QWidget):
     def __init__(self,utente,controller):
         super(VistaNotifica,self).__init__()
         uic.loadUi('notifica/view/VistaNotifica.ui',self)
-
+        self.setWindowTitle("Notifiche")
         self.utente=utente
 
         if isinstance(self.utente, Cliente):
@@ -64,6 +64,9 @@ class VistaNotifica(QWidget):
         selected_index = selected[0].row()
         self.controller.rimuovi_notifica_by_index(selected_index)
         self.listview_model.removeRow(selected_index)
+        if self.stackedWidget.currentWidget() == self.page_2:
+            self.stackedWidget.setCurrentWidget(self.page_1)
+            self.dettagli_notifica_button.setChecked(False)
         self.update_ui()
 
     def closeEvent(self, event):

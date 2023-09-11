@@ -6,6 +6,7 @@ class VistaModificaQuantitaScorta(QWidget):
     def __init__(self,magazzino,ingrediente,controller_ingredienti):
         super(VistaModificaQuantitaScorta, self).__init__()
         uic.loadUi('ingrediente/view/VistaModificaQuantitaScorta.ui', self)
+        self.setWindowTitle("Gestisci quantita")
         self.conferma_button.clicked.connect(lambda: self.conferma_modifica(ingrediente))
         self.controlleringr=controller_ingredienti
         self.magazzino=magazzino
@@ -13,7 +14,7 @@ class VistaModificaQuantitaScorta(QWidget):
 
     def conferma_modifica(self,ingrediente):
 
-        quantita_immessa=self.le_quantita.text().strip()
+        quantita_immessa=self.selettore_quantita.value()
 
         ingrediente.quantita=quantita_immessa
         self.controlleringr.save_data()

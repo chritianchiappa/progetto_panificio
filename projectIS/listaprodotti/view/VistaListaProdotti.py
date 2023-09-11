@@ -2,7 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QWidget, QMessageBox
 from PyQt6 import uic
 from prodotto.view.VistaProdotto import VistaProdotto
-from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
+
 
 class VistaListaProdotti(QWidget):
     def __init__(self,cliente,controller,controllerp):
@@ -17,6 +17,7 @@ class VistaListaProdotti(QWidget):
         self.popola_shop(self.lista_prodotti)
         self.filtro_prodotti.activated.connect(self.filtro_tipologia)
         self.cerca_button.clicked.connect(self.ricerca)
+
     def aggiungi_prodotto(self,rowNumber,columnNumber,prodotto):
         self.widget_prodotto=VistaProdotto(prodotto,self.cliente,self.controller_lista_prodotti)
         self.gridLayout.addWidget(self.widget_prodotto,rowNumber,columnNumber,1,1,Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)

@@ -6,6 +6,7 @@ class PersonalizzaTorta(QWidget):
     def __init__(self,cliente):
         super(PersonalizzaTorta,self).__init__()
         uic.loadUi('torta/view/Personalizza_torta.ui',self)
+        self.setWindowTitle("Personalizzazione torta")
         self.cliente=cliente
         self.current_page = self.stackedWidget.currentIndex()
         self.avanti_button.setEnabled(False)
@@ -149,7 +150,6 @@ class PersonalizzaTorta(QWidget):
         self.selezione_pagina_2 = [checkbox.text() for checkbox in checkbox_selezionate if checkbox.isChecked()]
         ulteriori_richieste = self.richieste.text().strip()
         torta=Torta(self.selezione_pagina_1,self.selezione_pagina_2,self.selezione_pagina_3,ulteriori_richieste,None,None)
-        print(self.cliente)
         self.ComplOrd=RiepilogoTorta(torta,self.cliente)
         self.ComplOrd.show()
 
