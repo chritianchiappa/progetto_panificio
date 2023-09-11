@@ -12,8 +12,6 @@ class VistaPagamento(QWidget):
         super(VistaPagamento, self).__init__()
         uic.loadUi('ordine/view/VistaPagamento.ui', self)
         self.prodotti=prodotti
-        for prodotto in self.prodotti:
-            print(prodotto.nome)
         self.cliente=cliente
         self.controller_lista_clienti=controllerc
         self.callback=callback
@@ -44,8 +42,11 @@ class VistaPagamento(QWidget):
             quantita_ord=ControllerProdotto(prodotto).get_quantita()
             prod_c=self.controllerprodotti.check_prodotto(prodotto.nome)
             quantita_prod=ControllerProdotto(prod_c).get_quantita()
+
             ControllerProdotto(prod_c).set_quantita(quantita_prod-quantita_ord)
-        self.controllerprodotti.save_data()
+            self.controllerprodotti.save_data()
+
+
     def toggle_indirizzo_label(self):
         if self.spedizione.isChecked():
             self.animation.setStartValue(0)
@@ -60,10 +61,23 @@ class VistaPagamento(QWidget):
         self.animation.setEasingCurve(self.easing_curve)
         self.animation.start()
 
+    def verifica_quantita_disponibile(self):
+        for prodotto in self.prodotti:
+            quantita_ord = ControllerProdotto(prodotto).get_quantita()
+            prod_c = self.controllerprodotti.check_prodotto(prodotto.nome)
+            quantita_prod = ControllerProdotto(prod_c).get_quantita()
+
+            if quantita_prod < quantita_ord:
+                self.popup(f"Quantità insufficiente di {prodotto.nome} nel magazzino.", QMessageBox.Icon.Warning)
+                return False
+
+        return True
+
     def check_out(self):
         selected_datetime = self.time_edit_consegna.dateTime().toPyDateTime()
-
-        if self.ritiro_negozio.isChecked():
+        if not self.verifica_quantita_disponibile():
+            return
+        elif self.ritiro_negozio.isChecked():
             str_indirizzo = "Negozio"
         elif self.spedizione.isChecked():
             str_indirizzo = self.indirizzo_consegna.text().strip()
@@ -75,11 +89,12 @@ class VistaPagamento(QWidget):
             self.popup("Seleziona una procedura per l'ordine",QMessageBox.Icon.Warning)
             return
 
+
         self.ordina(str_indirizzo,selected_datetime)
 
 
     def ordina(self,indirizzo,data_consegna):
-
+        self.scala_quantita()
         self.controllerord.inserisci_ordine(Ordine(
             self.prodotti,
             datetime.now(),
@@ -89,7 +104,7 @@ class VistaPagamento(QWidget):
             False)
         )
         prodotti_da_rimuovere = self.prodotti[:]
-        self.scala_quantita()
+
         for prodotto_carrello in prodotti_da_rimuovere:
             print(prodotto_carrello.nome)
             ControllerCliente(self.cliente).rimuovi_prodotto_carrello(prodotto_carrello)

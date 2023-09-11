@@ -586,7 +586,7 @@ border-left:2px solid black;
             <string notr="true">color:black;</string>
            </property>
            <property name="text">
-            <string>Nome Cognome</string>
+            <string>Nome </string>
            </property>
           </widget>
          </item>
@@ -654,41 +654,6 @@ border-bottom:2px solid rgb(255, 145, 0);</string>
               </property>
               <property name="text">
                <string>Notifiche</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="modifica_account_button">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>American Typewriter</family>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color:black;
-border-bottom:2px solid rgb(255, 145, 0);</string>
-              </property>
-              <property name="text">
-               <string>Modifica Account</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../../home/view/res.qrc">
-                <normaloff>:/icone/icone/profilo.png</normaloff>:/icone/icone/profilo.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>20</width>
-                <height>20</height>
-               </size>
               </property>
              </widget>
             </item>

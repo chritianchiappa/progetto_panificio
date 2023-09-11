@@ -26,6 +26,11 @@ class ControllerCliente():
         return self.model.carrello
 
     def aggiungi_prodotto_carrello(self,prodotto,quantita):
+
+        for elemento in self.get_carrello_cliente():
+            if prodotto.nome==elemento.nome:
+                ControllerProdotto(elemento).set_quantita(elemento.quantita + quantita)
+                return
         ControllerProdotto(prodotto).set_quantita(quantita)
         self.model.carrello.append(prodotto)
 

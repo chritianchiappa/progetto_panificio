@@ -42,7 +42,12 @@ class VistaCarrello(QWidget):
          self.prezzo_totale.setText(f"{round(importo,2)} €")
 
      def acquista_selezionato(self):
-         selected = self.list_view.selectedIndexes()[0].row()
+         selected_index = self.list_view.selectedIndexes()
+         if not selected_index:  # Verifica se la lista è vuota o nessun elemento selezionato
+             return
+         selected_row = selected_index[0].row()
+         if selected_row < 0:  # Verifica se l'indice è valido
+             return
          prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected)
          self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
          self.VistaOrdFin.show()
