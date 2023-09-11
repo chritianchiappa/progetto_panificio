@@ -113,7 +113,11 @@ border:none;</string>
              <item>
               <widget class="QTableWidget" name="tableWidget">
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">QTableWidget::item:selected {
+
+background-color: rgb(242, 155, 0);
+color:black;
+}</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>

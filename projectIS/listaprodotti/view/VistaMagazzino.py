@@ -13,6 +13,7 @@ class VistaMagazzino(QWidget):
     def __init__(self):
         super(VistaMagazzino, self).__init__()
         uic.loadUi('listaprodotti/view/VistaMagazzino.ui', self)
+        self.setWindowTitle("Magazzino")
         self.controllerprod = ControllerListaProdotti()
         self.controlleringr = ControllerListaIngredienti()
         self.update_list_prodotti()

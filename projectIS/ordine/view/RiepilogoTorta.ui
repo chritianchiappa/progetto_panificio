@@ -6,12 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>561</height>
+    <width>500</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>650</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:none;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -29,6 +46,12 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label_7">
         <property name="font">
@@ -44,6 +67,12 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_4">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -52,6 +81,24 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>Base:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="base">
            <property name="font">
             <font>
@@ -59,7 +106,10 @@
             </font>
            </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string>TextEdit</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -68,6 +118,12 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_6">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -75,6 +131,24 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>Farcitura:</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="farcitura">
            <property name="font">
@@ -92,6 +166,12 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_7">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -99,6 +179,24 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>Copertura:</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="copertura">
            <property name="font">
@@ -116,6 +214,12 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_8">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>60</height>
+         </size>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -123,6 +227,27 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>Richieste:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="richieste">
            <property name="font">
@@ -133,12 +258,28 @@
            <property name="text">
             <string>TextLabel</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="styleSheet">
+      <string notr="true">border:2px solid black;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
     </widget>
    </item>
    <item>
@@ -158,6 +299,12 @@
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Tiro Kannada</family>
@@ -179,7 +326,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>150</width>
+          <width>100</width>
           <height>0</height>
          </size>
         </property>
@@ -189,8 +336,21 @@
           <height>30</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border-radius:5px;</string>
+         <string notr="true">QDateTimeEdit {
+    background-color: rgb(242, 155, 0);
+    color:black;
+    border: none;
+    border-radius: 5px;
+   padding-top:6px;
+   padding-bottom:6px;
+   padding-left:8px;
+   
+}
+</string>
         </property>
         <property name="minimumDateTime">
          <datetime>
@@ -211,12 +371,28 @@
     </widget>
    </item>
    <item>
+    <widget class="Line" name="line">
+     <property name="styleSheet">
+      <string notr="true">border:2px solid black;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="frame_3">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>130</height>
+      </size>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -225,8 +401,20 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>12</number>
+      </property>
+      <property name="bottomMargin">
+       <number>12</number>
+      </property>
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Tiro Kannada</family>
@@ -290,7 +478,7 @@
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item>
+         <item alignment="Qt::AlignHCenter">
           <widget class="QLineEdit" name="indirizzo_consegna">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -298,11 +486,25 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>30</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
              <height>30</height>
             </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit:focus{
+border-bottom:2px solid rgb(242, 155, 0);
+}</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
            <property name="placeholderText">
             <string>Immetti un indirizzo di consegna</string>
@@ -316,12 +518,28 @@
     </widget>
    </item>
    <item>
+    <widget class="Line" name="line_3">
+     <property name="styleSheet">
+      <string notr="true">border:2px solid black;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="frame_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>60</height>
+      </size>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -335,7 +553,7 @@
         <property name="minimumSize">
          <size>
           <width>180</width>
-          <height>40</height>
+          <height>30</height>
          </size>
         </property>
         <property name="cursor">
@@ -346,23 +564,10 @@
    
 	background-color: rgb(242, 155, 0);
      border:none;
-     color:rgb(255,255,255); 
-     border-radius:20px;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
    
-}
-QPushButton:hover {
-	
-	background-color: rgba(242, 155, 20,150);
-     border-left: 2px solid rgb(173, 107,0);
-     border-right: 2px solid rgb(173, 107,0);
-     border-bottom: 3px solid rgb(173, 107,0);
-}
-QPushButton:pressed {
-	
-	background-color: rgba(255, 224, 0,75);
-     border-left: 2px solid rgb(173, 107,0);
-     border-right: 2px solid rgb(173, 107,0); 
-     border-bottom: none;
 }</string>
         </property>
         <property name="text">

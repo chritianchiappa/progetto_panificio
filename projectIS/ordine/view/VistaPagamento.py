@@ -39,7 +39,6 @@ class VistaPagamento(QWidget):
 
     def scala_quantita(self):
         for prodotto in self.prodotti:
-            print(prodotto.nome)
             quantita_ord=ControllerProdotto(prodotto).get_quantita()
             prod_c=self.controllerprodotti.check_prodotto(prodotto.nome)
             quantita_prod=ControllerProdotto(prod_c).get_quantita()

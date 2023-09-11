@@ -5,10 +5,12 @@ from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from ordine.model.Ordine import Ordine
 from datetime import datetime
 class RiepilogoTorta(QWidget):
-    def __init__(self,torta,cliente):
+    def __init__(self,torta,cliente,PersTorta):
         super(RiepilogoTorta,self).__init__()
         uic.loadUi('ordine/view/RiepilogoTorta.ui',self)
+        self.setWindowTitle("Riepilogo torta")
         self.torta=torta
+        self.PersTorta=PersTorta
         self.cliente=cliente
         self.controllerord = ControllerListaOrdini()
         self.animation = QPropertyAnimation(self.slide_frame, b"maximumHeight")
@@ -75,6 +77,7 @@ class RiepilogoTorta(QWidget):
         self.controllerord.save_data()
         self.popup("Ordine effettuato con successo",QMessageBox.Icon.Information)
         self.close()
+        self.PersTorta.close()
 
     def popup(self,text,icon):
         msg = QMessageBox()

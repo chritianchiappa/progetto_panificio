@@ -9,6 +9,7 @@ class CompletaTorta(QDialog):
     def __init__(self,lista_ordini,ordine_selezionato,selected_row,torta):
         super(CompletaTorta, self).__init__()
         uic.loadUi('torta/view/CompletaTorta.ui', self)
+        self.setWindowTitle("Peso torta")
         self.torta=torta
         self.lista_ordini=lista_ordini
         self.ordine_selezionato=ordine_selezionato

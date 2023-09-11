@@ -364,17 +364,9 @@ color:black;
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">QTableWidget{
-background-color:rgba(0,0,0,225);
-border-radius:10px;
-color:white;
-padding-left:5px;
-padding-top:10px;
-padding-right:5px;
-}
-
+             <string notr="true">
 QTableWidget::item:selected {
-border-radius:3px;
+
 background-color: rgb(242, 155, 0);
 color:black;
 }</string>
