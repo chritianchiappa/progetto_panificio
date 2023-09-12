@@ -24,13 +24,7 @@ class ListaProdotti:
 
     def get_prodotto_by_index(self,index):
         return self.lista_prodotti[index]
-    def get_lista_marche(self):
-        for prodotto in self.lista_prodotti:
-            if prodotto.marca in self.lista_marche:
-                pass
-            else:
-                self.lista_marche.append(prodotto.marca)
-        return self.lista_marche
+
 
     def get_dimensione_lista(self):
         return len(self.lista_prodotti)

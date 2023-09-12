@@ -17,7 +17,6 @@ class VistaCarrello(QWidget):
         self.cliente=cliente
         self.controller = ControllerCliente(cliente)
         self.controllerprodotti = controllerp
-
         self.controller_lista_clienti = controller
         self.update_ui()
         first_index = self.listview_model.index(0, 0)
@@ -52,6 +51,9 @@ class VistaCarrello(QWidget):
          prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected_row)
          self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
          self.VistaOrdFin.show()
+         if self.stackedWidget.currentWidget()==self.page_2:
+             self.stackedWidget.setCurrentWidget(self.page_1)
+             self.dettagli_button.setChecked(False)
 
 
      def dettagli_selezionato(self):
@@ -98,8 +100,6 @@ class VistaCarrello(QWidget):
 
 
      def closeEvent(self, event):
-         #self.controller_lista_clienti.aggiorna_carrello_cliente(self.cliente.email, self.cliente.password,
-                                                                 #self.cliente.carrello)
          self.controller_lista_clienti.save_data()
 
 

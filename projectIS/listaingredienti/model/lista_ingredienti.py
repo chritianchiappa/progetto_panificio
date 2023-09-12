@@ -20,8 +20,7 @@ class ListaIngredienti():
 
     def rimuovi_ingrediente_by_index(self,index):
         self.lista_ingredienti.pop(index)
-        print("eliminato")
-        self.save_data()
+
 
 
 

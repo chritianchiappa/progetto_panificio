@@ -1,10 +1,5 @@
 from listaprodotti.model.ListaProdotti import ListaProdotti
 
-"""
-    CONTROLLER DELLA LISTA DEI PRODOTTI
-        Contiene le funzionalità principali del programma per quanto riguarda la gestione dei prodotti
-"""
-
 
 class ControllerListaProdotti:
     def __init__(self):

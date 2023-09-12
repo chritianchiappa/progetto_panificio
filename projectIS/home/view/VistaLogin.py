@@ -9,8 +9,10 @@ from home.view.VistaLogAmm import VistaLogAmm
 from utilizzatore.view.HomeDipendente import HomeDipendente
 from cliente.view.HomeCliente import HomeCliente
 from listaclienti.controller.controller_lista_clienti import ControllerListaClienti
-
+from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
+from listaingredienti.controller.controller_lista_ingredienti import ControllerListaIngredienti
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
+
 
 
 from home.view import res_rc
@@ -21,6 +23,9 @@ class VistaLogin(QDialog):
         uic.loadUi('home/view/vistalogin2.ui', self)
         self.setWindowTitle("Login")
         self.clear_fields()
+
+        self.controllerprod=ControllerListaProdotti()
+        self.controlleringr=ControllerListaIngredienti()
         self.controller=ControllerListaClienti()
         self.controllerdip=ControllerListaDipendenti()
         self.accedi_button.clicked.connect(self.go_Home)
@@ -68,11 +73,11 @@ class VistaLogin(QDialog):
         utente_cliente = self.controller.check_cliente(email, password)
         utente_dipendente = self.controllerdip.check_dipendente(email, password)
         if utente_cliente:
-            self.HomeC = HomeCliente(self,utente_cliente,self.controller)
+            self.HomeC = HomeCliente(self,utente_cliente,self.controller,self.controllerprod)
             self.HomeC.show()
             self.hide()
         elif utente_dipendente:
-            self.HomeD = HomeDipendente(self,utente_dipendente,self.controllerdip,self.controller)
+            self.HomeD = HomeDipendente(self,utente_dipendente,self.controllerdip,self.controller,self.controllerprod,self.controlleringr)
             self.HomeD.show()
             self.hide()
         else:

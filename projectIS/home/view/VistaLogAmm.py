@@ -8,6 +8,7 @@ class VistaLogAmm(QFrame):
         super(VistaLogAmm, self).__init__()
         uic.loadUi('home/view/vistalogamm.ui', self)
         self.login=login
+
         self.controller=controller
         self.controllerdip=controllerdip
         self.la_button.clicked.connect(self.go_HomeAmm)

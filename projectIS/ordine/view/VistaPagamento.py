@@ -1,10 +1,11 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QDateTime
-from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
+
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from cliente.controller.ControllerCliente import ControllerCliente
 from ordine.model.Ordine import Ordine
+from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from datetime import datetime
 class VistaPagamento(QWidget):
 
@@ -25,7 +26,7 @@ class VistaPagamento(QWidget):
         current_datetime = QDateTime.currentDateTime()
         self.time_edit_consegna.setDateTime(current_datetime)
         self.time_edit_consegna.setMinimumDateTime(current_datetime)
-        self.prezzo_totale.setText(f"{self.calcola_importo()}")
+        self.prezzo_totale.setText(f"{self.calcola_importo()}€")
         self.ritiro_negozio.toggled.connect(self.toggle_indirizzo_label)
         self.spedizione.toggled.connect(self.toggle_indirizzo_label)
         self.ordina_button.clicked.connect(self.check_out)
@@ -95,21 +96,21 @@ class VistaPagamento(QWidget):
 
     def ordina(self,indirizzo,data_consegna):
         self.scala_quantita()
-        self.controllerord.inserisci_ordine(Ordine(
+        ordine=Ordine(
             self.prodotti,
             datetime.now(),
             self.cliente,
             indirizzo,
             data_consegna,
             False)
-        )
+        self.controllerord.inserisci_ordine(ordine)
+        self.controllerord.save_data()
         prodotti_da_rimuovere = self.prodotti[:]
 
         for prodotto_carrello in prodotti_da_rimuovere:
-            print(prodotto_carrello.nome)
             ControllerCliente(self.cliente).rimuovi_prodotto_carrello(prodotto_carrello)
         self.controller_lista_clienti.save_data()
-        self.controllerord.save_data()
+
         self.popup("Ordine effettuato con successo",QMessageBox.Icon.Information)
         self.callback()
         self.close()

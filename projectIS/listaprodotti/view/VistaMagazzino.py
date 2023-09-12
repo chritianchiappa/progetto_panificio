@@ -1,8 +1,7 @@
 from PyQt6 import uic
-from PyQt6.QtWidgets import QWidget,QTableWidgetItem,QAbstractItemView
+from PyQt6.QtWidgets import QWidget,QTableWidgetItem
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
-from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
-from listaingredienti.controller.controller_lista_ingredienti import ControllerListaIngredienti
+
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from prodotto.view.VistaModificaQuantita import VistaModificaQuantita
 from prodotto.view.VistaInserisciProdotto import VistaInserisciProdotto
@@ -10,12 +9,13 @@ from ingrediente.view.VistaInserisciScorta import VistaInserisciScorta
 from ingrediente.view.VistaModificaQuantitaScorta import VistaModificaQuantitaScorta
 
 class VistaMagazzino(QWidget):
-    def __init__(self):
+    def __init__(self,controllerprod,controlleringr):
         super(VistaMagazzino, self).__init__()
         uic.loadUi('listaprodotti/view/VistaMagazzino.ui', self)
         self.setWindowTitle("Magazzino")
-        self.controllerprod = ControllerListaProdotti()
-        self.controlleringr = ControllerListaIngredienti()
+        self.controllerprod = controllerprod
+        self.controlleringr = controlleringr
+
         self.update_list_prodotti()
         self.update_list_scorte()
         first_index1 = self.listview_model1.index(0, 0)
@@ -56,16 +56,11 @@ class VistaMagazzino(QWidget):
 
         lista_ingredienti = self.controlleringr.get_lista_ingredienti()
 
-        # Creare una lista di tuple (nome, indice) per l'ordinamento
-        ingrediente_tuples = [(ingrediente.nome, idx) for idx, ingrediente in enumerate(lista_ingredienti)]
-
-        # Ordina la lista in base al nome dell'ingrediente
-        ingrediente_tuples.sort(key=lambda x: x[0])
 
         self.tableWidget.setRowCount(len(lista_ingredienti))
+        row=0
 
-        for row, (nome, idx) in enumerate(ingrediente_tuples):
-            ingrediente = lista_ingredienti[idx]
+        for ingrediente in lista_ingredienti:
             if ingrediente.quantita == 0:
                 quantita = "esaurito"
             else:
@@ -74,6 +69,7 @@ class VistaMagazzino(QWidget):
             self.tableWidget.setItem(row, 1, QTableWidgetItem(f"{ingrediente.prezzo}"))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(f"{quantita}"))
             self.tableWidget.setItem(row, 3, QTableWidgetItem(f"{ingrediente.scadenza}"))
+            row += 1
 
     def show_prodotti(self):
         self.label.setText("Prodotti")
@@ -122,6 +118,7 @@ class VistaMagazzino(QWidget):
             return
         self.controllerprod.rimuovi_prodotto_by_index(selected_row)
         self.listview_model1.removeRow(selected_row)
+        self.controllerprod.save_data()
 
     def rim_scorta(self):
         selected_item = self.tableWidget.selectedItems()
@@ -129,6 +126,7 @@ class VistaMagazzino(QWidget):
             selected_row = selected_item[0].row()
             self.controlleringr.rimuovi_ingrediente_by_index(selected_row)
             self.tableWidget.removeRow(selected_row)
+            self.controlleringr.save_data()
 
 
 

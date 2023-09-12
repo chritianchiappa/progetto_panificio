@@ -6,6 +6,7 @@ import webbrowser
 from datetime import datetime
 from notifica.view.InviaNotifica import InviaNotifica
 from statistiche.view.VistaStatistiche import VistaStatistiche
+from listaordini.view.VistaCassa import VistaCassa
 
 
 class HomeAmministratore(QWidget):
@@ -14,12 +15,13 @@ class HomeAmministratore(QWidget):
         uic.loadUi('utilizzatore/view/vistaAmministratore.ui',self)
         self.setWindowTitle("Home")
         self.login=login
+
         self.controller=controller
         self.controllerdip=controllerdip
         self.logout_requested = False
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
         self.dipendenti_button.clicked.connect(self.go_Lista_Dipendenti)
-        self.magazzino_button.clicked.connect(self.go_Magazzino)
+
         self.statistiche_button.clicked.connect(self.go_Statistiche)
         self.cassa_button.clicked.connect(self.go_Cassa)
         self.logout_button.clicked.connect(self.logout)
@@ -75,16 +77,14 @@ class HomeAmministratore(QWidget):
     def go_Lista_Dipendenti(self):
         self.VistaDip = VistaListaDipendenti(self.controllerdip)
         self.VistaDip.show()
-    def go_Magazzino(self):
-        #self.VistaIng=VistaIngredienti()
-        #self.VistaIng.show()
-        self.close()
+
     def go_Statistiche(self):
         self.stats= VistaStatistiche()
         self.stats.show()
 
     def go_Cassa(self):
-        self.close()
+        self.Cassa=VistaCassa()
+        self.Cassa.show()
     def closeEvent(self, event):
         if self.logout_requested:
             event.accept()  # La finestra verrà chiusa senza popup di conferma

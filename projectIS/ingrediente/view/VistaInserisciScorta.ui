@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>411</width>
-    <height>543</height>
+    <width>400</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,63 +22,36 @@
     <height>500</height>
    </size>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>500</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:none;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>0</number>
+    <number>6</number>
    </property>
    <property name="leftMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
    <property name="rightMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>9</number>
    </property>
-   <item>
-    <widget class="QFrame" name="frame">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>50</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <family>Arial Black</family>
-          <pointsize>14</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Inserisci le informazioni</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item>
     <widget class="QFrame" name="frame_2">
      <property name="sizePolicy">
@@ -94,48 +67,129 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
+      <item alignment="Qt::AlignHCenter">
        <widget class="QLineEdit" name="nome">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+padding-left:5px;
+padding-right:5px;
+}
+
+QLineEdit:focus{
+border-bottom:2px solid rgb(242, 155, 0);
+}</string>
+        </property>
         <property name="placeholderText">
          <string>Nome</string>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+       <widget class="QFrame" name="frame">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="sizeHint" stdset="0">
+        <property name="maximumSize">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>16777215</width>
+          <height>70</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="prezzo">
-        <property name="placeholderText">
-         <string>Prezzo</string>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Prezzo(€):</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="prezzo">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="maximum">
+            <double>1000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+       <widget class="QFrame" name="frame_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="sizeHint" stdset="0">
+        <property name="maximumSize">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>16777215</width>
+          <height>70</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QFrame" name="frame_3">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -143,29 +197,109 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
-          <widget class="QLineEdit" name="quantita">
+          <widget class="QLabel" name="label_2">
            <property name="maximumSize">
             <size>
-             <width>210</width>
+             <width>70</width>
              <height>16777215</height>
             </size>
            </property>
-           <property name="placeholderText">
-            <string>Quantità</string>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Quantita:</string>
            </property>
           </widget>
          </item>
          <item>
+          <widget class="QDoubleSpinBox" name="quantita">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="maximum">
+            <double>1000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignRight">
           <widget class="QComboBox" name="selettore_unita">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>0</height>
+             <width>130</width>
+             <height>30</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+    background-color: rgb(242, 155, 0);
+    color:black;
+    border: none;
+    border-radius: 10px;
+   padding-top:6px;
+   padding-bottom:6px;
+   padding-left:8px;
+   
+}
+QComboBox QAbstractItemView {
+    selection-background-color: rgb(242, 155, 0);
+    selection-color: #ffffff;
+    
+}
+QComboBox QAbstractItemView::item:hover {
+    background-color: rgb(242, 155, 0);
+
+}
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox::down-arrow {
+    
+	image: url(:/icone/icone/freccia.png);
+    padding-right:8px;
+    width: 13px; 
+    height: 13px;
+}</string>
+           </property>
            <property name="placeholderText">
-            <string>Unità di musira</string>
+            <string>Unità di misura</string>
            </property>
            <item>
             <property name="text">
@@ -193,43 +327,106 @@
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+       <widget class="QLineEdit" name="allergeni">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="sizeHint" stdset="0">
+        <property name="maximumSize">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>16777215</width>
+          <height>20</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="allergeni">
+        <property name="font">
+         <font>
+          <family>Tiro Kannada</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+padding-left:5px;
+padding-right:5px;
+}
+
+QLineEdit:focus{
+border-bottom:2px solid rgb(242, 155, 0);
+}</string>
+        </property>
         <property name="placeholderText">
          <string>Allergeni</string>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
+       <widget class="QFrame" name="frame_5">
+        <property name="maximumSize">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>16777215</width>
+          <height>60</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QDateEdit" name="data_scadenza">
-        <property name="calendarPopup">
-         <bool>true</bool>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Scadenza:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="data_scadenza">
+           <property name="maximumSize">
+            <size>
+             <width>90</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Tiro Kannada</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+    background-color: rgb(242, 155, 0);
+    color:black;
+    border: none;
+    border-radius: 5px;
+   padding-top:6px;
+   padding-bottom:6px;
+   padding-left:8px;
+   
+}
+</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
@@ -258,6 +455,26 @@
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item alignment="Qt::AlignHCenter">
        <widget class="QPushButton" name="new_scorta_button">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+   
+	background-color: rgb(242, 155, 0);
+     border:none;
+     
+	color: rgb(0, 0, 0);
+     border-radius:10px;
+   
+}</string>
+        </property>
         <property name="text">
          <string>Aggiungi scorta</string>
         </property>
@@ -268,6 +485,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../home/view/res.qrc"/>
+ </resources>
  <connections/>
 </ui>

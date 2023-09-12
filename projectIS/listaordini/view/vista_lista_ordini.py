@@ -1,13 +1,13 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget,QTableWidgetItem
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
-from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
+
 from cliente.controller.ControllerCliente import ControllerCliente
 
 from ordine.controller.ControllerOrdine import ControllerOrdine
 from torta.model.Torta import Torta
 from torta.view.CompletaTorta import CompletaTorta
-
+from listaordini.controller.ControllerListaOrdini import ControllerListaOrdini
 from notifica.model.Notifica import Notifica
 
 
@@ -19,6 +19,7 @@ class VistaListaOrdini(QWidget):
         self.setWindowTitle("Lista ordini")
         self.controller = ControllerListaOrdini()
         self.controllerc=controllerc
+
         self.update_ui()
         self.dettagli_ordine_button.clicked.connect(self.mostra_dettagli)
         self.completato_button.clicked.connect(self.completa_ordine)

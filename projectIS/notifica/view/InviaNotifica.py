@@ -13,6 +13,7 @@ class InviaNotifica(QWidget):
     def __init__(self,controller,controllerdip):
         super(InviaNotifica,self).__init__()
         uic.loadUi('notifica/view/InviaNotifica.ui',self)
+        self.setWindowTitle("Invia notifica")
         self.controllerc=controller
         self.controllerd = controllerdip
         self.animation = QPropertyAnimation(self.slide_frame, b"maximumHeight")

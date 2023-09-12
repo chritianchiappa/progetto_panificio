@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
 from PyQt6.QtCore import QPropertyAnimation,QEasingCurve,QTimer
 from torta.view.PersonalizzaTorta import PersonalizzaTorta
-from listaprodotti.controller.ControllerListaProdotti import ControllerListaProdotti
+
 from listaprodotti.view.VistaListaProdotti import VistaListaProdotti
 from carrello.view.VistaCarrello import VistaCarrello
 from whishlist.view.VistaWhishlist import VistaWhishlist
@@ -10,14 +10,14 @@ from notifica.view.VistaNotifica import VistaNotifica
 import webbrowser
 from datetime import datetime
 class HomeCliente(QWidget):
-    def __init__(self,login,cliente,controller):
+    def __init__(self,login,cliente,controller,controllerprod):
         super(HomeCliente,self).__init__()
         uic.loadUi('cliente/view/vistaCliente.ui',self)
         self.setWindowTitle("Home")
         self.cliente=cliente
         self.login=login
         self.controller=controller
-        self.controllerp=ControllerListaProdotti()
+        self.controllerp=controllerprod
         self.logout_requested = False
         self.carrello_button.clicked.connect(lambda: self.go_carrello(cliente))
         self.whishlist_button.clicked.connect(lambda: self.go_Whishlist(cliente,self.controller))
@@ -96,9 +96,9 @@ class HomeCliente(QWidget):
 
     def closeEvent(self,event):
         if self.logout_requested:
-            event.accept()  # La finestra verrà chiusa senza popup di conferma
+            event.accept()
         else:
-            # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
+
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Icon.Question)
             msg.setText("Sei sicuro di voler chiudere il programma?")

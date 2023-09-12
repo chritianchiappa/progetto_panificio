@@ -640,7 +640,7 @@ background:none;
        </spacer>
       </item>
       <item alignment="Qt::AlignHCenter">
-       <widget class="QPushButton" name="registrati_button">
+       <widget class="QPushButton" name="reg_cliente_button">
         <property name="minimumSize">
          <size>
           <width>200</width>
