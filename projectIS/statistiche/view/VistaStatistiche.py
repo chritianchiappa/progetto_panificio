@@ -108,10 +108,26 @@ class VistaStatistiche(QWidget):
             ax = self.figure.add_subplot(111)
 
             ax.pie(sizes, labels=labels,
-                   wedgeprops={"linewidth": 1, "edgecolor": "black"}, autopct='%1.1f%%', startangle=90, explode=explode,
-                   colors=colors)
+                   wedgeprops={"linewidth": 1, "edgecolor": "black"}, autopct='', startangle=90, explode=explode,
+                   colors=colors, labeldistance=0.6)
 
             ax.axis('equal')
+
+            def mostra_valore(event):
+                if event.inaxes == ax:
+                    for i, pie_wedge in enumerate(ax.patches):
+                        if pie_wedge.contains(event)[0]:
+                            valore = sizes[i]
+                            totale = sum(sizes)
+                            percentuale = (valore / totale) * 100
+                            ax.set_title(f'Valore: {percentuale:.1f}%', fontsize=14, fontweight='bold')
+                            ax.figure.canvas.draw_idle()
+                            return
+                ax.set_title("")  # Nasconde l'etichetta quando il cursore esce dal grafico
+                ax.figure.canvas.draw_idle()
+            # Connette la funzione all'evento 'motion_notify_event'
+            ax.figure.canvas.mpl_connect('motion_notify_event', mostra_valore)
+
 
         else:
             self.figure.clear()
@@ -130,25 +146,33 @@ class VistaStatistiche(QWidget):
 
         mesiNum = {1: "gen", 2: "feb", 3: "mar", 4: "apr", 5: "mag", 6: "giu", 7: "lug", 8: "ago", 9: "set", 10: "ott",
                    11: "nov", 12: "dic"}
-        dati_tabella = [["Mese", "Prodotto", "Quantità"]]
+        dati_tabella = [["Mese", "Prodotto", "Quantita "]]
 
         for ordine in self.controllerlistord.get_lista_ordini():
-            for mese, mesiNome in zip(mesiNum, mesi):
-                if mese == ControllerOrdine(ordine).get_mese_ordine():
-                    for prod in ControllerOrdine(ordine).get_lista_prodotti_ordinati():
-                        if ControllerProdotto(prod).get_nome() in mesi[mesiNome]["conteggi"]:
-                            mesi[mesiNome]["conteggi"][ControllerProdotto(prod).get_nome()] += ControllerProdotto(
-                                prod).get_quantita()
-                        else:
-                            mesi[mesiNome]["conteggi"][ControllerProdotto(prod).get_nome()] = ControllerProdotto(
-                                prod).get_quantita()
+            if ControllerOrdine(ordine).get_anno_ordine() == self.anno_selezionato:
+                prodotti_ordinati = ControllerOrdine(ordine).get_lista_prodotti_ordinati()
+                if isinstance(prodotti_ordinati, list):
+                    for mese, mesiNome in zip(mesiNum, mesi):
+                        if mese == ControllerOrdine(ordine).get_mese_ordine():
+                            for prod in prodotti_ordinati:
+                                if ControllerProdotto(prod).get_nome() in mesi[mesiNome]["conteggi"]:
+                                    mesi[mesiNome]["conteggi"][
+                                        ControllerProdotto(prod).get_nome()] += ControllerProdotto(
+                                        prod).get_quantita()
+                                else:
+                                    mesi[mesiNome]["conteggi"][
+                                        ControllerProdotto(prod).get_nome()] = ControllerProdotto(
+                                        prod).get_quantita()
 
         for mesiNome in mesi:
             prodotti_ordinati = sorted(mesi[mesiNome]["conteggi"].items(), key=lambda x: x[1], reverse=True)
             primo_prodotto = dict(prodotti_ordinati[:1])
-            nome = list(primo_prodotto.keys())
-            quantita = list(primo_prodotto.values())
-            dati_tabella.append([mesiNome, nome, quantita])
+            if len(prodotti_ordinati) == 0:
+                dati_tabella.append(["N/A", "N/A", "N/A"])
+            else:
+                nome = list(primo_prodotto.keys())[0]
+                quantita = list(primo_prodotto.values())[0]
+                dati_tabella.append([mesiNome, str(nome), str(quantita)])
 
         self.figure.clear()
         ax = self.figure.add_subplot(111)
@@ -161,6 +185,8 @@ class VistaStatistiche(QWidget):
         tabella.set_fontsize(12)
         tabella.scale(1.2, 1.2)
         self.canvas.draw()
+
+
     def mostra_grafico4(self):
         self.grafico_attuale = "G4"
         categorie_base = Counter()
