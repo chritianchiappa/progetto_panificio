@@ -34,21 +34,21 @@ class VistaInserisciProdotto(QWidget):
 
     def aggiungi_prodotto(self):
         nome=self.nome.text().strip()
-        quantita=self.quantita.text().strip()
+        quantita=self.quantita.value()
         tipo=self.tipo.currentText()
-        prezzo=self.prezzo.text().strip()
+        prezzo=self.prezzo.value()
         ingredienti=self.ingredienti.text()
-        url_immagine= self.url_immagine.text()
+        url_immagine= self.url_immagine.text().strip()
         if tipo.strip() == "":
             self.popup("Seleziona un tipo di prodotto", QMessageBox.Icon.Warning, QMessageBox.StandardButton.Ok)
             return  # Interrompi il processo se non è stato selezionato un tipo
 
-        elif len(nome)==0 or len(quantita)==0 or len(prezzo)==0 or len(ingredienti)==0:
+        elif len(nome)==0 or len(ingredienti)==0:
             self.popup("Alcuni campi non sono compilati",QMessageBox.Icon.Warning,QMessageBox.StandardButton.Ok)
             return
 
         else:
-            self.sposta_file(url_immagine,"immagini/",nome)
+            self.sposta_file(url_immagine,"immagini/",nome+".png")
             lista_ingredienti=[]
             lista_nomi_ingredienti = ingredienti.split(',')
             for ingrediente_nome in lista_nomi_ingredienti:
@@ -68,10 +68,12 @@ class VistaInserisciProdotto(QWidget):
                 tipo,
                 prezzo,
                 lista_ingredienti,
-                float(quantita)
+                quantita
             ))
             self.popup("prodotto aggiunto all elenco",QMessageBox.Icon.Information,QMessageBox.StandardButton.Ok)
+
             self.controllerprod.save_data()
+            self.close()
 
     def popup(self,text,icon,button):
         msg = QMessageBox()

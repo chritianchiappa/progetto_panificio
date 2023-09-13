@@ -112,7 +112,7 @@ background-color: rgb(204, 204, 204);</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/cuore.png</normaloff>
              <normalon>:/icone/icone/cuore_pieno.png</normalon>:/icone/icone/cuore.png</iconset>
            </property>
@@ -141,7 +141,7 @@ background-color: rgb(204, 204, 204);</string>
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>260</height>
+          <height>220</height>
          </size>
         </property>
         <property name="cursor">
@@ -180,7 +180,7 @@ background-color: rgb(204, 204, 204);</string>
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>220</height>
+             <height>200</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -551,6 +551,9 @@ border-radius:5px;
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
             </layout>
@@ -601,6 +604,9 @@ border-radius:5px;
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -704,7 +710,7 @@ border-radius:0px;
             <string>Dettagli</string>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/piu.png</normaloff>
              <normalon>:/icone/icone/meno.png</normalon>:/icone/icone/piu.png</iconset>
            </property>
@@ -728,7 +734,7 @@ border-radius:0px;
   </layout>
  </widget>
  <resources>
-  <include location="../../home/view/res.qrc"/>
+  <include location="../../risorse/res.qrc"/>
  </resources>
  <connections/>
 </ui>

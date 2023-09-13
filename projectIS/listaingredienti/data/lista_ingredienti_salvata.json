@@ -1,104 +1,279 @@
 [
 {
    "nome": "farina 0",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 1.40,
+   "quantita": 40,
    "unita_misura": "Kg",
    "allergeni": [
       "glutine"],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
+ },
+  {
+   "nome": "farina 00",
+   "prezzo": 1.24,
+   "quantita": 40,
+   "unita_misura": "Kg",
+   "allergeni": [
+      "glutine"],
+   "scadenza": "31-12-2023"
  },
    {
       "nome": "uova",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 0.50,
+   "quantita": 20,
    "unita_misura": "Pz",
-   "allergeni": [
-      "glutine"],
-   "scadenza": "31/12/2023"
+   "allergeni": ["uova"],
+   "scadenza": "31-12-2023"
    },
    {
        "nome": "cioccolata",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 7.00,
+   "quantita": 5,
    "unita_misura": "Kg",
-   "allergeni": [
-      "glutine"],
-   "scadenza": "31/12/2023"
+   "allergeni": ["frutta a guscio"],
+   "scadenza": "31-12-2023"
    },
    {
        "nome": "crema",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 7.70,
+   "quantita": 5,
    "unita_misura": "Kg",
-   "allergeni": [
-      "glutine"],
-   "scadenza": "31/12/2023"
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "marmellata albicocca",
+   "prezzo": 8.50,
+   "quantita": 5,
+   "unita_misura": "Kg",
+   "allergeni": ["glutine"],
+   "scadenza": "31-12-2023"
    },
    {
        "nome": "pomodoro",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 2.30,
+   "quantita": 3,
    "unita_misura": "Kg",
-   "allergeni": [
-      "glutine"],
-   "scadenza": "31/12/2023"
+   "allergeni": [],
+   "scadenza": "31-12-2023"
    },
   {
       "nome": "margarina",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 6.50,
+   "quantita": 3,
    "unita_misura": "Kg",
    "allergeni": [
       ],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
    },
   {
       "nome": "vino",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 3.40,
+   "quantita": 3,
    "unita_misura": "L",
    "allergeni": [],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
    },
   {
       "nome": "zucchero",
-   "prezzo": 10,
+   "prezzo": 3.50,
    "quantita": 10,
    "unita_misura": "kg",
    "allergeni": [],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
    },
   {
       "nome": "vanillina",
-   "prezzo": 10,
-   "quantita": 10,
-   "unita_misura": "Kg",
+   "prezzo": 1.40,
+   "quantita": 200,
+   "unita_misura": "g",
    "allergeni": [],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
    },
   {
       "nome": "semi d'anice",
-   "prezzo": 10,
-   "quantita": 10,
-   "unita_misura": "g",
+   "prezzo": 12.00,
+   "quantita": 2,
+   "unita_misura": "Kg",
    "allergeni": [],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
    },
   {
       "nome": "lievito chimico",
-   "prezzo": 10,
-   "quantita": 10,
-   "unita_misura": "g",
+   "prezzo": 7.30,
+   "quantita": 5,
+   "unita_misura": "Kg",
    "allergeni": [],
-   "scadenza": "31/12/2023"
+   "scadenza": "14-09-2023"
    },
   {
       "nome": "sale",
-   "prezzo": 10,
-   "quantita": 10,
+   "prezzo": 0.90,
+   "quantita": 5,
    "unita_misura": "Kg",
    "allergeni": [],
-   "scadenza": "31/12/2023"
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "mozzarella",
+   "prezzo": 15.00,
+   "quantita": 5,
+   "unita_misura": "Kg",
+   "allergeni": ["latte"],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "cipolla",
+   "prezzo": 9.50,
+   "quantita": 6,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "burro",
+   "prezzo": 16.00,
+   "quantita": 3,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "acqua",
+   "prezzo": 0.00,
+   "quantita": 20,
+   "unita_misura": "L",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "latte",
+   "prezzo": 1.20,
+   "quantita": 24,
+   "unita_misura": "L",
+   "allergeni": ["latte"],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "tonno",
+   "prezzo": 30.00,
+   "quantita": 6,
+   "unita_misura": "Kg",
+   "allergeni": ["pesce"],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "maionese",
+   "prezzo": 4.50,
+   "quantita": 10,
+   "unita_misura": "Kg",
+   "allergeni": ["uovo"],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "lievito di birra",
+   "prezzo": 12.20,
+   "quantita": 6,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+{
+      "nome": "malto",
+   "prezzo": 8.00,
+   "quantita": 10,
+   "unita_misura": "Kg",
+   "allergeni": ["glutine"],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "liquore",
+   "prezzo": 7.20,
+   "quantita": 5,
+   "unita_misura": "L",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "fecola",
+   "prezzo": 3.90,
+   "quantita": 10,
+   "unita_misura": "Kg",
+   "allergeni": ["glutine"],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "cacao",
+   "prezzo": 12.90,
+   "quantita": 2,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "strutto",
+   "prezzo": 10.50,
+   "quantita": 20,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+   {
+      "nome": "olio d'oliva",
+   "prezzo": 7.00,
+   "quantita": 12,
+   "unita_misura": "L",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "miele",
+   "prezzo": 10.00,
+   "quantita": 20,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "rosmarino",
+   "prezzo": 10.50,
+   "quantita": 2,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "farina integrale di grano tenero",
+   "prezzo": 2.50,
+   "quantita": 20,
+   "unita_misura": "Kg",
+   "allergeni": ["glutine"],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "mele",
+   "prezzo": 2.50,
+   "quantita": 6,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+
+  {
+      "nome": "frutta candita",
+   "prezzo": 15.00,
+   "quantita": 2,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
+   },
+  {
+      "nome": "cipolla",
+   "prezzo": 1.40,
+   "quantita": 2,
+   "unita_misura": "Kg",
+   "allergeni": [],
+   "scadenza": "31-12-2023"
    }
+
 ]

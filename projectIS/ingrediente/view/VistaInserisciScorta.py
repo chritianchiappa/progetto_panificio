@@ -43,7 +43,7 @@ class VistaInserisciScorta(QWidget):
                 unita_misura,
                 quantita,
                 lista_allergeni,
-                selected_date.strftime("%d/%m/%Y"))
+                selected_date)
 
             self.controlleringr.inserisci_ingrediente(ingrediente)
             self.controllerspese.inserisci_spesa(Spesa(

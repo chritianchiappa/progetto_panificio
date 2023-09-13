@@ -7,7 +7,7 @@ from prodotto.view.VistaModificaQuantita import VistaModificaQuantita
 from prodotto.view.VistaInserisciProdotto import VistaInserisciProdotto
 from ingrediente.view.VistaInserisciScorta import VistaInserisciScorta
 from ingrediente.view.VistaModificaQuantitaScorta import VistaModificaQuantitaScorta
-
+from datetime import datetime
 class VistaMagazzino(QWidget):
     def __init__(self,controllerprod,controlleringr):
         super(VistaMagazzino, self).__init__()
@@ -65,10 +65,16 @@ class VistaMagazzino(QWidget):
                 quantita = "esaurito"
             else:
                 quantita = str(ingrediente.quantita) + ingrediente.unita_misura
+
+            if ingrediente.scadenza<datetime.now().date():
+                scadenza="scaduto"
+            else:
+                scadenza=ingrediente.scadenza.strftime("%d/%m/%Y")
+
             self.tableWidget.setItem(row, 0, QTableWidgetItem(f"{ingrediente.nome}"))
             self.tableWidget.setItem(row, 1, QTableWidgetItem(f"{ingrediente.prezzo}"))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(f"{quantita}"))
-            self.tableWidget.setItem(row, 3, QTableWidgetItem(f"{ingrediente.scadenza}"))
+            self.tableWidget.setItem(row, 3, QTableWidgetItem(f"{scadenza}"))
             row += 1
 
     def show_prodotti(self):

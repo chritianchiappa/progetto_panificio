@@ -1,45 +1,106 @@
 [
 {
-   "nome": "brioche alla nutella",
+   "nome": "Brioche alla nutella",
    "tipo": "Dolci",
    "prezzo": 1.2,
    "ingredienti":[
-      "farina 0",
+      "farina 00",
+     "acqua",
+     "zucchero",
+     "margarina",
+      "latte",
       "uova",
+     "miele",
+     "burro",
+     "sale",
+     "lievito di birra",
       "cioccolata"],
    "quantita": 20
  },
  {
-    "nome": "brioche alla crema",
+    "nome": "Brioche alla crema",
    "tipo": "Dolci",
    "prezzo": 1.2,
    "ingredienti": [
-      "farina 0",
+       "farina 00",
+     "acqua",
+     "zucchero",
+     "margarina",
+      "latte",
       "uova",
+     "miele",
+     "burro",
+     "sale",
+     "lievito di birra",
       "crema"],
    "quantita": 15
  },
    {
-    "nome": "pizza margherita",
+    "nome": "Pizza rossa",
    "tipo": "Pizze",
    "prezzo": 1,
    "ingredienti": [
       "farina 0",
-      "uova",
+     "acqua",
+     "strutto",
+     "olio d' oliva",
+     "sale",
+      "miele",
+     "lievito di birra",
       "pomodoro"],
      "quantita": 9
  },
    {
-    "nome": "pizza bianca",
+    "nome": "Pizza con rosmarino",
    "tipo": "Pizze",
    "prezzo": 0.50,
    "ingredienti": [
       "farina 0",
-      "uova"],
+     "acqua",
+     "strutto",
+     "olio d' oliva",
+     "sale",
+      "miele",
+     "lievito di birra",
+     "rosmarino"
+   ],
      "quantita": 20
  },
   {
-    "nome": "Ciambelline al vino ",
+    "nome": "Pizza con cipolla",
+   "tipo": "Pizze",
+   "prezzo": 0.50,
+   "ingredienti": [
+      "farina 0",
+     "acqua",
+     "strutto",
+     "olio d' oliva",
+     "sale",
+      "miele",
+     "lievito di birra",
+     "cipolla"
+   ],
+     "quantita": 20
+ },
+  {
+    "nome": "Pizza margherita",
+   "tipo": "Pizze",
+   "prezzo": 0.50,
+   "ingredienti": [
+      "farina 0",
+     "acqua",
+     "strutto",
+     "olio d' oliva",
+     "sale",
+      "miele",
+     "lievito di birra",
+     "pomodoro",
+     "mozzarella"
+   ],
+     "quantita": 20
+ },
+  {
+    "nome": "Ciambelline al vino 0,4kg",
    "tipo": "Biscotti",
    "prezzo": 4.80,
    "ingredienti": [
@@ -51,5 +112,235 @@
      "lievito chimico",
      "vanillina"],
      "quantita": 10
+ },
+  {
+    "nome": "Sandwich con tonno",
+   "tipo": "Pane",
+   "prezzo": 1.20,
+   "ingredienti": [
+      "farina 0",
+     "farina 00",
+     "acqua",
+     "margarina",
+     "zucchero",
+     "latte",
+     "sale",
+     "malto",
+     "lievito di birra",
+     "tonno",
+   "maionese"],
+     "quantita": 10
+ },
+  {
+    "nome": "Torta Sacher",
+   "tipo": "Dolci",
+   "prezzo": 28.00,
+   "ingredienti": [
+     "farina 00",
+     "zucchero",
+     "uova",
+     "fecola",
+     "marmellata albicocca",
+     "cioccolato",
+     "cacao",
+     "lievito chimico",
+   "liquore"],
+     "quantita": 10
+ },
+  {
+    "nome": "Biscotto di mosto",
+   "tipo": "Dolci",
+   "prezzo": 2.80,
+   "ingredienti": [
+     "farina 0",
+     "zucchero",
+     "vino",
+     "mosto",
+     "miele",
+     "olio d'oliva",
+     "semi d'anice",
+     "lievito di birra"],
+     "quantita": 10
+ },
+  {
+    "nome": "Baguette",
+   "tipo": "Pane",
+   "prezzo": 2.50,
+   "ingredienti": [
+     "farina 0",
+     "acqua",
+     "strutto",
+     "sale",
+     "lievito di birra",
+     "margarina"],
+     "quantita": 10
+ },
+  {
+    "nome": "Francese",
+   "tipo": "Pane",
+   "prezzo": 2.00,
+   "ingredienti": [
+     "farina 0",
+     "acqua",
+     "strutto",
+     "lievito di birra",
+     "sale"],
+     "quantita": 10
+ },
+  {
+    "nome": "Pane integrale",
+   "tipo": "Pane",
+   "prezzo": 1.50,
+   "ingredienti": [
+     "farina integrale di grano tenero",
+     "acqua",
+     "lievito di birra",
+     "sale"],
+     "quantita": 10
+ },
+  {
+    "nome": "Panini 0,100kg",
+   "tipo": "Pane",
+   "prezzo": 1.00,
+   "ingredienti": [
+     "farina 0",
+     "acqua",
+     "strutto",
+     "lievito di birra",
+     "sale"],
+     "quantita": 10
+ },
+  {
+    "nome": "Pane comune 0,400kg",
+   "tipo": "Pane",
+   "prezzo": 1.90,
+   "ingredienti": [
+     "farina 0",
+     "acqua",
+     "lievito di birra",
+     "sale"],
+     "quantita": 10
+ },
+  {
+    "nome": "Ciambellone al cioccolato",
+   "tipo": "Dolci",
+   "prezzo": 12.00,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "zucchero",
+     "burro",
+     "latte",
+     "lievito chimico",
+     "cioccolato"],
+     "quantita": 10
+ },
+  {
+    "nome": "Crostata marmellata",
+   "tipo": "Dolci",
+   "prezzo": 15.00,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "margarina",
+     "zucchero",
+     "sale",
+     "lievito chimico",
+     "marmellata albicocca"],
+     "quantita": 10
+ },
+  {
+    "nome": "Crostata crema e cioccolato",
+   "tipo": "Dolci",
+   "prezzo": 15.00,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "margarina",
+     "zucchero",
+     "sale",
+     "lievito chimico",
+     "crema",
+   "cioccolato"],
+     "quantita": 10
+ },
+  {
+    "nome": "Dolce del nonno",
+   "tipo": "Dolci",
+   "prezzo": 8.00,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "margarina",
+     "zucchero",
+     "lievito chimico"],
+     "quantita": 10
+ },
+  {
+    "nome": "Rullo al cioccolato",
+   "tipo": "Dolci",
+   "prezzo": 13.00,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "margarina",
+     "zucchero",
+     "lievito chimico",
+   "cioccolato"],
+     "quantita": 10
+ },
+  {
+    "nome": "Pizza marmorizzata",
+   "tipo": "Dolci",
+   "prezzo": 9.00,
+   "ingredienti": [
+     "farina 0",
+     "uova",
+     "burro",
+   "cacao",
+   "lievito chimico"],
+     "quantita": 10
+ },
+  {
+    "nome": "Torta di mele",
+   "tipo": "Dolci",
+   "prezzo": 15.00,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "burro",
+     "zucchero",
+     "mele",
+     "lievito chimico"],
+     "quantita": 10
+ },
+  {
+    "nome": "Biscotti caserecci 0,4kg",
+   "tipo": "Biscotti",
+   "prezzo": 4.80,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "margarina",
+     "latte",
+     "zucchero",
+     "lievito chimico"],
+     "quantita": 20
+ },
+  {
+    "nome": "Biscotteria assortita 0,5kg",
+   "tipo": "Biscotti",
+   "prezzo": 13.50,
+   "ingredienti": [
+     "farina 00",
+     "uova",
+     "burro",
+     "zucchero",
+     "cioccolato",
+     "frutta candita",
+     "lievito chimico"],
+     "quantita": 10
  }
+
+
 ]

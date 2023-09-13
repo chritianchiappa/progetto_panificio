@@ -1,0 +1,42 @@
+<RCC>
+  <qresource prefix="immagini">
+    <file>../immagini/sfondo_registra_utente.png</file>
+    <file>../immagini/sfondo_registra_dipendente.png</file>
+    <file>../immagini/sfondo_amm.png</file>
+    <file>../immagini/brioche alla nutella.png</file>
+    <file>../immagini/noimage.png</file>
+    <file>../immagini/pizza con rosmarino.png</file>
+    <file>../immagini/sfondo_splashscreen.png</file>
+    <file>../immagini/sfondologin.png</file>
+  </qresource>
+  <qresource prefix="icone">
+    <file>../icone/burger_menu.png</file>
+    <file>../icone/carrello.png</file>
+    <file>../icone/cassa.png</file>
+    <file>../icone/chiusura.png</file>
+    <file>../icone/cuore_pieno.png</file>
+    <file>../icone/cuore-spezzato.png</file>
+    <file>../icone/cuore.png</file>
+    <file>../icone/dipendenti.png</file>
+    <file>../icone/doppia_frecciadx.png</file>
+    <file>../icone/doppia_frecciasx.png</file>
+    <file>../icone/freccia_destra.png</file>
+    <file>../icone/freccia.png</file>
+    <file>../icone/hidepass.png</file>
+    <file>../icone/lented'ingrandimento.png</file>
+    <file>../icone/Logo_Forno_grande.png</file>
+    <file>../icone/Logo.png</file>
+    <file>../icone/logout.png</file>
+    <file>../icone/magazzino.png</file>
+    <file>../icone/meno.png</file>
+    <file>../icone/ordine.png</file>
+    <file>../icone/piu.png</file>
+    <file>../icone/prodotto.png</file>
+    <file>../icone/profilo.png</file>
+    <file>../icone/showpass.png</file>
+    <file>../icone/statistiche.png</file>
+    <file>../icone/torta.png</file>
+    <file>../icone/utente.png</file>
+    <file>../icone/whishlist.png</file>
+  </qresource>
+</RCC>

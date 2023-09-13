@@ -23,5 +23,3 @@ class ControllerListaIngredienti:
     def save_data(self):
         self.model.save_data()
 
-    def save_data_specialized(self, lista_ingredienti):
-        self.model.save_data_specialized(lista_ingredienti)

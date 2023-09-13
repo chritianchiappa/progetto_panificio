@@ -136,16 +136,18 @@ class VistaStatistiche(QWidget):
 
         self.canvas.draw()
 
-
-
     def mostra_grafico3(self):
         self.grafico_attuale = "G3"
-        mesi = {"gen": {"conteggi": {}}, "feb": {"conteggi": {}}, "mar": {"conteggi": {}}, "apr": {"conteggi": {}},
-                "mag": {"conteggi": {}}, "giu": {"conteggi": {}}, "lug": {"conteggi": {}}, "ago": {"conteggi": {}},
-                "set": {"conteggi": {}}, "ott": {"conteggi": {}}, "nov": {"conteggi": {}}, "dic": {"conteggi": {}}}
+        mesi = {
+            "gen": {"conteggi": {}}, "feb": {"conteggi": {}}, "mar": {"conteggi": {}}, "apr": {"conteggi": {}},
+            "mag": {"conteggi": {}}, "giu": {"conteggi": {}}, "lug": {"conteggi": {}}, "ago": {"conteggi": {}},
+            "set": {"conteggi": {}}, "ott": {"conteggi": {}}, "nov": {"conteggi": {}}, "dic": {"conteggi": {}}
+        }
 
-        mesiNum = {1: "gen", 2: "feb", 3: "mar", 4: "apr", 5: "mag", 6: "giu", 7: "lug", 8: "ago", 9: "set", 10: "ott",
-                   11: "nov", 12: "dic"}
+        mesiNum = {
+            1: "gen", 2: "feb", 3: "mar", 4: "apr", 5: "mag", 6: "giu", 7: "lug", 8: "ago", 9: "set", 10: "ott",
+            11: "nov", 12: "dic"
+        }
         dati_tabella = [["Mese", "Prodotto", "Quantita "]]
 
         for ordine in self.controllerlistord.get_lista_ordini():
@@ -166,12 +168,12 @@ class VistaStatistiche(QWidget):
 
         for mesiNome in mesi:
             prodotti_ordinati = sorted(mesi[mesiNome]["conteggi"].items(), key=lambda x: x[1], reverse=True)
-            primo_prodotto = dict(prodotti_ordinati[:1])
-            if len(prodotti_ordinati) == 0:
-                dati_tabella.append(["N/A", "N/A", "N/A"])
+            if not prodotti_ordinati:
+                dati_tabella.append([mesiNome, "N/A", "N/A"])
             else:
-                nome = list(primo_prodotto.keys())[0]
-                quantita = list(primo_prodotto.values())[0]
+                primo_prodotto = prodotti_ordinati[0]
+                nome = primo_prodotto[0]
+                quantita = primo_prodotto[1]
                 dati_tabella.append([mesiNome, str(nome), str(quantita)])
 
         self.figure.clear()

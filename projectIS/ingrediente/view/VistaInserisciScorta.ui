@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>500</height>
+    <width>450</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>400</width>
-    <height>500</height>
+    <width>450</width>
+    <height>550</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>400</width>
-    <height>500</height>
+    <width>500</width>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -99,6 +99,16 @@ border-bottom:2px solid rgb(242, 155, 0);
         </property>
         <property name="placeholderText">
          <string>Nome</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="styleSheet">
+         <string notr="true">border:2px solid black</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
@@ -327,6 +337,16 @@ QComboBox::down-arrow {
        </widget>
       </item>
       <item>
+       <widget class="Line" name="line_2">
+        <property name="styleSheet">
+         <string notr="true">border:2px solid black</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLineEdit" name="allergeni">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -358,6 +378,16 @@ border-bottom:2px solid rgb(242, 155, 0);
         </property>
         <property name="placeholderText">
          <string>Allergeni</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_7">
+        <property name="styleSheet">
+         <string notr="true">border:2px solid black</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
@@ -433,6 +463,16 @@ border-bottom:2px solid rgb(242, 155, 0);
     </widget>
    </item>
    <item>
+    <widget class="Line" name="line_8">
+     <property name="styleSheet">
+      <string notr="true">border:2px solid black</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="frame_4">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -486,7 +526,7 @@ border-bottom:2px solid rgb(242, 155, 0);
   </layout>
  </widget>
  <resources>
-  <include location="../../home/view/res.qrc"/>
+  <include location="../../login/view/res.qrc"/>
  </resources>
  <connections/>
 </ui>

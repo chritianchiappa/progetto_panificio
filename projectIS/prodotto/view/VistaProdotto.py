@@ -46,7 +46,7 @@ class VistaProdotto(QWidget):
             pixmap = QPixmap('immagini/' + str(self.prodotto.nome) + '.png')
         else:
             pixmap = QPixmap('immagini/noimage.png')
-        pixmap_scaled = pixmap.scaled(320, 200, Qt.AspectRatioMode.KeepAspectRatio)
+        pixmap_scaled = pixmap.scaled(320, 220, Qt.AspectRatioMode.KeepAspectRatio)
 
         self.immagine_prodotto.setPixmap(pixmap_scaled)
 

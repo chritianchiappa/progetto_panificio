@@ -1,4 +1,4 @@
-from utilizzatore.model.Utilizzatore import Utilizzatore
+from amministratore.model.Utilizzatore import Utilizzatore
 
 class Dipendente(Utilizzatore):
     def __init__(self, nome, cognome, email, password,cfiscale,indirizzo,id,telefono,notifiche):

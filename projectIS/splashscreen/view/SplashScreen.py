@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QSplashScreen,QApplication
 from PyQt6 import uic
 from PyQt6.QtCore import Qt,QTimer,QPropertyAnimation,QEasingCurve
 
-from home.view.VistaLogin import VistaLogin
+from login.view.VistaLogin import VistaLogin
 COUNTER=0
 class SplashScreen(QSplashScreen):
     def __init__(self):
