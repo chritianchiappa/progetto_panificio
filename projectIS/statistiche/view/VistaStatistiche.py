@@ -18,6 +18,7 @@ class VistaStatistiche(QWidget):
     def __init__(self):
         super(VistaStatistiche, self).__init__()
         uic.loadUi('statistiche/view/VistaStatistiche.ui', self)
+        self.setWindowTitle("Statistiche")
         plt.style.use('classic')
         self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
