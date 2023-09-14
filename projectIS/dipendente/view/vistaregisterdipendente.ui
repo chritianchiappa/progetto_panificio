@@ -26,7 +26,8 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/immagini/immagini/sfondo_registra_dipendente.png);</string>
+   <string notr="true">background-image: url(:/immagini/immagini/sfondo_registra_dipendente.png);
+</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">

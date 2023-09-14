@@ -102,7 +102,7 @@ background-color: rgb(255, 255, 255);</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/Logo.png</normaloff>:/icone/icone/Logo.png</iconset>
            </property>
            <property name="iconSize">
@@ -172,7 +172,7 @@ border:none;
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/burger_menu.png</normaloff>
              <normalon>:/icone/icone/freccia_destra.png</normalon>:/icone/icone/burger_menu.png</iconset>
            </property>
@@ -256,7 +256,7 @@ color:black;
             <string>Statistiche</string>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/statistiche.png</normaloff>:/icone/icone/statistiche.png</iconset>
            </property>
            <property name="iconSize">
@@ -307,7 +307,7 @@ color:black;
             <string>Dipendenti</string>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/dipendenti.png</normaloff>:/icone/icone/dipendenti.png</iconset>
            </property>
            <property name="iconSize">
@@ -357,7 +357,7 @@ color:black;
             <string>Cassa</string>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/cassa.png</normaloff>:/icone/icone/cassa.png</iconset>
            </property>
            <property name="iconSize">
@@ -586,7 +586,7 @@ border-bottom:2px solid rgb(255, 145, 0);</string>
                <string>Logout</string>
               </property>
               <property name="icon">
-               <iconset resource="../../home/view/res.qrc">
+               <iconset resource="../../risorse/res.qrc">
                 <normaloff>:/icone/icone/logout.png</normaloff>:/icone/icone/logout.png</iconset>
               </property>
               <property name="iconSize">
@@ -625,7 +625,7 @@ border-bottom:2px solid rgb(255, 145, 0);</string>
   </layout>
  </widget>
  <resources>
-  <include location="../../home/view/res.qrc"/>
+  <include location="../../risorse/res.qrc"/>
  </resources>
  <connections/>
 </ui>

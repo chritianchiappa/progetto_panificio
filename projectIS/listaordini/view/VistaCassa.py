@@ -29,9 +29,9 @@ class VistaCassa(QWidget):
                 prodotti_ordinati=ControllerOrdine(ordine).get_lista_prodotti_ordinati()
                 item = QStandardItem()
                 if isinstance(prodotti_ordinati,list):
-                    item.setText(f"Ordine di prodotti da {ControllerOrdine(ordine).get_nome_cliente()} {ControllerOrdine(ordine).get_importo()}€")
+                    item.setText(f"Ordine di prodotti da {ControllerOrdine(ordine).get_nome_cliente()} {round(ControllerOrdine(ordine).get_importo(),2)}€")
                 else:
-                    item.setText(f"Ordine di torta da {ControllerOrdine(ordine).get_nome_cliente()} {ControllerOrdine(ordine).get_importo()}€")
+                    item.setText(f"Ordine di torta da {ControllerOrdine(ordine).get_nome_cliente()} {round(ControllerOrdine(ordine).get_importo(),2)}€")
                 item.setEditable(False)
                 font = item.font()
                 font.setPointSize(18)
@@ -46,7 +46,7 @@ class VistaCassa(QWidget):
             if ControllerSpesa(spesa).get_data().date()==self.data_odierna.date():
                 totale_spese+=ControllerSpesa(spesa).get_costo_ingrediente()
                 item = QStandardItem()
-                item.setText(f"Acquisto di {ControllerSpesa(spesa).get_nome_ingrediente()} {ControllerSpesa(spesa).get_costo_ingrediente()}€")
+                item.setText(f"Acquisto di {ControllerSpesa(spesa).get_nome_ingrediente()} {round(ControllerSpesa(spesa).get_costo_ingrediente(),2)}€")
                 item.setEditable(False)
                 font = item.font()
                 font.setPointSize(18)

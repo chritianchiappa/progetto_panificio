@@ -2,7 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
 import os
-from PyQt6.QtGui import QPixmap,QPainter, QPainterPath
+from PyQt6.QtGui import QPixmap
 
 from prodotto.controller.ControllerProdotto import ControllerProdotto
 from cliente.controller.ControllerCliente import ControllerCliente

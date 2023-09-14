@@ -3,12 +3,15 @@ from PyQt6.QtWidgets import QWidget,QLineEdit,QMessageBox
 from PyQt6 import uic
 from cliente.model.Cliente import Cliente
 from validazionecampi.validazione_campi import Validation
+from PyQt6.QtGui import QPixmap,QPalette,QBrush
 class VistaRegisterUtente(QWidget):
     def __init__(self,controller):
         super(VistaRegisterUtente,self).__init__()
         uic.loadUi('cliente/view/vistaregisterutente.ui',self)
         self.setWindowTitle("Registrazione utente")
         self.controller = controller
+
+
         self.sp_button.clicked.connect(self.show_password)
         self.scp_button.clicked.connect(self.show_cpassword)
         self.reg_cliente_button.clicked.connect(self.registra_Cliente)

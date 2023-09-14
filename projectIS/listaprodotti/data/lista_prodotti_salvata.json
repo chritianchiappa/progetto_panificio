@@ -199,7 +199,7 @@
      "quantita": 10
  },
   {
-    "nome": "Panini 0,100kg",
+    "nome": "Panini 0,1kg",
    "tipo": "Pane",
    "prezzo": 1.00,
    "ingredienti": [
@@ -211,7 +211,7 @@
      "quantita": 10
  },
   {
-    "nome": "Pane comune 0,400kg",
+    "nome": "Pane comune 0,4kg",
    "tipo": "Pane",
    "prezzo": 1.90,
    "ingredienti": [
