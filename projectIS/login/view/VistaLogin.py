@@ -58,7 +58,7 @@ class VistaLogin(QDialog):
 
     def on_combobox_activated(self, index): #seleziona una delle scelte della combobox
         selected_option = self.sel_registra.itemText(index)
-        if selected_option=="Utente":
+        if selected_option=="Cliente":
             self.RegistraUtente = VistaRegisterUtente(self.controller)
             self.RegistraUtente.show()
         elif selected_option=="Dipendente":

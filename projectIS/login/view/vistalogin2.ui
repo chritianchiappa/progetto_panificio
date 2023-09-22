@@ -268,7 +268,7 @@ border:2px solid rgb(255, 148, 8);
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="res.qrc">
+               <iconset>
                 <normaloff>:/icone/icone/hidepass.png</normaloff>
                 <normalon>:/icone/icone/showpass.png</normalon>:/icone/icone/hidepass.png</iconset>
               </property>
@@ -558,7 +558,7 @@ QComboBox::down-arrow {
               </property>
               <item>
                <property name="text">
-                <string>Utente</string>
+                <string>Cliente</string>
                </property>
               </item>
               <item>
