@@ -26,7 +26,7 @@ class VistaInserisciScorta(QWidget):
         allergeni=self.allergeni.text().strip()
         unita_misura=self.selettore_unita.currentText()
         lista_allergeni = allergeni.split(',')
-        selected_date = self.data_scadenza.dateTime().toPyDateTime()
+        selected_date = self.data_scadenza.dateTime().toPyDateTime().date()
 
         if unita_misura.strip() == "":
             self.popup("Seleziona un unita di misura", QMessageBox.Icon.Warning, QMessageBox.StandardButton.Ok)
