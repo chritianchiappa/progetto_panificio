@@ -51,8 +51,7 @@ class ControllerCliente():
     def get_whishlist_cliente(self):
         return self.model.whishlist
 
-    def get_telefono_cliente(self):
-        return self.model.telefono
+
 
     def prezzo_totale_carrello(self):
         prezzo=0

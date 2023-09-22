@@ -34,8 +34,7 @@ def backup_files():
             else:
 
                 print(f'Il file {source_file} non esiste, il backup non è stato eseguito per questo file.')
-    else:
-        print('Non è l\'orario programmato per il backup.')
+
 def backup_thread():
     while True:
         backup_files()
