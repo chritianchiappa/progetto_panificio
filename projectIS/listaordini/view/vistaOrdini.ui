@@ -479,7 +479,7 @@ color:black;
             <string>DETTAGLI ORDINE</string>
            </property>
            <property name="icon">
-            <iconset resource="../../home/view/res.qrc">
+            <iconset resource="../../risorse/res.qrc">
              <normaloff>:/icone/icone/piu.png</normaloff>
              <normalon>:/icone/icone/meno.png</normalon>:/icone/icone/piu.png</iconset>
            </property>
@@ -522,7 +522,7 @@ color:black;
 }</string>
            </property>
            <property name="text">
-            <string>COMPLETATO</string>
+            <string>COMPLETA ORDINE</string>
            </property>
           </widget>
          </item>
@@ -548,7 +548,7 @@ color:black;
   </layout>
  </widget>
  <resources>
-  <include location="../../home/view/res.qrc"/>
+  <include location="../../risorse/res.qrc"/>
  </resources>
  <connections/>
 </ui>
