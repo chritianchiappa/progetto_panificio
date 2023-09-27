@@ -1,4 +1,4 @@
-from amministratore.model.Utilizzatore import Utilizzatore
+from utilizzatore.model.Utilizzatore import Utilizzatore
 
 class Cliente(Utilizzatore):
     def __init__(self, nome, cognome, email, password,telefono,carrello,whishlist,notifiche):

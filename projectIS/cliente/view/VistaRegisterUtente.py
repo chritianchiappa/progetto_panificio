@@ -3,20 +3,18 @@ from PyQt6.QtWidgets import QWidget,QLineEdit,QMessageBox
 from PyQt6 import uic
 from cliente.model.Cliente import Cliente
 from validazionecampi.validazione_campi import Validation
-from PyQt6.QtGui import QPixmap,QPalette,QBrush
+
 class VistaRegisterUtente(QWidget):
     def __init__(self,controller):
         super(VistaRegisterUtente,self).__init__()
         uic.loadUi('cliente/view/vistaregisterutente.ui',self)
-        self.setWindowTitle("Registrazione utente")
+        self.setWindowTitle("Registrazione cliente")
         self.controller = controller
-
-
         self.sp_button.clicked.connect(self.show_password)
         self.scp_button.clicked.connect(self.show_cpassword)
         self.reg_cliente_button.clicked.connect(self.registra_Cliente)
 
-    def show_password(self):
+    def show_password(self): #mostra o nasconde la password in base allo stato del bottone
         if self.sp_button.isChecked():
             self.textPassword.setEchoMode(QLineEdit.EchoMode.Normal)
         else:

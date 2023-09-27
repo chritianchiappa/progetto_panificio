@@ -51,7 +51,7 @@ class VistaInserisciScorta(QWidget):
                 datetime.now()
 
             ))
-            self.popup("ingrediente aggiunto all elenco", QMessageBox.Icon.Information, QMessageBox.StandardButton.Ok)
+            self.popup("ingrediente aggiunto all'elenco", QMessageBox.Icon.Information, QMessageBox.StandardButton.Ok)
             self.close()
             self.magazzino.update_list_scorte()
             self.controlleringr.save_data()

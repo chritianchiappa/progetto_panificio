@@ -1,9 +1,7 @@
 from PyQt6.QtWidgets import QWidget,QMessageBox
 from PyQt6 import uic
 from PyQt6.QtCore import QTimer,QPropertyAnimation,QEasingCurve
-
 import webbrowser
-from datetime import datetime
 from listaprodotti.view.VistaMagazzino import VistaMagazzino
 from listaordini.view.vista_lista_ordini import VistaListaOrdini
 from notifica.view.VistaNotifica import VistaNotifica
@@ -104,7 +102,7 @@ class HomeDipendente(QWidget):
 
     def closeEvent(self, event):
         if self.logout_requested:
-            event.accept()  # La finestra verrà chiusa senza popup di conferma
+            event.accept()  # La finestra verrà chiusa senza popup di conferma perche la chiusura è dovuta al logout
         else:
             # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
             msg = QMessageBox()

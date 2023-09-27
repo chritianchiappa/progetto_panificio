@@ -18,7 +18,7 @@ class HomeAmministratore(QWidget):
 
         self.controller=controller
         self.controllerdip=controllerdip
-        self.logout_requested = False
+        self.logout_requested = False  #utilizzo questa variabile per verificare se l uscita dalla home è dovuta al logout o meno
         self.open_close_side_bar_btn.clicked.connect(self.slideMenu)
         self.dipendenti_button.clicked.connect(self.go_Lista_Dipendenti)
 
@@ -32,11 +32,11 @@ class HomeAmministratore(QWidget):
         self.timer.start(1000)
         self.update_time()
 
-    def open_sito(self):
+    def open_sito(self):  #apre il sito di tripadvisor del panificio
         webbrowser.open(
             "https://www.tripadvisor.it/Restaurant_Review-g1934128-d15861838-Reviews-Il_Piccolo_Forno-Castelplanio_Province_of_Ancona_Marche.html")
 
-    def update_time(self):
+    def update_time(self):  #utilizzato per impostare la data e l' ora nella home
         time = datetime.now()
         formatted_time = time.strftime("%H:%M:%S")
         formatted_data = time.strftime("%d/%m/%Y")
@@ -59,7 +59,7 @@ class HomeAmministratore(QWidget):
         self.SendNot=InviaNotifica(self.controller,self.controllerdip)
         self.SendNot.show()
 
-    def slideMenu(self):
+    def slideMenu(self): #si occupa di gestire l' animazione del menu a scomparsa
         self.animation = QPropertyAnimation(self.slide_menu, b"maximumWidth")
         self.animation.setDuration(250)
         easing_curve = QEasingCurve(QEasingCurve.Type.Linear)
@@ -87,7 +87,7 @@ class HomeAmministratore(QWidget):
         self.Cassa.show()
     def closeEvent(self, event):
         if self.logout_requested:
-            event.accept()  # La finestra verrà chiusa senza popup di conferma
+            event.accept()  # La finestra verrà chiusa senza popup di conferma perche la chiusura è dovuta al logout
         else:
             # L'utente sta chiudendo la finestra normalmente, quindi mostriamo il popup di conferma
             msg = QMessageBox()

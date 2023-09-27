@@ -8,14 +8,13 @@ class VistaLogAmm(QFrame):
         super(VistaLogAmm, self).__init__()
         uic.loadUi('amministratore/view/vistalogamm.ui', self)
         self.login=login
-
         self.controller=controller
         self.controllerdip=controllerdip
         self.la_button.clicked.connect(self.go_HomeAmm)
 
     def go_HomeAmm(self):
         idamm=self.Id_field.text()
-        if Amministratore.id!=idamm:
+        if Amministratore.id!=idamm:  #controllo che l' id immesso corrisponda a quello dell amministratore
             self.error.setText("Id non corretto!")
         else:
             self.close()

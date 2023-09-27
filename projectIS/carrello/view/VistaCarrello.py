@@ -2,13 +2,8 @@ from PyQt6 import uic
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
 from PyQt6.QtWidgets import QWidget
 from cliente.controller.ControllerCliente import ControllerCliente
-
-
 from ordine.view.VistaPagamento import VistaPagamento
-
 from prodotto.controller.ControllerProdotto import ControllerProdotto
-
-
 class VistaCarrello(QWidget):
      def __init__(self, cliente,controller,controllerp):
         super(VistaCarrello, self).__init__()
@@ -26,7 +21,7 @@ class VistaCarrello(QWidget):
         self.rimuovi_button.clicked.connect(self.rimuovi_selezionato)
         self.ordina_tutto_button.clicked.connect(self.ordina_tutto)
 
-     def update_ui(self):
+     def update_ui(self):  #aggiorna l' interfaccia utente, ovvero i prodotti all' interno della lista
          self.listview_model = QStandardItemModel(self.list_view)
          for prodotto in self.controller.get_carrello_cliente():
              item = QStandardItem()
@@ -41,7 +36,7 @@ class VistaCarrello(QWidget):
          importo=self.controller.prezzo_totale_carrello()
          self.prezzo_totale.setText(f"{round(importo,2)} €")
 
-     def acquista_selezionato(self):
+     def acquista_selezionato(self): #acquisto di un singolo prodotto selezionato
          selected_index = self.list_view.selectedIndexes()
          if not selected_index:  # Verifica se la lista è vuota o nessun elemento selezionato
              return
@@ -51,12 +46,12 @@ class VistaCarrello(QWidget):
          prodotto_selezionato = self.controller.get_prodotto_carrello_by_index(selected_row)
          self.VistaOrdFin = VistaPagamento([prodotto_selezionato],self.cliente,self.controllerprodotti,self.controller_lista_clienti,self.update_ui)
          self.VistaOrdFin.show()
-         if self.stackedWidget.currentWidget()==self.page_2:
+         if self.stackedWidget.currentWidget()==self.page_2:  #nel caso il programma stia mostrando i dettagli del prodotto ritorna alla vista della lista prodotti
              self.stackedWidget.setCurrentWidget(self.page_1)
              self.dettagli_button.setChecked(False)
 
 
-     def dettagli_selezionato(self):
+     def dettagli_selezionato(self): #mostra i dettagli di un prodotto selezionato
          if self.dettagli_button.isChecked():
              selected_indexes = self.list_view.selectedIndexes()
              if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
@@ -78,7 +73,7 @@ class VistaCarrello(QWidget):
              self.stackedWidget.setCurrentWidget(self.page_1)
 
 
-     def rimuovi_selezionato(self):
+     def rimuovi_selezionato(self):  #rimuove un prodotto selezionato
          selected = self.list_view.selectedIndexes()
          if not selected:
             return
@@ -90,7 +85,7 @@ class VistaCarrello(QWidget):
              self.dettagli_button.setChecked(False)
          self.update_ui()
 
-     def ordina_tutto(self):
+     def ordina_tutto(self): #ordina tutti i prodotti presenti nella lista
          if self.list_view.model().rowCount() == 0:
              return
          else:

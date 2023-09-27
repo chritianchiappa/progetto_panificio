@@ -50,9 +50,6 @@ class ControllerCliente():
                 self.model.whishlist.remove(prodotto)
     def get_whishlist_cliente(self):
         return self.model.whishlist
-
-
-
     def prezzo_totale_carrello(self):
         prezzo=0
         for prodotto in self.get_carrello_cliente():
