@@ -33,13 +33,13 @@ class VistaProdotto(QWidget):
         self.selettore_quantita.clear()
         quantita_disponibile = int(self.prodotto.quantita)
 
-        # Aggiungi le opzioni solo se la quantità è maggiore di 0
+
         if quantita_disponibile > 0:
             for quantita in range(1, quantita_disponibile + 1):
                 self.selettore_quantita.addItem(str(quantita))
         else:
             self.selettore_quantita.addItem("Esaurito")
-            self.agg_carrello_button.setEnabled(False)
+            self.agg_carrello_button.setEnabled(False) #se il prodotto è esaurito non permette la sua aggiunta al carrello
 
     def mostra_immagine(self):
         if os.path.isfile('immagini/' + str(self.prodotto.nome) + '.png'):
@@ -84,7 +84,6 @@ class VistaProdotto(QWidget):
 
     def popup(self, text, icon):
         msg = QMessageBox()
-        msg.setWindowTitle("ATTENZIONE")
         msg.setText(text)
         msg.setIcon(icon)
         msg.setStandardButtons(QMessageBox.StandardButton.Ok)

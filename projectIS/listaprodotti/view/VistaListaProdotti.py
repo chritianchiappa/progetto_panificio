@@ -51,7 +51,7 @@ class VistaListaProdotti(QWidget):
             widget = item.widget()
             if widget:
                 widget.deleteLater()
-    def filtro_tipologia(self):
+    def filtro_tipologia(self): #filtra i prodotti in base alla tipologia
         filtro_tipo=self.filtro_prodotti.currentText()
         if filtro_tipo == "Tutti":
             self.lista_prodotti_filtrata = self.lista_prodotti[:]
@@ -61,18 +61,8 @@ class VistaListaProdotti(QWidget):
         self.clear_layout(self.gridLayout)
         self.popola_shop(self.lista_prodotti_filtrata)
 
-
-    def popup_quantita_insufficiente(self):
-        msg = QMessageBox()
-        msg.setWindowTitle("ATTENZIONE")
-        msg.setText("Quantita dei prodotti insufficiente")
-        msg.setIcon(QMessageBox.Icon.Warning)
-        msg.setStandardButtons(QMessageBox.StandardButton.Yes)
-        msg.setDefaultButton(QMessageBox.StandardButton.Yes)
-        msg.exec()
     def popup_ricerca(self,testo):
         msg = QMessageBox()
-        msg.setWindowTitle("ATTENZIONE")
         msg.setText(testo)
         msg.setIcon(QMessageBox.Icon.Warning)
         msg.setStandardButtons(QMessageBox.StandardButton.Ok)

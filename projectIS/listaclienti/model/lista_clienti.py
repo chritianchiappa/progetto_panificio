@@ -46,10 +46,7 @@ class ListaClienti():
             if cliente.email == email:
                 return True
         return False
-    def ritorna_nome(self,cognome):
-        for cliente in self.lista_clienti:
-            if cliente.cognome==cognome:
-                return cliente.nome
+
     def get_lista_clienti(self):
         return self.lista_clienti
 

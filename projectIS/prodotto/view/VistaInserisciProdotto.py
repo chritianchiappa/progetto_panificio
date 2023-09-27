@@ -13,7 +13,7 @@ class VistaInserisciProdotto(QWidget):
         self.controllerprod = controller_prodotti
         self.new_prodotto_button.clicked.connect(self.aggiungi_prodotto)
 
-    def sposta_file(self,percorso_file, cartella_destinazione,nome_prodotto):
+    def sposta_file(self,percorso_file, cartella_destinazione,nome_prodotto): #permette di spostare il file e inserirlo all'interno della cartella immagini
         try:
             if os.path.exists(percorso_file):
                 if not os.path.exists(cartella_destinazione):
@@ -41,7 +41,7 @@ class VistaInserisciProdotto(QWidget):
         url_immagine= self.url_immagine.text().strip()
         if tipo.strip() == "":
             self.popup("Seleziona un tipo di prodotto", QMessageBox.Icon.Warning, QMessageBox.StandardButton.Ok)
-            return  # Interrompi il processo se non è stato selezionato un tipo
+            return
 
         elif len(nome)==0 or len(ingredienti)==0:
             self.popup("Alcuni campi non sono compilati",QMessageBox.Icon.Warning,QMessageBox.StandardButton.Ok)
@@ -56,7 +56,7 @@ class VistaInserisciProdotto(QWidget):
                 for ingrediente_obj in ControllerListaIngredienti().get_lista_ingredienti():
                     if ingrediente_obj.nome == ingrediente_nome:
                         ingrediente_corrispondente = ingrediente_obj
-                        break  # Esci dal ciclo una volta trovato il corrispondente
+                        break  # Esce dal ciclo una volta trovato il corrispondente
                 if ingrediente_corrispondente:
                     lista_ingredienti.append(ingrediente_corrispondente)
                 else:
@@ -70,7 +70,7 @@ class VistaInserisciProdotto(QWidget):
                 lista_ingredienti,
                 quantita
             ))
-            self.popup("prodotto aggiunto all elenco",QMessageBox.Icon.Information,QMessageBox.StandardButton.Ok)
+            self.popup("prodotto aggiunto all'elenco",QMessageBox.Icon.Information,QMessageBox.StandardButton.Ok)
 
             self.controllerprod.save_data()
             self.close()

@@ -13,7 +13,7 @@ from listaprodotti.controller.ControllerListaProdotti import ControllerListaProd
 from listaingredienti.controller.controller_lista_ingredienti import ControllerListaIngredienti
 from listadipendenti.controller.controller_lista_dipendenti import ControllerListaDipendenti
 
-from risorse import res_rc
+from risorse import res_rc #permette di importare le risorse necessarie(immagini e icone) per il progetto
 
 class VistaLogin(QDialog):
     def __init__(self,parent=None):
@@ -85,12 +85,11 @@ class VistaLogin(QDialog):
             self.error.setText("email o password non corette")
 
 
-    def accedi_Amm(self): #per la registrazione dell amministratore
+    def accedi_Amm(self): #per la registrazione dell'amministratore
         self.LogAmm= VistaLogAmm(self,self.controller,self.controllerdip)
         self.LogAmm.show()
 
-    def closeEvent(self, event): #prima di chiudere la finestra del login invia un popup di conferma
-
+    def closeEvent(self, event): #prima di chiudere la finestra di login invia un popup di conferma
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Icon.Question)
         msg.setText("Sei sicuro di voler chiudere il programma?")

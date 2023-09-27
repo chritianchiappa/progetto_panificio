@@ -30,5 +30,3 @@ class ControllerListaProdotti:
     def save_data(self):
         self.model.save_data()
 
-    def save_data_specialized(self, lista_prodotti):
-        self.model.save_data_specialized(lista_prodotti)

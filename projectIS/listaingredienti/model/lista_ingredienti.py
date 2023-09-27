@@ -1,7 +1,7 @@
 import os
 import pickle
 import json
-from datetime import datetime,timedelta
+from datetime import datetime
 
 from ingrediente.model.Ingrediente import Ingrediente
 
@@ -20,8 +20,6 @@ class ListaIngredienti():
 
     def rimuovi_ingrediente_by_index(self,index):
         self.lista_ingredienti.pop(index)
-
-
 
 
     def get_lista_ingredienti(self):

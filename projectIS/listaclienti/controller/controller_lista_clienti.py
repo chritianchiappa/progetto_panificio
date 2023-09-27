@@ -23,8 +23,7 @@ class ControllerListaClienti():
     def check_email(self,email):
         return self.model.check_email(email)
 
-    def ritorna_nome(self,cognome):
-        return self.model.ritorna_nome(cognome)
+
 
     def rimuovi_cliente_by_id(self, id):
         self.model.rimuovi_cliente_by_id(id)

@@ -11,6 +11,6 @@ class Prodotto:
     def copia(self):
         # Crea una copia del prodotto
         copia = Prodotto(self.nome, self.tipo,self.prezzo, self.ingredienti,
-                         self.quantita)  # Assicurati di copiare tutti gli attributi necessari
-        # Copia gli altri attributi specifici se presenti
+                         self.quantita)
+
         return copia

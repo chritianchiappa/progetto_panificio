@@ -38,7 +38,7 @@ class VistaPagamento(QWidget):
             importo+=ControllerProdotto(prodotto).get_prezzo()
         return round(importo,2)
 
-    def scala_quantita(self):
+    def scala_quantita(self): #scala la quantita dei prodotti che vengono ordinati
         for prodotto in self.prodotti:
             quantita_ord=ControllerProdotto(prodotto).get_quantita()
             prod_c=self.controllerprodotti.check_prodotto(prodotto.nome)
@@ -62,7 +62,7 @@ class VistaPagamento(QWidget):
         self.animation.setEasingCurve(self.easing_curve)
         self.animation.start()
 
-    def verifica_quantita_disponibile(self):
+    def verifica_quantita_disponibile(self): #non permette di ordinare prodotti che sono esauriti
         for prodotto in self.prodotti:
             quantita_ord = ControllerProdotto(prodotto).get_quantita()
             prod_c = self.controllerprodotti.check_prodotto(prodotto.nome)
@@ -117,7 +117,6 @@ class VistaPagamento(QWidget):
 
     def popup(self,text,icon):
         msg = QMessageBox()
-        msg.setWindowTitle("ATTENZIONE")
         msg.setText(text)
         msg.setIcon(icon)
         msg.setStandardButtons(QMessageBox.StandardButton.Ok)

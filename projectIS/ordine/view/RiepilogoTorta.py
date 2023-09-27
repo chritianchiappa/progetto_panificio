@@ -81,7 +81,6 @@ class RiepilogoTorta(QWidget):
 
     def popup(self,text,icon):
         msg = QMessageBox()
-        msg.setWindowTitle("ATTENZIONE")
         msg.setText(text)
         msg.setIcon(icon)
         msg.setStandardButtons(QMessageBox.StandardButton.Ok)

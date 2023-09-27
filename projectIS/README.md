@@ -22,7 +22,7 @@ Mentre l' account del dipendente già inserito ha le segeuenti credenziali:
 E' possibile accedere anche come amministratore utilizzando il seguente id:
 - Id: Amministratorte
 
-L' amministratore puo gestire i dipendenti del negozio,visualizzare varie statistiche riguardanti le vendite e visualizzare la cassa giornaliera
+L' amministratore puo gestire i dipendenti del negozio aggiungendoli assegnando un id(che il dipendente dovrà utilizzare al primo accesso per registrarsi) o rimuovendoli ,visualizzare varie statistiche riguardanti le vendite e visualizzare la cassa giornaliera
 oltre che inviare notifiche ai dipendenti e clienti registrati.
 
 Abbiamo utilizzato il linguaggio Python 6 con la libreria PyQt6 per l'interfaccia grafica.

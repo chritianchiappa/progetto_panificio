@@ -22,7 +22,7 @@ class ListaSpese:
                 except EOFError:
                     return
 
-    # Metodo: salva il contenuto della lista su file pickle
+
     def save_data(self):
         with open('listaspese/data/lista_spese_salvata.pickle', 'wb') as handle:
             pickle.dump(self.lista_spese, handle, pickle.HIGHEST_PROTOCOL)

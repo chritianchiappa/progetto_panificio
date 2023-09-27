@@ -39,12 +39,12 @@ class VistaListaDipendenti(QWidget):
     def dettagli_selezionato(self):
         if self.dettagli_button.isChecked():
             selected_indexes = self.list_view.selectedIndexes()
-            if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
+            if not selected_indexes:
                 self.dettagli_button.setChecked(False)
                 return
 
             selected_row = selected_indexes[0].row()
-            if selected_row < 0:  # Verifica se l'indice è valido
+            if selected_row < 0:
                 return
             self.stackedWidget.setCurrentWidget(self.page_2)
             dipendente_selezionato = self.controller.get_dipendente_by_index(selected_row)

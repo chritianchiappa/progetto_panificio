@@ -14,7 +14,7 @@ class VistaNotifica(QWidget):
         self.setWindowTitle("Notifiche")
         self.utente=utente
 
-        if isinstance(self.utente, Cliente):
+        if isinstance(self.utente, Cliente): #verifico se l'utente passato come parametro è un cliente o un dipendente
             self.controller_lista = controller
             self.controller = ControllerCliente(self.utente)
         else:
@@ -43,12 +43,12 @@ class VistaNotifica(QWidget):
     def dettagli_messaggio(self):
         if self.dettagli_notifica_button.isChecked():
             selected_index = self.list_view.selectedIndexes()
-            if not selected_index:  # Verifica se la lista è vuota o nessun elemento selezionato
+            if not selected_index:
                 self.dettagli_notifica_button.setChecked(False)
                 return
 
             selected_row = selected_index[0].row()
-            if selected_row < 0:  # Verifica se l'indice è valido
+            if selected_row < 0:
                 return
             self.stackedWidget.setCurrentWidget(self.page_2)
             notifica_selezionata= self.controller.get_notifica_by_index(selected_row)

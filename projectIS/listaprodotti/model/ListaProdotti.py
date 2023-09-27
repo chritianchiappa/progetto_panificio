@@ -40,7 +40,7 @@ class ListaProdotti:
                 return prodotto
         return None
 
-    # Metodo: ricarica in lista i dati da file pickle, se esistente e non vuoto, o dal file json
+    # ricarica in lista i dati da file pickle, se esistente e non vuoto, o dal file json
     def refresh_data(self):
         if os.path.isfile('listaprodotti/data/lista_prodotti_salvata.pickle') and os.stat('listaprodotti/data/lista_prodotti_salvata.pickle').st_size!=0:
             with open('listaprodotti/data/lista_prodotti_salvata.pickle', 'rb') as f:
@@ -59,7 +59,7 @@ class ListaProdotti:
                         for ingrediente_obj in ControllerListaIngredienti().get_lista_ingredienti():
                             if ingrediente_obj.nome == ingrediente_nome:
                                 ingrediente_corrispondente = ingrediente_obj
-                                break  # Esci dal ciclo una volta trovato il corrispondente
+                                break  # Esce dal ciclo una volta trovato il corrispondente
                         if ingrediente_corrispondente:
                             ingredienti_caricati.append(ingrediente_corrispondente)
 
@@ -71,12 +71,8 @@ class ListaProdotti:
                             ingredienti_caricati,
                             prodotto_da_caricare['quantita']))
 
-    # Metodo: salva il contenuto della lista su file pickle
+    #salva il contenuto della lista su file pickle
     def save_data(self):
         with open('listaprodotti/data/lista_prodotti_salvata.pickle', 'wb') as handle:
             pickle.dump(self.lista_prodotti, handle, pickle.HIGHEST_PROTOCOL)
 
-    # Metodo: salvo il contenuto di una lista in particolare su file pickle
-    def save_data_specialized(self, lista_prodotti):
-        with open('listaprodotti/data/DatabaseProdotti.pickle', 'wb') as handle:
-            pickle.dump(lista_prodotti, handle, pickle.HIGHEST_PROTOCOL)

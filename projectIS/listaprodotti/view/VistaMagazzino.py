@@ -2,7 +2,6 @@ from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget,QTableWidgetItem
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
 
-from prodotto.controller.ControllerProdotto import ControllerProdotto
 from prodotto.view.VistaModificaQuantita import VistaModificaQuantita
 from prodotto.view.VistaInserisciProdotto import VistaInserisciProdotto
 from ingrediente.view.VistaInserisciScorta import VistaInserisciScorta
@@ -88,11 +87,11 @@ class VistaMagazzino(QWidget):
 
     def mod_quantita_prodotto(self):
         selected_indexes = self.list_view1.selectedIndexes()
-        if not selected_indexes:  # Verifica se la lista è vuota o nessun elemento selezionato
+        if not selected_indexes:
             return
 
         selected_row = selected_indexes[0].row()
-        if selected_row < 0:  # Verifica se l'indice è valido
+        if selected_row < 0:
             return
         prodotto_selezionato = self.controllerprod.get_prodotto_by_index(selected_row)
         self.ModQuantita=VistaModificaQuantita(self,prodotto_selezionato,self.controllerprod)
@@ -116,11 +115,11 @@ class VistaMagazzino(QWidget):
 
     def rim_prodotto(self):
         selected_index = self.list_view1.selectedIndexes()
-        if not selected_index:  # Verifica se la lista è vuota o nessun elemento selezionato
+        if not selected_index:
             return
 
         selected_row = selected_index[0].row()
-        if selected_row < 0:  # Verifica se l'indice è valido
+        if selected_row < 0:
             return
         self.controllerprod.rimuovi_prodotto_by_index(selected_row)
         self.listview_model1.removeRow(selected_row)
