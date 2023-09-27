@@ -100,6 +100,7 @@ class PersonalizzaTorta(QWidget):
             self.selezione_pagina_3 = self.pasta_zucchero.text()
         else:
             self.selezione_pagina_3 = None
+        # Abilita il pulsante "Avanti" se almeno un radio button è selezionato
         if self.selezione_pagina_3:
 
             self.avanti_button.setEnabled(True)

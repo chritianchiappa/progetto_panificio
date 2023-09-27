@@ -2,8 +2,6 @@ from PyQt6 import uic
 
 from PyQt6.QtWidgets import QDialog,QMessageBox
 
-
-
 class CompletaTorta(QDialog):
 
     def __init__(self,lista_ordini,ordine_selezionato,selected_row,torta):
